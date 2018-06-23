@@ -1,3 +1,9 @@
 <resources>
+
+
+    <string name="facebook_app_id">1036758143142364</string>
+    <string name="fb_login_protocol_scheme">fb1036758143142364</string>
+
+
     <string name="app_name">SerFeliz</string>
 </resources>
