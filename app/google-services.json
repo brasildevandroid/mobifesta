@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1000848294670",
+    "firebase_url": "https://serfeliz-4d215.firebaseio.com",
+    "project_id": "serfeliz-4d215",
+    "storage_bucket": "serfeliz-4d215.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000848294670:android:b31fd798b76c689f",
+        "android_client_info": {
+          "package_name": "com.example.pinheiro.serfeliz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000848294670-ti0a9vir2eqq4n959c8c9ckd53gduplh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pinheiro.serfeliz",
+            "certificate_hash": "ea3a6ba44ab39310841ea6fac44e0bde233b9ff7"
+          }
+        },
+        {
+          "client_id": "1000848294670-v8np2dbqkv0g59a5bui5j5qd91mnoics.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6gpnGcJxUEyc4fE1jNMRlr6MQOz13oag"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000848294670-v8np2dbqkv0g59a5bui5j5qd91mnoics.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
