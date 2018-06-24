@@ -35,8 +35,6 @@ public class TelaLogin extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-
-
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.FacebookBuilder().build(),
                 new AuthUI.IdpConfig.GoogleBuilder().build(),
@@ -54,7 +52,6 @@ public class TelaLogin extends AppCompatActivity {
 
     }
 
-
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // RC_SIGN_IN is the request code you passed into startActivityForResult(...) when starting the sign in flow.
@@ -65,7 +62,7 @@ public class TelaLogin extends AppCompatActivity {
                 // Successfully signed in
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                 if (user.getProviderData() != null){
+                 if (user != null){
 
 
                    startActivity(new Intent(TelaLogin.this,MainActivity.class));
