@@ -36,16 +36,19 @@ public class TelaLogin extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-        List<AuthUI.IdpConfig> providers = Arrays.asList(
-                new AuthUI.IdpConfig.EmailBuilder().build(),
-                new AuthUI.IdpConfig.GoogleBuilder().build(),
-                new AuthUI.IdpConfig.FacebookBuilder().build());
 
+        List<AuthUI.IdpConfig> providers = Arrays.asList(
+                new AuthUI.IdpConfig.FacebookBuilder().build(),
+                new AuthUI.IdpConfig.GoogleBuilder().build(),
+                new AuthUI.IdpConfig.EmailBuilder().build()
+
+               );
 
         startActivityForResult(AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setIsSmartLockEnabled(false)
-
+                .setTheme(R.style.GreenTheme)
+                .setLogo(R.drawable.ic_logo)
                 .setAvailableProviders(providers)
                 .build(),RC_SIGN_IN);
 
@@ -58,25 +61,23 @@ public class TelaLogin extends AppCompatActivity {
         if (requestCode == RC_SIGN_IN) {
             IdpResponse response = IdpResponse.fromResultIntent(data);
 
-            // Successfully signed in
             if (resultCode == RESULT_OK) {
-                //startActivity(SignedInActivity.createIntent(this, response));
-                finish();
+                // Successfully signed in
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                 if (user.getProviderData() != null){
+
+
+                   startActivity(new Intent(TelaLogin.this,MainActivity.class));
+                   finish();
+
+                 }
+                // ...
             } else {
-                // Sign in failed
-                if (response == null) {
-                    // User pressed back button
-                    showSnackbar(R.string.sign_in_cancelled);
-                    return;
-                }
-
-                if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
-                    showSnackbar(R.string.no_internet_connection);
-                    return;
-                }
-
-                showSnackbar(R.string.unknown_error);
-                Log.e(TAG, "Sign-in error: ", response.getError());
+                // Sign in failed. If response is null the user canceled the
+                // sign-in flow using the back button. Otherwise check
+                // response.getError().getErrorCode() and handle the error.
+                // ...
             }
         }
     }
