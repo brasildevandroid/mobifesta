@@ -12,14 +12,36 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".TelaLogin" />
+        <activity android:name=".TelaConfiguraFesta" />
+        <activity android:name=".TelaProfissionalTeste" />
+        <activity android:name=".TelaEspera" />
+        <activity android:name=".TelaCadastroProfissional">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TelaAdministrativo" />
+        <activity
+            android:name=".TelaAdministrativa"
+
+            android:label="@string/title_activity_tela_administrativa">
+
+        </activity>
+        <activity
+            android:name="profissional.TelaProfissional"
+            android:label="@string/title_activity_tela_profissional">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
-        <activity android:name=".TelaLogin"></activity>
-        <activity android:name=".TelaConfiguraPlanejamento"></activity>
     </application>
 
 </manifest>

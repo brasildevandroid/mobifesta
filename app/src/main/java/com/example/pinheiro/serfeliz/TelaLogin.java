@@ -33,7 +33,7 @@ public class TelaLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_login);
 
-        mAuth = FirebaseAuth.getInstance();
+       // mAuth = FirebaseAuth.getInstance();
 
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.FacebookBuilder().build(),
@@ -41,6 +41,7 @@ public class TelaLogin extends AppCompatActivity {
                 new AuthUI.IdpConfig.EmailBuilder().build()
 
                );
+
 
         startActivityForResult(AuthUI.getInstance()
                 .createSignInIntentBuilder()
@@ -64,8 +65,7 @@ public class TelaLogin extends AppCompatActivity {
 
                  if (user != null){
 
-
-                   startActivity(new Intent(TelaLogin.this,MainActivity.class));
+                   startActivity(new Intent(TelaLogin.this,TelaEspera.class));
                    finish();
 
                  }

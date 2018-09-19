@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:background="#7f333639"
+        android:paddingTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/linearaaaaa">
+
+        <android.support.design.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp"
+            app:cardPreventCornerOverlap="true"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="16dp"
+            android:layout_margin="6dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_margin="3dp"
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="24dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="4dp"
+                        app:srcCompat="@drawable/ic_prancheta"
+
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:text="Dados Pessoais:"
+                        android:textAlignment="center"
+                        android:textSize="24sp" />
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="nome:"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Nome_Juridica_Profissional"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="sobrenome:"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Sobrenome_Juridica_Profissional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="email:"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Email_Juridica_Profissional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="digite seu  cpf:"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Cpf_Juridica_Profissional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="digite sua identidade:"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Identidade_Juridica_Profissional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Celular_Juridica_Profissional"
+                        android:layout_width="215dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="(DDD) + celular:"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="20sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:text="Dados da Empresa:"
+                        android:textAlignment="center"
+                        android:textSize="24sp" />
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="Razão Social:"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Razao_Social_Juridica_Profissional"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="Cnpj:"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Cnpj_Juridica_Profissional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="inscrição estadual:"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_InscEstadual_Juridica_Profissional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="Nome Fantasia"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Nome_Fantasia_Juridica_Profissional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+                    <TextView
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Endereço:"
+                        android:textAlignment="center"
+                        android:textSize="24sp" />
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="cep:"
+                        android:id="@+id/edt_Cep_Juridica_Profissional"
+                        android:layout_width="215dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+
+
+
+                    <RelativeLayout
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.beardedhen.androidbootstrap.BootstrapEditText
+                            android:hint="rua:"
+                            android:id="@+id/edt_Rua_Juridica_Profissional"
+                            android:layout_width="215dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="11dp"
+                            android:imeOptions="actionNext"
+                            android:inputType="textPersonName"
+                            android:maxLines="1"
+                            android:textColor="@android:color/widget_edittext_dark"
+                            android:textSize="14sp"
+                            app:bootstrapBrand="primary"
+                            app:bootstrapSize="lg"
+                            app:roundedCorners="true" />
+
+
+                        <com.beardedhen.androidbootstrap.BootstrapEditText
+                            android:id="@+id/edt_Numero_Juridica_Profissional"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginEnd="14dp"
+                            android:hint="número:"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:textColor="@android:color/widget_edittext_dark"
+                            android:textSize="14sp"
+                            app:bootstrapBrand="primary"
+                            app:bootstrapSize="lg"
+                            app:roundedCorners="true" />
+
+                    </RelativeLayout>
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="bairro:"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Bairro_Juridica_Profissional"
+                        android:layout_width="215dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:id="@+id/edt_Complemento_Juridica_Profissional"
+                        android:layout_width="215dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="complemento:"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="cidade:"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Cidade_Juridica_Profissional"
+                        android:layout_width="215dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:hint="estado:"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:id="@+id/edt_Estado_Juridica_Profissional"
+                        android:layout_width="215dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:textSize="14sp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+
+
+                    <TextView
+                        android:textColor="@android:color/widget_edittext_dark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Anexar Documentos:"
+                        android:textAlignment="center"
+                        android:textSize="24sp" />
+
+                    <RelativeLayout
+                        android:layout_margin="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <Button
+                            android:id="@+id/btn_Cpf_Juridica_Profissional"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:text=" anexar cpf"
+                            android:textSize="13dp" />
+
+
+                        <ImageView
+                            android:visibility="invisible"
+                            android:id="@+id/img_Cpf_Carregado_Juridica"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="13dp"
+                            android:src="@drawable/ic_checado" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_margin="16dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/btn_Identidade_Juridica_Profissional"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="anexar identidade"
+                            android:textAlignment="center"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:id="@+id/img_Identidade_Carregado_Juridica"
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="13dp"
+                            android:src="@drawable/ic_checado" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_margin="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_Residencia_Juridica_Profissional"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:text="anexar comprovante de residência"
+                            android:textAlignment="center"
+                            android:textSize="13dp" />
+
+
+                        <ImageView
+                            android:visibility="invisible"
+                            android:id="@+id/img_Residencia_Carregado_Juridica"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="13dp"
+                            android:src="@drawable/ic_checado" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_margin="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_Cnpj_Juridica_Profissional"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:text="anexar cadastro nacional da pessoa juridica ou MEI"
+                            android:textAlignment="center"
+                            android:textSize="13dp" />
+
+
+                        <ImageView
+                            android:visibility="invisible"
+                            android:id="@+id/img_Cnpj_Carregado_Juridica"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="13dp"
+                            android:src="@drawable/ic_checado" />
+
+                    </RelativeLayout>
+
+
+                    <Button
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="24dp"
+                        android:id="@+id/btn_Enviar_Cadastro_Juridica_Profissional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="finalizar cadastro"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+        </android.support.design.card.MaterialCardView>
+
+    </LinearLayout>
+
+
+</ScrollView>

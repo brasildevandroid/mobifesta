@@ -6,5 +6,42 @@
     <!-- Facebook Application ID, prefixed by 'fb'. Enables Chrome Custom tabs. -->
     <string name="facebook_login_protocol_scheme" translatable="false">fb1036758143142364</string>
 
+    <string name="ser_hint_data">insira a data</string>
+    <string name="ser_hint_festa">tipo de festa</string>
+
+
     <string name="app_name">SerFeliz</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="profissional_bloqueado">Ops!Parece que você não pode mais acessar o aplicativo,por favor entre em contato conosco atráves
+        do e-mail luizcox1@hotmail.com!
+    </string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="boas_vindas_profissional">Olá!estamos muito felizes com seu cadastro mais no entanto precisa aguardar até 72 hrs para liberação do cadastro
+        enquanto isso sugerimos que treine um pouco quanto ao funcionamento do aplicativo,boa sorte!
+    </string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="boas_vindas">Olá!se você é um profissional ou empresa, e deseja oferecer seus serviços em nossa plataforma, por favor
+    leia todos os termos de uso e prossiga para realizar seu cadastro,temos propostas de clientes  esperando por você!
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_tela_administrativa">TelaAdministrativa</string>
+
+    <string name="titulo_profissional_Painel">Painel Geral</string>
+    <string name="titulo_profissional_Financeiro">Financeiro</string>
+    <string name="titulo_profissional_Pedidos">Pedidos</string>
+
+
+    <string name="title_home">Geral</string>
+    <string name="title_dashboard">Profissional</string>
+    <string name="title_notifications">Cliente</string>
+
+    <string name="title_activity_tela_profissional">TelaProfissional</string>
 </resources>
