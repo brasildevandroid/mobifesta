@@ -10,6 +10,13 @@
     android:layout_height="match_parent"
     tools:context=".TelaConfiguraFesta">
 
+    <FrameLayout
+        android:id="@+id/container_tela"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"/>
+
+
 
     <RelativeLayout
         android:backgroundTint="#7f333639"

@@ -25,10 +25,9 @@ public class TelaAdministrativa extends AppCompatActivity {
 
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.container_tela_administrativa,new FragmentAdministrativoProfissional())
+                            .replace(R.id.container_tela_administrativa,new FragmentResumo())
                             .addToBackStack(null)
                             .commit();
-
 
                     return true;
                 case R.id.navigation_notifications:

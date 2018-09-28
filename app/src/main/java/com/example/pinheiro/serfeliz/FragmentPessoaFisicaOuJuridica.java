@@ -1,6 +1,5 @@
 package com.example.pinheiro.serfeliz;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.pinheiro.serfeliz.R;
-
 
 public class FragmentPessoaFisicaOuJuridica extends Fragment {
 
@@ -23,6 +20,7 @@ public class FragmentPessoaFisicaOuJuridica extends Fragment {
 
     @Nullable
     @Override
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_pessoa_fisica_ou_juridica,container,false);
@@ -35,31 +33,31 @@ public class FragmentPessoaFisicaOuJuridica extends Fragment {
         btnPessoaFisica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-/*
+
                 FragmentManager fmm = getFragmentManager();
                 FragmentTransaction ftt = fmm.beginTransaction();
-                ftt.replace(R.id.container_tela_principal_cadastro, new FragmentCadastroPessoaFisica());
+                ftt.replace(R.id.container_tela_cadastro_profissional, new FragmentCadastroPessoaFisica());
                 ftt.addToBackStack(null);
                 ftt.commit();
 
-                */
 
             }
         });
 
 
-
         btnPessoaJuridica.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-/*
+
+                /*
                 FragmentManager fmm = getFragmentManager();
                 FragmentTransaction ftt = fmm.beginTransaction();
-                ftt.replace(R.id.container_tela_principal_cadastro, new FragmentCadastroPessoaJuridica());
+                ftt.replace(R.id.container_Cadastro_Profissional, new FragmentCadastroPessoaJuridica());
                 ftt.addToBackStack(null);
                 ftt.commit();
 */
-            }
+             }
         });
 
         return view;

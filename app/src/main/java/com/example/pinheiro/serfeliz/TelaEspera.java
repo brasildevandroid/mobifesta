@@ -6,8 +6,6 @@ import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -26,6 +24,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+import pojos.Cliente;
 import pojos.Funcionarios;
 
 public class TelaEspera extends AppCompatActivity {
@@ -51,6 +50,7 @@ ProgressBar progressEspera;
         mFirestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
+
         progressEspera = (ProgressBar) findViewById(R.id.progress_Espera);
 
         new CountDownTimer(2000, 1000) {
@@ -61,23 +61,17 @@ ProgressBar progressEspera;
 
             public void onFinish() {
 
-
-                mAuth = FirebaseAuth.getInstance();
-
                 if (mAuth.getCurrentUser() != null){
 
 
+                        carregaUsuario();
 
-                    mUser = mAuth.getCurrentUser();
+                }else {
 
-                    if (mUser != null){
+                    Toast.makeText(TelaEspera.this, "estartou pro login", Toast.LENGTH_SHORT).show();
 
-
-                        String email = mUser.getEmail();
-                        setListaFuncionarios(email);
-
-                    }
-
+                    startActivity(new Intent(TelaEspera.this,TelaLogin.class));
+                    finish();
                 }
 
             }
@@ -86,6 +80,138 @@ ProgressBar progressEspera;
 
 
     }
+
+    private void carregaUsuario() {
+
+        mFirestore = FirebaseFirestore.getInstance();
+
+
+        FirebaseUser mUser =
+                mAuth.getCurrentUser();
+
+        if (mUser !=  null){
+
+
+            String mUid =
+                    mUser.getUid();
+
+
+            try {
+
+
+
+
+            }catch (Exception e){
+
+
+
+
+
+
+            }
+
+
+
+            mFirestore.collection("plataforma")
+                    .document("cliente")
+                    .collection(mUid)
+                    .document("dados pessoais")
+                    .get()
+                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                            Cliente cliente = documentSnapshot.toObject(Cliente.class);
+
+                            String tipoCliente  = cliente.getTipo();
+
+                            if (tipoCliente.equalsIgnoreCase("clienteFesta")){
+
+
+                            //    startActivity(new Intent(TelaEspera.this,TelaCliente.class));
+
+                                finish();
+
+                            }else {
+
+                                setProfissional();
+
+
+                            }
+
+
+                        }
+                    });
+
+
+
+        }
+
+
+
+
+
+
+    }
+
+    private void setProfissional() {
+
+        mFirestore = FirebaseFirestore.getInstance();
+
+
+        FirebaseUser mUser =
+                mAuth.getCurrentUser();
+
+
+
+
+
+
+
+            if (mUser !=  null) {
+
+
+                String mUid =
+                        mUser.getUid();
+
+
+                mFirestore.collection("plataforma")
+                        .document("profissional")
+                        .collection(mUid)
+                        .document("dados pessoais")
+                        .get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                                Cliente cliente = documentSnapshot.toObject(Cliente.class);
+
+                                String tipoCliente = cliente.getTipo();
+
+                                if (tipoCliente.equalsIgnoreCase("clienteFesta")) {
+
+
+                                 //   startActivity(new Intent(TelaEspera.this, TelaCliente.class));
+
+                                    finish();
+
+                                } else {
+
+                                    setProfissional();
+
+                                }
+
+
+                            }
+                        });
+
+
+            }
+
+
+
+
+        }
 
     public void setListaFuncionarios(String email) {
 
@@ -119,12 +245,12 @@ ProgressBar progressEspera;
 
                                         if (verificaEmail.equalsIgnoreCase(funcionarios.getEmail())) {
 
-                                            startActivity(new Intent(TelaEspera.this, TelaAdministrativa.class));
+                                          //  startActivity(new Intent(TelaEspera.this, TelaAdministrativa.class));
                                             finish();
 
                                         }else {
 
-                                            startActivity(new Intent(TelaEspera.this, MainActivity.class));
+                                       //     startActivity(new Intent(TelaEspera.this, TelaCliente.class));
                                             finish();
 
                                         }

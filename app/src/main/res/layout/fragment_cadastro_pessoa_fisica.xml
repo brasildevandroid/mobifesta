@@ -7,20 +7,21 @@
     android:layout_height="match_parent">
 
 
-
     <LinearLayout
-        android:background="#7f333639"
+
         android:paddingTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:id="@+id/linearaaaaa">
 
+
         <android.support.design.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardElevation="8dp"
             app:cardPreventCornerOverlap="true"
+            android:layout_marginBottom="@dimen/cardMarginVertical"
             android:layout_marginTop="24dp"
             app:cardCornerRadius="16dp"
             android:layout_margin="6dp">
@@ -38,34 +39,14 @@
                     android:orientation="vertical"
                     android:paddingTop="24dp">
 
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="4dp"
-                        app:srcCompat="@drawable/ic_prancheta"
-
-                        tools:ignore="VectorDrawableCompat" />
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:textColor="@android:color/widget_edittext_dark"
-
-                        android:text="Dados Pessoais:"
-                        android:textAlignment="center"
-                        android:textSize="24sp" />
 
                     <com.beardedhen.androidbootstrap.BootstrapEditText
-                        android:hint="nome:"
+                        android:id="@+id/edt_Nome"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:id="@+id/edt_Nome_Fisica_Profissional"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="32dp"
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:maxLines="1"
@@ -73,17 +54,18 @@
                         android:textSize="14sp"
                         app:bootstrapBrand="primary"
                         app:bootstrapSize="lg"
-                        app:roundedCorners="true" />
+                        app:roundedCorners="true"
+                        android:hint="nome:"/>
+
 
 
                     <com.beardedhen.androidbootstrap.BootstrapEditText
-                        android:hint="sobrenome:"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:id="@+id/edt_Sobrenome_Fisica_Profissional"
+                        android:id="@+id/edt_Sobrenome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:maxLines="1"
@@ -91,17 +73,17 @@
                         android:textSize="14sp"
                         app:bootstrapBrand="primary"
                         app:bootstrapSize="lg"
-                        app:roundedCorners="true" />
+                        app:roundedCorners="true"
+                        android:hint="sobrenome:"/>
 
 
                     <com.beardedhen.androidbootstrap.BootstrapEditText
-                        android:hint="email:"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:id="@+id/edt_Email_Fisica_Profissional"
+                        android:id="@+id/edt_Email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:imeOptions="actionNext"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
@@ -109,52 +91,19 @@
                         android:textSize="14sp"
                         app:bootstrapBrand="primary"
                         app:bootstrapSize="lg"
-                        app:roundedCorners="true" />
+                        app:roundedCorners="true"
+                        android:hint="email:"/>
 
-
-                    <com.beardedhen.androidbootstrap.BootstrapEditText
-                        android:hint="digite seu  cpf:"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:id="@+id/edt_Cpf_Fisica_Profissional"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLines="1"
-                        android:textColor="@android:color/widget_edittext_dark"
-                        android:textSize="14sp"
-                        app:bootstrapBrand="primary"
-                        app:bootstrapSize="lg"
-                        app:roundedCorners="true" />
-
-                    <com.beardedhen.androidbootstrap.BootstrapEditText
-                        android:hint="digite sua identidade:"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:id="@+id/edt_Identidade_Fisica_Profissional"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLines="1"
-                        android:textColor="@android:color/widget_edittext_dark"
-                        android:textSize="14sp"
-                        app:bootstrapBrand="primary"
-                        app:bootstrapSize="lg"
-                        app:roundedCorners="true" />
 
 
                     <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:id="@+id/edt_Celular"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:id="@+id/edt_Celular_Fisica_Profissional"
-                        android:layout_width="215dp"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:hint="(DDD) + celular:"
+                        android:layout_marginTop="8dp"
+                        android:hint="(DDD) + celular"
                         android:imeOptions="actionNext"
                         android:inputType="number"
                         android:maxLines="1"
@@ -162,49 +111,18 @@
                         android:textSize="20sp"
                         app:bootstrapBrand="primary"
                         app:bootstrapSize="lg"
-                        app:roundedCorners="true" />
-
-
-                    <TextView
-                        android:textColor="@android:color/widget_edittext_dark"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:text="Endereço:"
-                        android:textAlignment="center"
-                        android:textSize="24sp" />
-
-                    <com.beardedhen.androidbootstrap.BootstrapEditText
-                        android:hint="cep:"
-                        android:id="@+id/edt_Cep_Fisica_Profissional"
-                        android:layout_width="215dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginTop="16dp"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="10"
-                        android:maxLines="1"
-                        android:textColor="@android:color/widget_edittext_dark"
-                        android:textSize="14sp"
-                        app:bootstrapBrand="primary"
-                        app:bootstrapSize="lg"
-                        app:roundedCorners="true" />
-
-
+                        app:roundedCorners="true"/>
 
 
 
                     <RelativeLayout
-                        android:layout_marginTop="16dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
 
                         <com.beardedhen.androidbootstrap.BootstrapEditText
-                            android:hint="rua:"
-                            android:id="@+id/edt_Rua_Fisica_Profissional"
+                            android:layout_marginTop="32dp"
+                            android:id="@+id/edt_Rua"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
@@ -217,17 +135,19 @@
                             android:textSize="14sp"
                             app:bootstrapBrand="primary"
                             app:bootstrapSize="lg"
-                            app:roundedCorners="true" />
+                            app:roundedCorners="true"
+                            android:hint="rua:"/>
 
 
                         <com.beardedhen.androidbootstrap.BootstrapEditText
-                            android:id="@+id/edt_Numero_Fisica_Profissional"
+                            android:layout_marginTop="32dp"
+
+                            android:id="@+id/edt_Numero"
                             android:layout_width="90dp"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"
                             android:layout_marginEnd="14dp"
-                            android:hint="número:"
                             android:imeOptions="actionNext"
                             android:inputType="number"
                             android:maxLength="10"
@@ -236,18 +156,19 @@
                             android:textSize="14sp"
                             app:bootstrapBrand="primary"
                             app:bootstrapSize="lg"
-                            app:roundedCorners="true" />
+                            app:roundedCorners="true"
+                            android:hint="numero:"/>
 
                     </RelativeLayout>
 
                     <com.beardedhen.androidbootstrap.BootstrapEditText
-                        android:hint="bairro:"
+                        android:layout_marginTop="8dp"
+
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:id="@+id/edt_Bairro_Fisica_Profissional"
-                        android:layout_width="215dp"
+                        android:id="@+id/edt_Complemento"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:maxLines="1"
@@ -255,17 +176,17 @@
                         android:textSize="14sp"
                         app:bootstrapBrand="primary"
                         app:bootstrapSize="lg"
-                        app:roundedCorners="true" />
-
+                        app:roundedCorners="true"
+                        android:hint="apartamento:" />
 
                     <com.beardedhen.androidbootstrap.BootstrapEditText
-                        android:hint="complemento:"
+                        android:layout_marginTop="8dp"
+
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:id="@+id/edt_Complemento_Fisica_Profissional"
-                        android:layout_width="215dp"
+                        android:id="@+id/edt_Comp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:maxLines="1"
@@ -273,16 +194,19 @@
                         android:textSize="14sp"
                         app:bootstrapBrand="primary"
                         app:bootstrapSize="lg"
-                        app:roundedCorners="true" />
+                        app:roundedCorners="true"
+                        android:hint="complemento:" />
+
 
                     <com.beardedhen.androidbootstrap.BootstrapEditText
-                        android:hint="cidade:"
+                        android:layout_marginTop="8dp"
+
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:id="@+id/edt_Cidade_Fisica_Profissional"
+                        android:id="@+id/edt_Bairro"
                         android:layout_width="215dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:maxLines="1"
@@ -290,136 +214,27 @@
                         android:textSize="14sp"
                         app:bootstrapBrand="primary"
                         app:bootstrapSize="lg"
-                        app:roundedCorners="true" />
-                    <com.beardedhen.androidbootstrap.BootstrapEditText
-                        android:hint="estado:"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:id="@+id/edt_Estado_Fisica_Profissional"
-                        android:layout_width="215dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:imeOptions="actionNext"
-                        android:inputType="textPersonName"
-                        android:maxLines="1"
-                        android:textColor="@android:color/widget_edittext_dark"
-                        android:textSize="14sp"
-                        app:bootstrapBrand="primary"
-                        app:bootstrapSize="lg"
-                        app:roundedCorners="true" />
+                        app:roundedCorners="true"
+                        android:hint="bairro:"/>
 
 
-                    <TextView
-                        android:textColor="@android:color/widget_edittext_dark"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:text="Anexar Documentos:"
-                        android:textAlignment="center"
-                        android:textSize="24sp" />
-
-                    <RelativeLayout
-                        android:layout_margin="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <Button
-                            android:id="@+id/btn_Cpf_Fisica_Profissional"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
-                            android:layout_centerHorizontal="true"
-                            android:text=" anexar cpf"
-                            android:textSize="13dp" />
-
-
-                        <ImageView
-                            android:visibility="invisible"
-                            android:id="@+id/img_Cpf_Carregado"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginEnd="13dp"
-                            android:src="@drawable/ic_checado" />
-
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:layout_margin="16dp"
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <Button
-                            android:id="@+id/btn_Identidade_Fisica_Profissional"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
-                            android:layout_centerHorizontal="true"
-                            android:text="anexar identidade"
-                            android:textAlignment="center"
-                            android:textSize="13dp" />
-
-                        <ImageView
-                          android:id="@+id/img_Identidade_Carregado"
-                            android:visibility="invisible"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginEnd="13dp"
-                            android:src="@drawable/ic_checado" />
-
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:layout_margin="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/btn_Residencia_Fisica_Profissional"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
-                            android:layout_centerHorizontal="true"
-                            android:layout_gravity="center"
-                            android:text="anexar comprovante de residência"
-                            android:textAlignment="center"
-                            android:textSize="13dp" />
-
-
-                        <ImageView
-                            android:visibility="invisible"
-                           android:id="@+id/img_Residencia_Carregado"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginEnd="13dp"
-                            android:src="@drawable/ic_checado" />
-
-                    </RelativeLayout>
 
 
 
                     <Button
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginTop="24dp"
-                        android:id="@+id/btn_Enviar_Cadastro_Fisica_Profissional"
+
+                        android:id="@+id/btn_Enviar_Coleta"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:text="finalizar cadastro"
-                        android:textAlignment="center"/>
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginRight="32dp"
+                        android:text="enviar"
+                        android:textAlignment="center"
+                        android:textSize="22sp" />
+
 
                 </LinearLayout>
+
 
             </ScrollView>
         </android.support.design.card.MaterialCardView>

@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 public class TelaCadastroProfissional extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,7 +16,7 @@ public class TelaCadastroProfissional extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.container_Cadastro_Profissional,new FragmentCadastroPessoaFisica())
+                .replace(R.id.container_tela_cadastro_profissional,new FragmentCadastroPessoaFisica())
                 .addToBackStack(null)
                 .commit();
 

@@ -12,8 +12,14 @@
         android:title="@string/titulo_profissional_Pedidos" />
 
     <item
-        android:id="@+id/navigation_profissional_financeiro"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:id="@+id/navigation_profissional_clientes"
+        android:icon="@drawable/ic_cliente"
         android:title="@string/titulo_profissional_Financeiro"/>
+
+
+    <item
+        android:id="@+id/navigation_profissional_mensagens"
+        android:icon="@drawable/ic_message_black_24dp"
+        android:title="@string/titulo_profissional_Mensagens"/>
 
 </menu>

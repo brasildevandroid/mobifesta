@@ -1,4 +1,4 @@
-package com.example.pinheiro.serfeliz;
+package pojos;
 
 class DadosGeraisProfissionalFisica {
 

@@ -34,9 +34,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_tela_administrativa">TelaAdministrativa</string>
 
-    <string name="titulo_profissional_Painel">Painel Geral</string>
-    <string name="titulo_profissional_Financeiro">Financeiro</string>
+    <string name="titulo_profissional_Painel">Painel </string>
+    <string name="titulo_profissional_Financeiro">Clientes</string>
     <string name="titulo_profissional_Pedidos">Pedidos</string>
+    <string name="titulo_profissional_Mensagens">Mensagens</string>
 
 
     <string name="title_home">Geral</string>
@@ -44,4 +45,9 @@
     <string name="title_notifications">Cliente</string>
 
     <string name="title_activity_tela_profissional">TelaProfissional</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_tela_profissonal">TelaProfissonal</string>
 </resources>

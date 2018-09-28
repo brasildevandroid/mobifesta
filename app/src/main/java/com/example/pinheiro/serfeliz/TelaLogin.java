@@ -33,7 +33,12 @@ public class TelaLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_login);
 
-       // mAuth = FirebaseAuth.getInstance();
+
+
+        Toast.makeText(this,"fui pra tela configura festa",Toast.LENGTH_SHORT).show();
+
+        finish();
+
 
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.FacebookBuilder().build(),
@@ -65,7 +70,10 @@ public class TelaLogin extends AppCompatActivity {
 
                  if (user != null){
 
-                   startActivity(new Intent(TelaLogin.this,TelaEspera.class));
+                     Toast.makeText(TelaLogin.this,"o resultado foi positivo",Toast.LENGTH_SHORT).show();
+
+                   startActivity(new Intent(TelaLogin.this,TelaConfiguraFesta.class));
+
                    finish();
 
                  }
