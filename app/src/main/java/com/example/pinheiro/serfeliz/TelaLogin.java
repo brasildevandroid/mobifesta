@@ -34,12 +34,6 @@ public class TelaLogin extends AppCompatActivity {
         setContentView(R.layout.activity_tela_login);
 
 
-
-        Toast.makeText(this,"fui pra tela configura festa",Toast.LENGTH_SHORT).show();
-
-        finish();
-
-
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.FacebookBuilder().build(),
                 new AuthUI.IdpConfig.GoogleBuilder().build(),
@@ -66,17 +60,10 @@ public class TelaLogin extends AppCompatActivity {
 
             if (resultCode == RESULT_OK) {
                 // Successfully signed in
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-                 if (user != null){
 
                      Toast.makeText(TelaLogin.this,"o resultado foi positivo",Toast.LENGTH_SHORT).show();
+                     startActivity(new Intent(TelaLogin.this,SignUpActivity.class));
 
-                   startActivity(new Intent(TelaLogin.this,TelaConfiguraFesta.class));
-
-                   finish();
-
-                 }
                 // ...
             } else {
                 // Sign in failed. If response is null the user canceled the

@@ -33,7 +33,7 @@ public class TelaProfissonal extends AppCompatActivity {
 
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.container_tela_profissional,new FragmentPedidosDisponiveis())
+                          //  .replace(R.id.container_tela_profissional,new FragmentPedidosDisponiveis())
                             .commit();
 
 
@@ -42,7 +42,7 @@ public class TelaProfissonal extends AppCompatActivity {
 
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.container_tela_profissional,new FragmentCadastroPendente())
+                          //  .replace(R.id.container_tela_profissional,new FragmentCadastroPendente())
                             .commit();
 
 
@@ -54,7 +54,7 @@ public class TelaProfissonal extends AppCompatActivity {
 
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.container_tela_profissional,new FragmentCadastroPendente())
+                        //    .replace(R.id.container_tela_profissional,new FragmentCadastroPendente())
                             .commit();
 
 

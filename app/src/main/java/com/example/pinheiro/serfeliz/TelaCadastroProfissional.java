@@ -16,7 +16,7 @@ public class TelaCadastroProfissional extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.container_tela_cadastro_profissional,new FragmentCadastroPessoaFisica())
+                .replace(R.id.container_tela_cadastro_profissional,new FragmentResumo())
                 .addToBackStack(null)
                 .commit();
 

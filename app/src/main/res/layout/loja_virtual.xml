@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <LinearLayout
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/edt_Pesquisa"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="8dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:textColor="@android:color/widget_edittext_dark"
+                android:textSize="14sp"
+                app:bootstrapBrand="primary"
+                app:bootstrapSize="lg"
+                app:roundedCorners="true"
+                android:hint="Pesquisar"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_filter"/>
+
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAdd"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rec_Restaurantes"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Últimos Vistos"
+            android:textSize="16sp"/>
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recUltVistosLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"/>
+
+
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buffets >"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recBuffetLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salão >"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recSalaoLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bolos >"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recBoloLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tema >"
+            android:textSize="16sp"/>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recTemaLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Animação>"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recAnimacaoLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Decoraçaõ>"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recDecoracaoLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lembrancinhas>"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recLembrancinhasLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pegue e Monte >"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recProvencalLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salgados >"
+            android:textSize="16sp"/>
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recSalgadosLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mesas e toalhas >"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recMesasToalhasLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Diversos >"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recDiversosLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estação >"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recEstacaoLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Garçon >"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recGarconLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Copeira >"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recCopeiraLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fritadeira>"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recFritadeiraLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recepcionista>"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recRecepcionistaLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Segurança>"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recSegurancaLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transporte>"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recTransporteLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recreação>"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recRecreacaoLoja"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

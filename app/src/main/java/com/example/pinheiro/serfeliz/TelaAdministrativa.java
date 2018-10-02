@@ -25,7 +25,7 @@ public class TelaAdministrativa extends AppCompatActivity {
 
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.container_tela_administrativa,new FragmentResumo())
+                        //    .replace(R.id.container_tela_administrativa,new FragmentResumo())
                             .addToBackStack(null)
                             .commit();
 
@@ -45,7 +45,7 @@ public class TelaAdministrativa extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_administrativa);
+        setContentView(R.layout.activity_formulario);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

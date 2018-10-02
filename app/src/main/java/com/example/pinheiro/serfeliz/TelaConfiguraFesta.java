@@ -101,7 +101,7 @@ public class TelaConfiguraFesta extends AppCompatActivity {
         slideAdapter =  new SlideAdapter(this);
         mSlideViewPager.setAdapter(slideAdapter);
 
-        tiposDeFestas.add("escolha uma festa");
+              tiposDeFestas.add("escolha uma festa");
         tiposDeFestas.add("Casamento");
         tiposDeFestas.add("Aniversário");
         tiposDeFestas.add("Debutantes");

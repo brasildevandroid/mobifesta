@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".FragmentResumo"
     tools:layout_editor_absoluteY="25dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
     <TextView
@@ -21,255 +25,348 @@
         android:textColor="#FFFF"
         android:textSize="24sp" />
 
-    <LinearLayout
-        android:gravity="center_horizontal"
+
+
+
+
+
+
+    <RelativeLayout
+
+        android:id="@+id/relativeL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="130dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout2"
-            android:layout_width="145dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/colorAccent"
+        <ImageView
+            android:id="@+id/ia"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="35dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_pagamento" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/ia"
+            android:layout_below="@+id/ia"
+            android:text="Minhas"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="135dp"
+            android:background="@color/colorBranco" />
 
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerHorizontal="true"
-                app:srcCompat="@drawable/ic_pagamento"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
 
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="12dp"
-                android:text="Pagamentos"
-                android:textColor="@color/colorBranco"
-                android:textSize="20sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/ia"
+            android:text="vendas"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
 
 
-        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout3"
-            android:layout_width="145dp"
-            android:layout_height="130dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/relativeLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="58dp"
+            android:layout_marginTop="28dp"
+            android:drawableLeft="@drawable/ic_ponto"
+            android:text="Realizadas"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginEnd="48dp"
+            android:drawableLeft="@drawable/ic_ponto"
+            android:text="Canceladas"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
 
 
-            <ImageView
-                android:id="@+id/imageV"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/ic_meus_produtos"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="8dp"
-                android:text="Meus Produtos"
-                android:textColor="@color/colorBranco"
-                android:textSize="18sp" />
 
-        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relaL"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+
+        <ImageView
+            android:id="@+id/i"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="35dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_meus_produtos" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/i"
+            android:layout_marginStart="51dp"
+            android:text="Meus"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="135dp"
+            android:background="@color/colorBranco" />
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/i"
+            android:text="Anúncios"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="74dp"
+            android:layout_marginTop="28dp"
+            android:drawableLeft="@drawable/ic_ponto"
+            android:text="Ativos"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginEnd="48dp"
+            android:drawableLeft="@drawable/ic_ponto"
+            android:text="Cancelados"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/rela"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+
+        <ImageView
+            android:id="@+id/ias"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="35dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_minha_reputacao" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/ias"
+            android:layout_marginStart="49dp"
+            android:text="Minha"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="135dp"
+            android:background="@color/colorBranco" />
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="28dp"
+            android:text="Reputação"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="19dp"
+            android:drawableLeft="@drawable/ic_ponto"
+            android:text="Avaliações"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="55dp"
+            android:drawableLeft="@drawable/ic_ponto"
+            android:text="Nive"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_marginBottom="16dp"
+        android:id="@+id/relasss"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+
+        <ImageView
+            android:id="@+id/iasd"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="22dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_configurar" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp"
+            android:text="Configuração"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="135dp"
+            android:background="@color/colorBranco" />
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="19dp"
+            android:drawableLeft="@drawable/ic_ponto"
+            android:text="Minha Conta"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="89dp"
+            android:drawableLeft="@drawable/ic_ponto"
+            android:text="Ajuda"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/iasd"
+            android:layout_marginEnd="61dp"
+            android:drawableLeft="@drawable/ic_ponto"
+            android:text="Sair"
+            android:textColor="@color/colorBranco"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+
 
 
     </LinearLayout>
-
-    <LinearLayout
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout7"
-            android:layout_width="145dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/colorAccent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
-
-
-            <ImageView
-                android:id="@+id/ima"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/ic_minha_reputacao"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="4dp"
-                android:text="Minha Reputação"
-                android:textAlignment="center"
-                android:textColor="@color/colorBranco"
-                android:textSize="20sp" />
-
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/relativeLayo"
-            android:layout_width="145dp"
-            android:layout_height="130dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/colorAccent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerHorizontal="true"
-                app:srcCompat="@drawable/ic_ajuda"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="4dp"
-                android:text="Ajuda"
-                android:textColor="@color/colorBranco"
-                android:textSize="20sp" />
-
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-
-
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout8"
-            android:layout_width="145dp"
-            android:layout_height="130dp"
-            android:layout_marginBottom="56dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/relativeLayout6"
-            app:layout_constraintHorizontal_bias="0.266"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout7"
-            app:layout_constraintVertical_bias="0.888">
-
-
-            <ImageView
-                android:id="@+id/imaas"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                app:srcCompat="@drawable/ic_configurar"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imaas"
-                android:layout_centerHorizontal="true"
-                android:text="Configuração"
-                android:textAlignment="center"
-                android:textColor="@color/colorBranco"
-                android:textSize="20sp" />
-
-
-
-        </RelativeLayout>
-
-
-
-
-
-        <RelativeLayout
-            android:id="@+id/relativeLa"
-            android:layout_width="145dp"
-            android:layout_height="130dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/relativeLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-
-            <ImageView
-                android:id="@+id/imag"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/ic_sair"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="8dp"
-                android:text="Sair"
-                android:textColor="@color/colorBranco"
-                android:textSize="20sp" />
-
-        </RelativeLayout>
-
-
-
-
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</ScrollView>

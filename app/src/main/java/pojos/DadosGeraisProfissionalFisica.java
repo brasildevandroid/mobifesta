@@ -1,14 +1,12 @@
 package pojos;
 
-class DadosGeraisProfissionalFisica {
+public  class DadosGeraisProfissionalFisica {
 
 
 
     String nome;
     String sobrenome;
     String email;
-    String cpf;
-    String identidade;
 
 
     String cep;
@@ -18,9 +16,6 @@ class DadosGeraisProfissionalFisica {
     String cidade;
     String estado;
     String complemento;
-
-    String urlCpf;
-    String urlIdentidade;
     String urlEndereco;
     String status;
 
@@ -32,28 +27,12 @@ class DadosGeraisProfissionalFisica {
         this.status = status;
     }
 
-    public String getIdentidade() {
-        return identidade;
-    }
-
-    public void setIdentidade(String identidade) {
-        this.identidade = identidade;
-    }
-
     String celular;
-
-
-
 
     public DadosGeraisProfissionalFisica(){
 
 
     }
-
-
-
-
-
 
     public String getCep() {
         return cep;
@@ -137,13 +116,6 @@ class DadosGeraisProfissionalFisica {
         this.email = email;
     }
 
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
 
     public String getCelular() {
         return celular;
@@ -151,23 +123,6 @@ class DadosGeraisProfissionalFisica {
 
     public void setCelular(String celular) {
         this.celular = celular;
-    }
-
-
-    public String getUrlCpf() {
-        return urlCpf;
-    }
-
-    public void setUrlCpf(String urlCpf) {
-        this.urlCpf = urlCpf;
-    }
-
-    public String getUrlIdentidade() {
-        return urlIdentidade;
-    }
-
-    public void setUrlIdentidade(String urlIdentidade) {
-        this.urlIdentidade = urlIdentidade;
     }
 
     public String getUrlEndereco() {
