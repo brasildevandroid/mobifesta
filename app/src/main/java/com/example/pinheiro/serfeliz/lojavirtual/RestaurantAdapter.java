@@ -82,6 +82,10 @@ public class RestaurantAdapter extends FirestoreAdapter<RestaurantAdapter.ViewHo
         @BindView(R.id.restaurant_item_category)
         TextView categoryView;
 
+        @BindView(R.id.txt_Detalhes)
+        TextView txtDetalhes;
+
+
         @BindView(R.id.restaurant_item_city)
         TextView cityView;
 
@@ -108,6 +112,7 @@ public class RestaurantAdapter extends FirestoreAdapter<RestaurantAdapter.ViewHo
             numRatingsView.setText(resources.getString(R.string.fmt_num_ratings,
                     restaurant.getNumRatings()));
             priceView.setText(RestaurantUtil.getPriceString(restaurant));
+            txtDetalhes.setText(restaurant.getCategory());
 
             // Click listener
             itemView.setOnClickListener(new View.OnClickListener() {

@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements
     @BindView(R.id.text_current_sort_by)
     TextView mCurrentSortByView;
 
-    @BindView(R.id.recycler_restaurants)
+    @BindView(R.id.rec_Profissionais_Cidade)
     RecyclerView mRestaurantsRecycler;
 
     @BindView(R.id.view_empty)
