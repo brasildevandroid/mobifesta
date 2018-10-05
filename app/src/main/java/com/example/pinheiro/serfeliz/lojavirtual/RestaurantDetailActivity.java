@@ -166,24 +166,24 @@ public class RestaurantDetailActivity extends AppCompatActivity
             public Void apply(Transaction transaction)
                     throws FirebaseFirestoreException {
 
-                Restaurant restaurant = transaction.get(restaurantRef)
-                        .toObject(Restaurant.class);
+                Produto produto = transaction.get(restaurantRef)
+                        .toObject(Produto.class);
 
                 // Compute new number of ratings
-                int newNumRatings = restaurant.getNumRatings() + 1;
+                int newNumRatings = produto.getNumRatings() + 1;
 
                 // Compute new average rating
-                double oldRatingTotal = restaurant.getAvgRating() *
-                        restaurant.getNumRatings();
+                double oldRatingTotal = produto.getAvgRating() *
+                        produto.getNumRatings();
                 double newAvgRating = (oldRatingTotal + rating.getRating()) /
                         newNumRatings;
 
-                // Set new restaurant info
-                restaurant.setNumRatings(newNumRatings);
-                restaurant.setAvgRating(newAvgRating);
+                // Set new produto info
+                produto.setNumRatings(newNumRatings);
+                produto.setAvgRating(newAvgRating);
 
                 // Commit to Firestore
-                transaction.set(restaurantRef, restaurant);
+                transaction.set(restaurantRef, produto);
                 transaction.set(ratingRef, rating);
 
                 return null;
@@ -192,7 +192,7 @@ public class RestaurantDetailActivity extends AppCompatActivity
     }
 
     /**
-     * Listener for the Restaurant document ({@link #mRestaurantRef}).
+     * Listener for the Produto document ({@link #mRestaurantRef}).
      */
     @Override
     public void onEvent(DocumentSnapshot snapshot, FirebaseFirestoreException e) {
@@ -201,20 +201,20 @@ public class RestaurantDetailActivity extends AppCompatActivity
             return;
         }
 
-        onRestaurantLoaded(snapshot.toObject(Restaurant.class));
+        onRestaurantLoaded(snapshot.toObject(Produto.class));
     }
 
-    private void onRestaurantLoaded(Restaurant restaurant) {
-        mNameView.setText(restaurant.getName());
-        mRatingIndicator.setRating((float) restaurant.getAvgRating());
-        mNumRatingsView.setText(getString(R.string.fmt_num_ratings, restaurant.getNumRatings()));
-        mCityView.setText(restaurant.getCity());
-        mCategoryView.setText(restaurant.getCategory());
-        mPriceView.setText(RestaurantUtil.getPriceString(restaurant));
+    private void onRestaurantLoaded(Produto produto) {
+        mNameView.setText(produto.getNome());
+        mRatingIndicator.setRating((float) produto.getAvgRating());
+        mNumRatingsView.setText(getString(R.string.fmt_num_ratings, produto.getNumRatings()));
+        mCityView.setText(produto.getCidade());
+        mCategoryView.setText(produto.getCategoria());
+        mPriceView.setText(RestaurantUtil.getPriceString(produto));
 
         // Background image
         Glide.with(mImageView.getContext())
-                .load(restaurant.getPhoto())
+                .load(produto.getFoto())
                 .into(mImageView);
     }
 

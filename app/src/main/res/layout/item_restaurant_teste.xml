@@ -1,170 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView android:elevation="16dp"
 
-    android:layout_margin="12dp"
+    android:layout_margin="8dp"
     app:cardCornerRadius="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="320dp"
+    android:layout_height="330dp"
     android:background="?attr/selectableItemBackground"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="320dp">
+        android:layout_height="330dp">
 
         <ImageView
-            android:id="@+id/restaurant_item_image"
+            android:id="@+id/img_Produto_Capa"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="162dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:background="#757575"
             android:scaleType="centerCrop"
-            android:src="@drawable/pizza_monster" />
+            android:src="@drawable/pizza_monster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+
+        <TextView
+            android:id="@+id/txt_Produto_Descricao"
+            style="@style/AppTheme.Subheader"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:maxLines="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_Produto_Capa"
+            tools:ignore="MissingConstraints"
+            tools:text="Buffets para casamento,aniversários venha conferir e fazer uma degustação conosco nós somos focados na qualidade do que fazemos..." />
+
+
+        <View
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_Produto_Descricao"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
 
         <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
-            android:id="@+id/image_View_Header"
+            android:id="@+id/img_Foto_Profissional"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_alignParentStart="true"
+
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/slide3"
+            android:src="@drawable/loira_linda"
             app:bootstrapSize="xl"
             app:hasBorder="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/restaurant_item_image"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/txt_Detalhes"
+            android:id="@+id/txt_Produto_Detalhes"
             style="@style/AppTheme.Subheader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:maxLines="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/restaurant_item_num_ratings"
-            app:layout_constraintTop_toBottomOf="@+id/restaurant_item_price"
-            tools:text="detalhes >" />
-
-        <TextView
-            android:id="@+id/restaurant_item_name"
-            style="@style/AppTheme.Subheader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="4dp"
-            android:layout_marginStart="8dp"
-            android:maxLines="1"
-            app:layout_constraintBottom_toTopOf="@+id/restaurant_item_city"
-            app:layout_constraintStart_toEndOf="@+id/image_View_Header"
-            tools:text="Foo's Bar" />
-
-
-        <TextView
-            android:id="@+id/restaurant_item_city"
-            style="@style/AppTheme.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/restaurant_item_name"
-            android:layout_below="@+id/restaurant_item_name"
-            android:layout_marginBottom="20dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:textColor="@color/greySecondary"
-            app:layout_constraintBottom_toTopOf="@+id/restaurant_item_rating"
-            app:layout_constraintEnd_toStartOf="@+id/restaurant_item_price"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/image_View_Header"
-            tools:text="San Francisco" />
-
-        <me.zhanghai.android.materialratingbar.MaterialRatingBar
-            android:id="@+id/restaurant_item_rating"
-            style="@style/Widget.MaterialRatingBar.RatingBar.Indicator.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/restaurant_item_name"
-            android:layout_below="@+id/restaurant_item_price"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/restaurant_item"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/image_View_Header" />
-
-        <TextView
-            android:id="@+id/restaurant_item_num_ratings"
-            style="@style/AppTheme.Caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/restaurant_item_rating"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_toEndOf="@+id/restaurant_item_rating"
+            android:maxLines="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.705"
+            app:layout_constraintStart_toEndOf="@+id/produto_item_num_ratings"
+            app:layout_constraintTop_toBottomOf="@+id/txt_Quant_Pessoas"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="detalhes >" />
+
+        <TextView
+            android:id="@+id/txt_Nome_Profissional"
+            style="@style/AppTheme.Subheader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            app:layout_constraintStart_toEndOf="@+id/img_Foto_Profissional"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:text="Ana vera" />
+
+
+        <TextView
+            android:id="@+id/txt_Produto_Cidade"
+            style="@style/AppTheme.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/txt_Nome_Profissional"
+            android:layout_below="@+id/txt_Nome_Profissional"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/greySecondary"
+            app:layout_constraintStart_toEndOf="@+id/img_Foto_Profissional"
+            app:layout_constraintTop_toBottomOf="@+id/txt_Nome_Profissional"
+            tools:text="Buffet" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/produto_item_rating"
+            style="@style/Widget.MaterialRatingBar.RatingBar.Indicator.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/txt_Nome_Profissional"
+            android:layout_below="@+id/txt_Produto_Preco"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_Foto_Profissional" />
+
+        <TextView
+            android:id="@+id/produto_item_num_ratings"
+            style="@style/AppTheme.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/produto_item_rating"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
             android:textColor="@color/greyDisabled"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/restaurant_item"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/restaurant_item_rating"
-            app:layout_constraintTop_toBottomOf="@+id/restaurant_item_category"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/produto_item_rating"
             tools:text="(10)" />
 
         <TextView
 
-            android:id="@+id/restaurant_item_category"
+            android:id="@+id/txt_Produto_Categoria"
             style="@style/AppTheme.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/image_View_Header"
-            android:layout_alignStart="@+id/restaurant_item_name"
+            android:layout_alignBottom="@+id/img_Foto_Profissional"
+            android:layout_alignStart="@+id/txt_Nome_Profissional"
             android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:textColor="@color/greySecondary"
-            app:layout_constraintBottom_toTopOf="@+id/restaurant_item_rating"
-            app:layout_constraintEnd_toStartOf="@+id/restaurant_item_num_ratings"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/image_View_Header"
-            app:layout_constraintTop_toBottomOf="@+id/restaurant_item_city"
-            app:layout_constraintVertical_bias="0.0"
-            tools:text="Italian" />
+            app:layout_constraintBottom_toTopOf="@+id/produto_item_rating"
+            app:layout_constraintStart_toEndOf="@+id/img_Foto_Profissional"
+            app:layout_constraintTop_toBottomOf="@+id/txt_Produto_Cidade"
+            tools:text="Campo Grande" />
 
 
         <TextView
-            android:id="@+id/restaurant_item_price"
-            style="@style/AppTheme.Caption"
+            android:id="@+id/txt_Quant_Pessoas"
+            style="@style/AppTheme.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/restaurant_item_city"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/greySecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.879"
+            app:layout_constraintStart_toEndOf="@+id/txt_Produto_Categoria"
+            app:layout_constraintTop_toBottomOf="@+id/txt_Produto_Preco"
+            tools:text="60 pessoas" />
+
+
+        <TextView
+            android:id="@+id/txt_Produto_Preco"
+            style="@style/AppTheme.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginBottom="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:textColor="@color/material_green_500"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/restaurant_item_category"
-            app:layout_constraintTop_toBottomOf="@+id/restaurant_item_image"
-            app:layout_constraintVertical_bias="0.687"
+            app:layout_constraintStart_toEndOf="@+id/txt_Produto_Cidade"
+            app:layout_constraintTop_toBottomOf="@+id/view"
             tools:text="R$ 300,00" />
-
 
     </android.support.constraint.ConstraintLayout>
 

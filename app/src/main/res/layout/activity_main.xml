@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0E0E0"
     tools:context="com.example.pinheiro.serfeliz.lojavirtual.MainActivity">
+
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -14,12 +14,9 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:theme="@style/AppTheme"
-        app:logo="@drawable/ic_restaurant_white_24px"
         app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
-        app:title="@string/app_name"
         app:titleMarginStart="24dp"
         app:titleTextColor="@android:color/white" />
-
 
 
     <FrameLayout
@@ -100,20 +97,11 @@
 
     </FrameLayout>
 
-    <!-- Main Restaurants recycler -->
-    <android.support.v7.widget.RecyclerView
-
-        android:id="@+id/recycler_restaurants"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/filter_bar_container"
-        android:background="@android:color/holo_orange_light"
-        tools:listitem="@layout/item_restaurant" />
 
 
     <TextView
         android:textColor="@color/bootstrap_gray_dark"
-        android:layout_below="@+id/recycler_restaurants"
+        android:layout_below="@+id/filter_bar_container"
         android:textSize="20sp"
         android:id="@+id/txt_UltimosVistos"
         android:layout_width="match_parent"

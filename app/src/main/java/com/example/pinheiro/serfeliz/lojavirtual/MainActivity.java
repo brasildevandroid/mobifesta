@@ -51,7 +51,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements
         FilterDialogFragment.FilterListener,
-        RestaurantAdapter.OnRestaurantSelectedListener {
+        ProdutoAdapter.OnRestaurantSelectedListener {
 
     private static final String TAG = "MainActivity";
 
@@ -71,14 +71,20 @@ public class MainActivity extends AppCompatActivity implements
     @BindView(R.id.rec_Profissionais_Cidade)
     RecyclerView mRestaurantsRecycler;
 
+
+    @BindView(R.id.rec_Ultimos_Vistos)
+    RecyclerView mRecUltimos;
+
     @BindView(R.id.view_empty)
     ViewGroup mEmptyView;;
 
     private FirebaseFirestore mFirestore;
     private Query mQuery;
 
+
     private FilterDialogFragment mFilterDialog;
-    private RestaurantAdapter mAdapter;
+    private ProdutoAdapter mAdapter;
+
 
     private MainActivityViewModel mViewModel;
 
@@ -99,13 +105,14 @@ public class MainActivity extends AppCompatActivity implements
 
         initFirestore();
         initRecyclerView();
+     //   initRecycler();
 
         // Filter Dialog
         mFilterDialog = new FilterDialogFragment();
+
     }
 
     private void initFirestore() {
-
 
         mFirestore = FirebaseFirestore.getInstance ();
         // TODO(developer): Implement
@@ -115,14 +122,19 @@ public class MainActivity extends AppCompatActivity implements
         mQuery = mFirestore.collection("restaurants")
                 .orderBy("avgRating", Query.Direction.DESCENDING)
                 .limit(LIMIT);
+
+
+
     }
 
     private void initRecyclerView() {
+
+
         if (mQuery == null) {
             Log.w(TAG, "No query, not initializing RecyclerView");
         }
 
-        mAdapter = new RestaurantAdapter(mQuery, this) {
+        mAdapter = new ProdutoAdapter(mQuery, this) {
 
             @Override
             protected void onDataChanged() {
@@ -145,23 +157,13 @@ public class MainActivity extends AppCompatActivity implements
             }
         };
 
-        GridLayoutManager layoutManager = new GridLayoutManager(this,1);
-        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        //layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-
-        // Set layout manager.
-
-        mRestaurantsRecycler.setLayoutManager(layoutManager);
+        mRestaurantsRecycler.setLayoutManager(new LinearLayoutManager(this));
         mRestaurantsRecycler.setAdapter(mAdapter);
-
-
-    /*
-
-        mRestaurantsRecycler.setLayoutManager(new GridLayoutManager(this,1));
-        mRestaurantsRecycler.setAdapter(mAdapter);
-
-        */
     }
+
+
+
+
 
     @Override
     public void onStart() {
@@ -198,11 +200,11 @@ public class MainActivity extends AppCompatActivity implements
         CollectionReference restaurants = mFirestore.collection("restaurants");
 
         for (int i = 0; i < 10; i++) {
-            // Get a random Restaurant POJO
-            Restaurant restaurant = RestaurantUtil.getRandom(this);
+            // Get a random Produto POJO
+            Produto produto = RestaurantUtil.getRandom(this);
 
             // Add a new document to the restaurants collection
-            restaurants.add(restaurant);
+            restaurants.add(produto);
         }
         showTodoToast();
     }
@@ -241,9 +243,6 @@ public class MainActivity extends AppCompatActivity implements
         // Update the query
         mQuery = query;
         mAdapter.setQuery(query);
-
-
-
 
         // Set header
         mCurrentSearchView.setText(Html.fromHtml(filters.getSearchDescription(this)));

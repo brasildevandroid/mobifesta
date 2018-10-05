@@ -36,7 +36,7 @@ import me.zhanghai.android.materialratingbar.MaterialRatingBar;
 /**
  * RecyclerView adapter for a list of Restaurants.
  */
-public class RestaurantAdapter extends FirestoreAdapter<RestaurantAdapter.ViewHolder> {
+public class ProdutoAdapter extends FirestoreAdapter<ProdutoAdapter.ViewHolder> {
 
     public interface OnRestaurantSelectedListener {
 
@@ -46,7 +46,7 @@ public class RestaurantAdapter extends FirestoreAdapter<RestaurantAdapter.ViewHo
 
     private OnRestaurantSelectedListener mListener;
 
-    public RestaurantAdapter(Query query, OnRestaurantSelectedListener listener) {
+    public ProdutoAdapter(Query query, OnRestaurantSelectedListener listener) {
         super(query);
         mListener = listener;
     }
@@ -64,30 +64,47 @@ public class RestaurantAdapter extends FirestoreAdapter<RestaurantAdapter.ViewHo
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.restaurant_item_image)
-        ImageView imageView;
+        @BindView(R.id.img_Produto_Capa)
+        ImageView imgProdutoCapa;
 
-        @BindView(R.id.restaurant_item_name)
-        TextView nameView;
+        @BindView(R.id.txt_Produto_Descricao)
+        TextView txtProdutoDescricao;
 
-        @BindView(R.id.restaurant_item_rating)
+
+        @BindView(R.id.img_Foto_Profissional)
+        ImageView imgFotoProfissional;
+
+        @BindView(R.id.txt_Produto_Detalhes)
+        TextView txtProdutoDetalhes;
+
+        @BindView(R.id.txt_Nome_Profissional)
+        TextView txtNomeProfissional;
+
+        @BindView(R.id.txt_Produto_Cidade)
+        TextView txtProdutoCidade;
+
+
+
+        @BindView(R.id.produto_item_rating)
         MaterialRatingBar ratingBar;
 
-        @BindView(R.id.restaurant_item_num_ratings)
+        @BindView(R.id.produto_item_num_ratings)
         TextView numRatingsView;
 
-        @BindView(R.id.restaurant_item_price)
-        TextView priceView;
 
-        @BindView(R.id.restaurant_item_category)
-        TextView categoryView;
+        @BindView(R.id.txt_Produto_Categoria)
+        TextView txtProdutoCategoria;
 
-        @BindView(R.id.txt_Detalhes)
-        TextView txtDetalhes;
+        @BindView(R.id.txt_Quant_Pessoas)
+        TextView txtQuantPessoas;
 
 
-        @BindView(R.id.restaurant_item_city)
-        TextView cityView;
+        @BindView(R.id.txt_Produto_Preco)
+        TextView txtProdutoPreco;
+
+
+
+
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -97,23 +114,26 @@ public class RestaurantAdapter extends FirestoreAdapter<RestaurantAdapter.ViewHo
         public void bind(final DocumentSnapshot snapshot,
                          final OnRestaurantSelectedListener listener) {
 
-            Restaurant restaurant = snapshot.toObject(Restaurant.class);
+            Produto produto = snapshot.toObject(Produto.class);
             Resources resources = itemView.getResources();
 
             // Load image
-            Glide.with(imageView.getContext())
-                    .load(restaurant.getPhoto())
-                    .into(imageView);
+            Glide.with(imgProdutoCapa.getContext())
+                    .load(produto.getFoto())
+                    .into(imgProdutoCapa);
 
-            nameView.setText(restaurant.getName());
-            ratingBar.setRating((float) restaurant.getAvgRating());
-            cityView.setText(restaurant.getCity());
-            categoryView.setText(restaurant.getCategory());
+            txtNomeProfissional.setText(produto.getNome());
+            txtProdutoCategoria.setText(produto.getCategoria());
+            txtProdutoCidade.setText(produto.getCidade());
+            ratingBar.setRating((float) produto.getAvgRating());
             numRatingsView.setText(resources.getString(R.string.fmt_num_ratings,
-                    restaurant.getNumRatings()));
-            priceView.setText(RestaurantUtil.getPriceString(restaurant));
-            txtDetalhes.setText(restaurant.getCategory());
+                    produto.getNumRatings()));
+            txtProdutoPreco.setText(RestaurantUtil.getPriceString(produto));
+            txtProdutoDetalhes.setText(produto.getCategoria());
 
+            txtProdutoDescricao.setText("\"Buffets para casamento,aniversários venha conferir e fazer uma degustação conosco nós somos focados na qualidade...\"");
+
+            txtQuantPessoas.setText("60 pessoas");
             // Click listener
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

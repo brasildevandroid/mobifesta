@@ -18,10 +18,10 @@
 import com.google.firebase.firestore.IgnoreExtraProperties;
 
 /**
- * Restaurant POJO.
+ * Produto POJO.
  */
 @IgnoreExtraProperties
-public class Restaurant {
+public class Produto {
 
     public static final String FIELD_CITY = "city";
     public static final String FIELD_CATEGORY = "category";
@@ -29,64 +29,70 @@ public class Restaurant {
     public static final String FIELD_POPULARITY = "numRatings";
     public static final String FIELD_AVG_RATING = "avgRating";
 
-    private String name;
-    private String city;
-    private String category;
-    private String photo;
-    private int price;
+    private String nome;
+    private String cidade;
+    private String categoria;
+    private String foto;
+    private String bairro;
+    private int preco;
     private int numRatings;
     private double avgRating;
 
-    public Restaurant() {}
+    public Produto() {}
 
-    public Restaurant(String name, String city, String category, String photo,
-                      int price, int numRatings, double avgRating) {
-        this.name = name;
-        this.city = city;
-        this.category = category;
-        this.price = price;
+    public Produto(String nome, String cidade, String  categoria, String foto,String bairro,
+                   int preco, int numRatings, double avgRating) {
+        this.nome = nome;
+        this.cidade = cidade;
+        this.categoria = categoria;
+        this.preco = preco;
+        this.foto = foto;
+        this.bairro = bairro;
         this.numRatings = numRatings;
         this.avgRating = avgRating;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome)
+    {
+        this.nome = nome;
     }
 
-    public String getCity() {
-        return city;
+    public String getCidade()
+    {
+        return cidade;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setCity(String cidade) {
+        this.cidade = cidade;
     }
 
-    public String getCategory() {
-        return category;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategoria(String categoria)
+    {
+        this.categoria = categoria;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getFoto() {
+        return foto;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setPhoto(String foto) {
+        this.foto = foto;
     }
 
-    public int getPrice() {
-        return price;
+    public int getPreco() {
+        return preco;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setPreco(int preco) {
+        this.preco = preco;
     }
 
     public int getNumRatings() {

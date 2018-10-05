@@ -1,30 +1,23 @@
 package com.example.pinheiro.serfeliz.lojavirtual;
 
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.pinheiro.serfeliz.R;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class FragmentLojaVirtual extends Fragment {
 
@@ -40,7 +33,7 @@ public class FragmentLojaVirtual extends Fragment {
 
 
     private FilterDialogFragment mFilterDialog;
-    private RestaurantAdapter mAdapter;
+    private ProdutoAdapter mAdapter;
 
     private MainActivityViewModel mViewModel;
 
@@ -95,7 +88,7 @@ public class FragmentLojaVirtual extends Fragment {
             Log.w(TAG, "No query, not initializing RecyclerView");
         }
 
-        mAdapter = new RestaurantAdapter(mQuery,null) {
+        mAdapter = new ProdutoAdapter(mQuery,null) {
 
             @Override
             protected void onDataChanged() {
@@ -147,11 +140,11 @@ public class FragmentLojaVirtual extends Fragment {
         CollectionReference restaurants = mFirestore.collection("restaurants");
 
         for (int i = 0; i < 10; i++) {
-            // Get a random Restaurant POJO
-            Restaurant restaurant = RestaurantUtil.getRandom(getContext());
+            // Get a random Produto POJO
+            Produto produto = RestaurantUtil.getRandom(getContext());
 
             // Add a new document to the restaurants collection
-            restaurants.add(restaurant);
+            restaurants.add(produto);
         }
     }
 
