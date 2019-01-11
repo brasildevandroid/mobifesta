@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -7,26 +9,45 @@
 
 
     <ImageView
-
-        android:id="@+id/slide_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
+        android:id="@+id/slide_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:srcCompat="@drawable/slide1" />
 
+
     <TextView
-        android:id="@+id/slide_desc"
-        android:layout_width="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_below="@+id/slide_image"
+        android:textAlignment="viewStart"
+        android:id="@+id/slide_titulo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="211dp"
-        android:text="os detalhes do projeto devem ser discutidos primeiro" />
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="25dp"
+        android:text="JÁ ESTAMOS QUASE LÁ"
+        android:textColor="@color/colorBranco"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
 
+    <TextView
 
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:id="@+id/slide_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slide_titulo"
+        android:text="os detalhes do projeto devem ser discutidos primeiro"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorBranco"
+        android:textSize="18sp"
+        android:layout_marginBottom="80dp"/>
 
 
 </RelativeLayout>

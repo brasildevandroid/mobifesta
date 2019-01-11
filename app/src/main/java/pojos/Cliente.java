@@ -5,14 +5,42 @@ public class Cliente {
     String nome;
     String email;
     String uidCliente;
-    String tipo;
+    String tipoFesta;
+    String dataFesta;
+    String orcamento;
 
-    public String getTipo() {
-        return tipo;
+    public String getDataFesta() {
+        return dataFesta;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setDataFesta(String dataFesta) {
+        this.dataFesta = dataFesta;
+    }
+
+    public String getOrcamento() {
+        return orcamento;
+    }
+
+    public void setOrcamento(String orcamento) {
+        this.orcamento = orcamento;
+    }
+
+    public String getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(String dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+
+    String dataCadastro;
+
+    public String getTipoFesta() {
+        return tipoFesta;
+    }
+
+    public void setTipoFesta(String tipo) {
+        this.tipoFesta = tipo;
     }
 
     String urlPhoto;

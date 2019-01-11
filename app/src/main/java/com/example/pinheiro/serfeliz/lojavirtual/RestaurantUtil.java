@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- package com.example.pinheiro.serfeliz.lojavirtual;
+package com.example.pinheiro.serfeliz.lojavirtual;
+
 
 import android.content.Context;
 
@@ -42,33 +43,34 @@ public class RestaurantUtil {
     private static final int MAX_IMAGE_NUM = 22;
 
     private static final String[] NAME_FIRST_WORDS = {
-
-            "Ana Julia",
-            "Marcos",
-            "Viviane Salgados",
-            "Tuanne Lembranças",
-            "Pablo Anima",
-            "L&M Festas",
-            "Maria Bolo",
-
+            "Foo",
+            "Bar",
+            "Baz",
+            "Qux",
+            "Fire",
+            "Sam's",
+            "World Famous",
+            "Google",
+            "The Best",
     };
 
     private static final String[] NAME_SECOND_WORDS = {
-            "Ana Mania",
-            "Celler Buffet",
-            "Lina Animação",
-            "Garçons de Preto",
-            "Familia Gastrônomica",
-            "Transporte Moacir",
-            "Vitoria Pula-Pula",
+
+            "Restaurant",
+            "Cafe",
+            "Spot",
+            "Eatin' Place",
+            "Eatery",
+            "Drive Thru",
+            "Diner",
     };
 
 
     /**
-     * Create a random Produto POJO.
+     * Create a random Restaurant POJO.
      */
-    public static Produto getRandom(Context context) {
-        Produto produto = new Produto();
+    public static Restaurant getRandom(Context context) {
+        Restaurant restaurant = new Restaurant();
         Random random = new Random();
 
         // Cities (first elemnt is 'Any')
@@ -81,15 +83,15 @@ public class RestaurantUtil {
 
         int[] prices = new int[]{1, 2, 3};
 
-        produto.setNome(getRandomName(random));
-        produto.setCity(getRandomString(cities, random));
-        produto.setCategoria(getRandomString(categories, random));
-        produto.setPhoto(getRandomImageUrl(random));
-        produto.setPreco(getRandomInt(prices, random));
-        produto.setAvgRating(getRandomRating(random));
-        produto.setNumRatings(random.nextInt(20));
+        restaurant.setName(getRandomName(random));
+        restaurant.setCity(getRandomString(cities, random));
+        restaurant.setCategory(getRandomString(categories, random));
+        restaurant.setPhoto(getRandomImageUrl(random));
+        restaurant.setPrice(getRandomInt(prices, random));
+        restaurant.setAvgRating(getRandomRating(random));
+        restaurant.setNumRatings(random.nextInt(20));
 
-        return produto;
+        return restaurant;
     }
 
 
@@ -106,8 +108,8 @@ public class RestaurantUtil {
     /**
      * Get price represented as dollar signs.
      */
-    public static String getPriceString(Produto produto) {
-        return getPriceString(produto.getPreco());
+    public static String getPriceString(Restaurant restaurant) {
+        return getPriceString(restaurant.getPrice());
     }
 
     /**
@@ -116,12 +118,12 @@ public class RestaurantUtil {
     public static String getPriceString(int priceInt) {
         switch (priceInt) {
             case 1:
-                return "R$ 3.000,00";
+                return "$";
             case 2:
-                return "R$ 1.800,00";
+                return "$$";
             case 3:
             default:
-                return "R$ 500,00";
+                return "$$$";
         }
     }
 

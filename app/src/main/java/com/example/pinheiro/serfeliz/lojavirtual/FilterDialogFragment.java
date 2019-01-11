@@ -23,6 +23,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.pinheiro.serfeliz.R;
 import com.google.firebase.firestore.Query;
@@ -52,12 +53,13 @@ public class FilterDialogFragment extends DialogFragment {
     @BindView(R.id.spinner_city)
     Spinner mCitySpinner;
 
+    /*
     @BindView(R.id.spinner_sort)
     Spinner mSortSpinner;
 
     @BindView(R.id.spinner_price)
     Spinner mPriceSpinner;
-
+*/
     private FilterListener mFilterListener;
 
     @Nullable
@@ -67,6 +69,8 @@ public class FilterDialogFragment extends DialogFragment {
                              @Nullable Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.dialog_filters, container, false);
         ButterKnife.bind(this, mRootView);
+
+
 
         return mRootView;
     }
@@ -92,6 +96,8 @@ public class FilterDialogFragment extends DialogFragment {
     public void onSearchClicked() {
         if (mFilterListener != null) {
             mFilterListener.onFilter(getFilters());
+
+
         }
 
         dismiss();
@@ -122,9 +128,13 @@ public class FilterDialogFragment extends DialogFragment {
         }
     }
 
+    /*
+
     private int getSelectedPrice() {
         String selected = (String) mPriceSpinner.getSelectedItem();
         if (selected.equals(getString(R.string.price_1))) {
+
+
             return 1;
         } else if (selected.equals(getString(R.string.price_2))) {
             return 2;
@@ -134,6 +144,9 @@ public class FilterDialogFragment extends DialogFragment {
             return -1;
         }
     }
+
+*/
+    /*
 
     @Nullable
     private String getSelectedSortBy() {
@@ -149,6 +162,9 @@ public class FilterDialogFragment extends DialogFragment {
         return null;
     }
 
+*/
+
+/*
     @Nullable
     private Query.Direction getSortDirection() {
         String selected = (String) mSortSpinner.getSelectedItem();
@@ -163,12 +179,14 @@ public class FilterDialogFragment extends DialogFragment {
         return null;
     }
 
+*/
+
     public void resetFilters() {
         if (mRootView != null) {
             mCategorySpinner.setSelection(0);
             mCitySpinner.setSelection(0);
-            mPriceSpinner.setSelection(0);
-            mSortSpinner.setSelection(0);
+         //   mPriceSpinner.setSelection(0);
+          //  mSortSpinner.setSelection(0);
         }
     }
 
@@ -176,11 +194,12 @@ public class FilterDialogFragment extends DialogFragment {
         Filters filters = new Filters();
 
         if (mRootView != null) {
-            filters.setCategory(getSelectedCategory());
-            filters.setCity(getSelectedCity());
-            filters.setPrice(getSelectedPrice());
-            filters.setSortBy(getSelectedSortBy());
-            filters.setSortDirection(getSortDirection());
+              filters.setCategory(getSelectedCategory());
+              filters.setCity(getSelectedCity());
+        //    filters.setPrice(getSelectedPrice());
+         //   filters.setSortBy(getSelectedSortBy());
+         //   filters.setSortDirection(getSortDirection());
+
         }
 
         return filters;

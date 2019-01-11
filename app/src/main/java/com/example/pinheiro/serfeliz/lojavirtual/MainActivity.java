@@ -20,14 +20,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -51,7 +48,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements
         FilterDialogFragment.FilterListener,
-        ProdutoAdapter.OnRestaurantSelectedListener {
+        RestaurantAdapter.OnRestaurantSelectedListener {
 
     private static final String TAG = "MainActivity";
 
@@ -76,14 +73,14 @@ public class MainActivity extends AppCompatActivity implements
     RecyclerView mRecUltimos;
 
     @BindView(R.id.view_empty)
-    ViewGroup mEmptyView;;
+    ViewGroup mEmptyView;
 
     private FirebaseFirestore mFirestore;
     private Query mQuery;
 
 
     private FilterDialogFragment mFilterDialog;
-    private ProdutoAdapter mAdapter;
+    private RestaurantAdapter mAdapter;
 
 
     private MainActivityViewModel mViewModel;
@@ -95,7 +92,14 @@ public class MainActivity extends AppCompatActivity implements
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
 
+
+
+         //  startActivity(new Intent(MainActivity.this, ScrollingActivity.class));
+
+         //   finish();
+
         // View model
+
         mViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
 
         // Enable Firestore logging
@@ -112,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
+
     private void initFirestore() {
 
         mFirestore = FirebaseFirestore.getInstance ();
@@ -119,9 +124,15 @@ public class MainActivity extends AppCompatActivity implements
 
 
         // obter os 50 melhores restaurantes avaliados
-        mQuery = mFirestore.collection("restaurants")
-                .orderBy("avgRating", Query.Direction.DESCENDING)
+        mQuery = mFirestore.collection("fornecedor")
+                .document("rio de janeiro")
+                .collection("buffet")
+                //.orderBy("avgRating", Query.Direction.DESCENDING)
                 .limit(LIMIT);
+
+
+
+        onAddItemsClicked();
 
 
 
@@ -134,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements
             Log.w(TAG, "No query, not initializing RecyclerView");
         }
 
-        mAdapter = new ProdutoAdapter(mQuery, this) {
+        mAdapter = new RestaurantAdapter(mQuery, this) {
 
             @Override
             protected void onDataChanged() {
@@ -143,6 +154,7 @@ public class MainActivity extends AppCompatActivity implements
                 if (getItemCount() == 0) {
                     mRestaurantsRecycler.setVisibility(View.GONE);
                     mEmptyView.setVisibility(View.VISIBLE);
+
                 } else {
                     mRestaurantsRecycler.setVisibility(View.VISIBLE);
                     mEmptyView.setVisibility(View.GONE);
@@ -156,6 +168,8 @@ public class MainActivity extends AppCompatActivity implements
                         "Error: check logs for info.", Snackbar.LENGTH_LONG).show();
             }
         };
+
+
 
         mRestaurantsRecycler.setLayoutManager(new LinearLayoutManager(this));
         mRestaurantsRecycler.setAdapter(mAdapter);
@@ -201,10 +215,10 @@ public class MainActivity extends AppCompatActivity implements
 
         for (int i = 0; i < 10; i++) {
             // Get a random Produto POJO
-            Produto produto = RestaurantUtil.getRandom(this);
+           Restaurant restaurant = RestaurantUtil.getRandom(this);
 
             // Add a new document to the restaurants collection
-            restaurants.add(produto);
+            restaurants.add(restaurant);
         }
         showTodoToast();
     }
@@ -252,25 +266,6 @@ public class MainActivity extends AppCompatActivity implements
         mViewModel.setFilters(filters);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_add_items:
-                onAddItemsClicked();
-                break;
-            case R.id.menu_sign_out:
-                AuthUI.getInstance().signOut(this);
-                startSignIn();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

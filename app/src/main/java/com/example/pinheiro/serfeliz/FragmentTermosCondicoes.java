@@ -21,8 +21,6 @@ Button btnProsseguirCadastro;
 Button btnCancelarCadastro;
 
 
-
-
     public FragmentTermosCondicoes() {
 
     }

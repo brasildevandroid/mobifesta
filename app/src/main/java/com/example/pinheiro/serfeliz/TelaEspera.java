@@ -34,13 +34,9 @@ public class TelaEspera extends AppCompatActivity {
     String aceitaTermosECondicoes;
     protected AlertDialog alerta;
     private FirebaseAuth mAuth;
-    ImageView imgTelaEspera;
-    String termosAceitados;
-    List<Funcionarios> listaFuncionarios;
 
-    Button btnLerTermos;
-    Button btnAceitarTermos;
-ProgressBar progressEspera;
+    List<Funcionarios> listaFuncionarios;
+    ProgressBar progressEspera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,214 +59,33 @@ ProgressBar progressEspera;
 
                 if (mAuth.getCurrentUser() != null){
 
+                     mUser = mAuth.getCurrentUser();
 
-                        carregaUsuario();
+                        carregaUsuario(mUser);
 
                 }else {
 
                     Toast.makeText(TelaEspera.this, "estartou pro login", Toast.LENGTH_SHORT).show();
-
                     startActivity(new Intent(TelaEspera.this,TelaLogin.class));
                     finish();
                 }
-
             }
 
         }.start();
 
-
     }
 
-    private void carregaUsuario() {
+    private void carregaUsuario(FirebaseUser user) {
 
         mFirestore = FirebaseFirestore.getInstance();
 
+        if (user !=  null){
 
-        FirebaseUser mUser =
-                mAuth.getCurrentUser();
+          startActivity(new Intent(TelaEspera.this,TelaCliente.class));
 
-        if (mUser !=  null){
-
-
-            String mUid =
-                    mUser.getUid();
-
-
-            try {
-
-
-
-
-            }catch (Exception e){
-
-
-
-
-
-
-            }
-
-
-
-            mFirestore.collection("plataforma")
-                    .document("cliente")
-                    .collection(mUid)
-                    .document("dados pessoais")
-                    .get()
-                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                        @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
-
-                            Cliente cliente = documentSnapshot.toObject(Cliente.class);
-
-                            String tipoCliente  = cliente.getTipo();
-
-                            if (tipoCliente.equalsIgnoreCase("clienteFesta")){
-
-
-                            //    startActivity(new Intent(TelaEspera.this,TelaCliente.class));
-
-                                finish();
-
-                            }else {
-
-                                setProfissional();
-
-
-                            }
-
-
-                        }
-                    });
-
-
+          finish();
 
         }
-
-
-
-
-
 
     }
-
-    private void setProfissional() {
-
-        mFirestore = FirebaseFirestore.getInstance();
-
-
-        FirebaseUser mUser =
-                mAuth.getCurrentUser();
-
-
-
-
-
-
-
-            if (mUser !=  null) {
-
-
-                String mUid =
-                        mUser.getUid();
-
-
-                mFirestore.collection("plataforma")
-                        .document("profissional")
-                        .collection(mUid)
-                        .document("dados pessoais")
-                        .get()
-                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                            @Override
-                            public void onSuccess(DocumentSnapshot documentSnapshot) {
-
-                                Cliente cliente = documentSnapshot.toObject(Cliente.class);
-
-                                String tipoCliente = cliente.getTipo();
-
-                                if (tipoCliente.equalsIgnoreCase("clienteFesta")) {
-
-
-                                 //   startActivity(new Intent(TelaEspera.this, TelaCliente.class));
-
-                                    finish();
-
-                                } else {
-
-                                    setProfissional();
-
-                                }
-
-
-                            }
-                        });
-
-
-            }
-
-
-
-
-        }
-
-    public void setListaFuncionarios(String email) {
-
-        final String verificaEmail = email;
-
-        mFirestore = FirebaseFirestore.getInstance();
-
-        listaFuncionarios = new ArrayList<>();
-
-        if (verificaEmail != null){
-
-            Toast.makeText(TelaEspera.this,verificaEmail,Toast.LENGTH_SHORT).show();
-
-
-            mFirestore.collection("plataforma")
-                    .document("funcionarios")
-                    .collection("ativos")
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
-
-                            if (task.isSuccessful()) {
-
-                                for (QueryDocumentSnapshot document : task.getResult()) {
-
-                                        Funcionarios funcionarios = document.toObject(Funcionarios.class);
-                                        listaFuncionarios.add(funcionarios);
-
-
-                                        if (verificaEmail.equalsIgnoreCase(funcionarios.getEmail())) {
-
-                                          //  startActivity(new Intent(TelaEspera.this, TelaAdministrativa.class));
-                                            finish();
-
-                                        }else {
-
-                                       //     startActivity(new Intent(TelaEspera.this, TelaCliente.class));
-                                            finish();
-
-                                        }
-
-
-                                    }
-
-
-                                }
-                            }
-
-                    });
-
-        }else {
-
-
-        }
-
-
-
-    }
-
 }

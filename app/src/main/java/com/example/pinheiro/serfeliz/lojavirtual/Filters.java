@@ -26,68 +26,68 @@ import com.google.firebase.firestore.Query;
  */
 public class Filters {
 
-    private String category = null;
-    private String city = null;
-    private int price = -1;
-    private String sortBy = null;
+    private String categoria = null;
+    private String cidade = null;
+    private int preco = -1;
+    private String relevancia = null;
     private Query.Direction sortDirection = null;
 
     public Filters() {}
 
     public static Filters getDefault() {
         Filters filters = new Filters();
-        filters.setSortBy(Produto.FIELD_AVG_RATING);
+        filters.setSortBy(Restaurant.FIELD_AVG_RATING);
         filters.setSortDirection(Query.Direction.DESCENDING);
 
         return filters;
     }
 
     public boolean hasCategory() {
-        return !(TextUtils.isEmpty(category));
+        return !(TextUtils.isEmpty(categoria));
     }
 
     public boolean hasCity() {
-        return !(TextUtils.isEmpty(city));
+        return !(TextUtils.isEmpty(cidade));
     }
 
     public boolean hasPrice() {
-        return (price > 0);
+        return (preco > 0);
     }
 
     public boolean hasSortBy() {
-        return !(TextUtils.isEmpty(sortBy));
+        return !(TextUtils.isEmpty(relevancia));
     }
 
     public String getCategory() {
-        return category;
+        return categoria;
     }
 
     public void setCategory(String category) {
-        this.category = category;
+        this.categoria = category;
     }
 
     public String getCity() {
-        return city;
+        return cidade;
     }
 
     public void setCity(String city) {
-        this.city = city;
+        this.cidade = city;
     }
 
     public int getPrice() {
-        return price;
+        return preco;
     }
 
     public void setPrice(int price) {
-        this.price = price;
+        this.preco = preco;
     }
 
     public String getSortBy() {
-        return sortBy;
+        return relevancia;
     }
 
     public void setSortBy(String sortBy) {
-        this.sortBy = sortBy;
+        this.relevancia = sortBy;
     }
 
     public Query.Direction getSortDirection() {
@@ -101,32 +101,32 @@ public class Filters {
     public String getSearchDescription(Context context) {
         StringBuilder desc = new StringBuilder();
 
-        if (category == null && city == null) {
+        if (categoria == null && cidade == null) {
             desc.append("<b>");
             desc.append(context.getString(R.string.all_restaurants));
             desc.append("</b>");
         }
 
-        if (category != null) {
+        if (categoria != null) {
             desc.append("<b>");
-            desc.append(category);
+            desc.append(categoria);
             desc.append("</b>");
         }
 
-        if (category != null && city != null) {
+        if (categoria != null && cidade != null) {
             desc.append(" in ");
         }
 
-        if (city != null) {
+        if (cidade != null) {
             desc.append("<b>");
-            desc.append(city);
+            desc.append(cidade);
             desc.append("</b>");
         }
 
-        if (price > 0) {
+        if (preco > 0) {
             desc.append(" for ");
             desc.append("<b>");
-            desc.append(RestaurantUtil.getPriceString(price));
+            desc.append(RestaurantUtil.getPriceString(preco));
             desc.append("</b>");
         }
 
@@ -134,9 +134,9 @@ public class Filters {
     }
 
     public String getOrderDescription(Context context) {
-        if (Produto.FIELD_PRICE.equals(sortBy)) {
+        if (Restaurant.FIELD_PRICE.equals(relevancia)) {
             return context.getString(R.string.sorted_by_price);
-        } else if (Produto.FIELD_POPULARITY.equals(sortBy)) {
+        } else if (Restaurant.FIELD_POPULARITY.equals(relevancia)) {
             return context.getString(R.string.sorted_by_popularity);
         } else {
             return context.getString(R.string.sorted_by_rating);

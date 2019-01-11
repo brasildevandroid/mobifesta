@@ -35,6 +35,7 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:elevation="8dp"
+
             android:foreground="?attr/selectableItemBackground">
 
             <RelativeLayout

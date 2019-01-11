@@ -21,10 +21,10 @@ public class FragmentCadastroPessoaFisica extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_cadastro_pessoa_fisica,container,false);
+        View view = inflater.inflate(R.layout.fragment_cadastro_bloqueado,container,false);
 
 
-        edtCelularPessoaFisica = (EditText) view.findViewById(R.id.edt_Celular);
+       // edtCelularPessoaFisica = (EditText) view.findViewById(R.id.edt_Celular);
 
 
 

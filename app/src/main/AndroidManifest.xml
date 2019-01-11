@@ -11,50 +11,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Formulario">
+
+        <activity android:name=".TelaConfiguraFesta"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
-        <activity android:name=".TelaConfiguraFesta">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".SignUpActivity">
+        <activity android:name=".TelaLogin"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
             </intent-filter>
         </activity>
-        <activity android:name=".TelaLogin">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-
-
         <activity android:name=".lojavirtual.RestaurantDetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".TelaCliente">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-
-
         <activity android:name=".lojavirtual.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".lojavirtual.DetalheBuffet" />
+        <activity android:name=".lojavirtual.SolicitarOrcamento" />
+        <activity
+            android:name=".TelaCliente"
+            android:label="@string/title_activity_tela_cliente">
+
+        </activity>
+
+        <activity
+            android:name=".TelaEspera"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_tela_cliente">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
+
         </activity>
+
+
     </application>
 
 </manifest>

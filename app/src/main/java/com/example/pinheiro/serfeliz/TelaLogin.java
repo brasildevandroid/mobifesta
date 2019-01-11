@@ -61,11 +61,13 @@ public class TelaLogin extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 // Successfully signed in
 
-                     Toast.makeText(TelaLogin.this,"o resultado foi positivo",Toast.LENGTH_SHORT).show();
-                     startActivity(new Intent(TelaLogin.this,SignUpActivity.class));
 
+                     startActivity(new Intent(TelaLogin.this,TelaConfiguraFesta.class));
+
+                     finish();
                 // ...
             } else {
+                Toast.makeText(TelaLogin.this,"houve uma falha,por favor tente mais tarde!",Toast.LENGTH_SHORT).show();
                 // Sign in failed. If response is null the user canceled the
                 // sign-in flow using the back button. Otherwise check
                 // response.getError().getErrorCode() and handle the error.

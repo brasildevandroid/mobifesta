@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".lojavirtual.FragmentBuffets">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:background="@color/bootstrap_gray_dark"
+        android:id="@+id/txt_Categoria_Cidade"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" 875 Buffets Casamento em Rio de Janeiro >"
+        android:textSize="18sp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:background="@color/colorCinza"
+        android:id="@+id/rec_Buffets"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+</LinearLayout>
