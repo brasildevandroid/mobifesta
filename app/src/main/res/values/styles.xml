@@ -14,8 +14,16 @@
     </style>
 
 
-
     <style name="AppThemeTelaApresentacao" parent="Theme.AppCompat.Light.NoActionBar">
+
+
+        <item name="colorPrimaryDark">@color/material_green_50</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="AppThemeTela" parent="Theme.AppCompat.Light.DarkActionBar">
 
 
         <item name="colorPrimaryDark">@color/material_green_50</item>
@@ -26,6 +34,18 @@
 
 
 
+
+
+    <style name="AppThemeProgress" parent="Theme.AppCompat.Light.NoActionBar">
+
+
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorBranco</item>
+
+    </style>
+
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
 
@@ -33,10 +53,6 @@
         <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="android:textColorPrimary">@color/greyPrimary</item>
-        <item name="android:textColorSecondary">@color/greySecondary</item>
-
-        <item name="android:actionOverflowButtonStyle">@style/AppTheme.Overflow</item>
     </style>
 
     <style name="AppTheme.Activity" parent="AppTheme" />

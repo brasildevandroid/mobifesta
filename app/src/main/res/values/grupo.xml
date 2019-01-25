@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="grupo">
+        <item >Nenhum</item>
+        <item >Parentes</item>
+        <item >Amigos</item>
+        <item >Vizinhos</item>
+        <item >Colegas</item>
+        <item >Conhecidos</item>
+        <item >Outros</item>
+
+    </string-array>
+    
+</resources>

@@ -6,7 +6,9 @@
     <color name="colorBranco">#ffffff</color>
     <color name="colorAmarelo">#fce903</color>
 
-    <color name="colorCinza">#dedede</color>
+    <color name="colorCinza">#D3D2D2</color>
+
+    <color name="colorCinzaClaro">#FCFCFC</color>
 
     <!-- cores para á tela de login -->
     <color name="material_green_50">#E8F5E9</color>

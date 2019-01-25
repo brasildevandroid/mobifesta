@@ -3,6 +3,8 @@
     package="com.example.pinheiro.serfeliz">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -11,20 +13,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".TelaConfiguraFesta"
-            android:screenOrientation="portrait">
+        <activity android:name=".clientetelaconvidados.TelaCadastroConvidado"></activity>
+        <activity android:name=".clientetelaconvidados.TelaConvidado">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+
 
             </intent-filter>
         </activity>
-        <activity android:name=".TelaLogin"
+
+        <meta-data
+            android:name="android.app.searchable"
+            android:resource="@xml/searchable" />
+
+        <activity
+            android:name=".TelaConfiguraFesta"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TelaLogin"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".lojavirtual.RestaurantDetailActivity">
@@ -32,7 +45,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".lojavirtual.MainActivity">
+        <activity android:name=".lojavirtual.MainActivityLoja">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -42,22 +55,75 @@
         <activity
             android:name=".TelaCliente"
             android:label="@string/title_activity_tela_cliente">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
 
+
+            </intent-filter>
         </activity>
 
         <activity
             android:name=".TelaEspera"
-            android:screenOrientation="portrait"
-            android:label="@string/title_activity_tela_cliente">
+            android:label="@string/title_activity_tela_cliente"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
+
+        <activity
+            android:name=".clientetelaconvidados.ConvidadoDetalheActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
             </intent-filter>
-
         </activity>
 
 
+        <activity
+            android:name=".clientetelaconvidados.TelaEditarConvidado"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".barradepesquisa.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".barradepesquisa.NovaPesquisaContatos">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".barradepesquisa.SubActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ex16_fragments.HotelActivity"
+            android:theme="@style/AppThemeTela">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ex16_fragments.HotelDetalheActivity"
+            android:label="@string/novo_convidado"
+            android:parentActivityName=".ex16_fragments.HotelActivity"
+            android:theme="@style/AppThemeTela">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ex16_fragments.HotelActivity" />
+        </activity>
     </application>
 
 </manifest>

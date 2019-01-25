@@ -1,8 +1,10 @@
 package com.example.pinheiro.serfeliz;
 
 import android.app.DatePickerDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.media.Image;
 import android.net.Uri;
@@ -28,6 +30,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pinheiro.serfeliz.bancointerno.BancoInternoResumo;
+import com.example.pinheiro.serfeliz.bancointerno.PostContract;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -82,6 +86,7 @@ public class TelaConfiguraFesta extends AppCompatActivity {
     FirebaseAuth mAuth;
     CardView cardConfiguraFesta;
     static FirebaseUser userCliente;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -441,8 +446,9 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
     public void verificaDiaDaSemana(Calendar cal) {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdfa = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
          dia = sdf.format(cal.getTime());
 
 
@@ -627,8 +633,11 @@ public class TelaConfiguraFesta extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
 
-                        startActivity(new Intent(TelaConfiguraFesta.this,TelaCliente.class));
-                        finish();
+
+
+
+                                startActivity(new Intent(TelaConfiguraFesta.this,TelaCliente.class));
+                                finish();
 
                                 Log.d(
 

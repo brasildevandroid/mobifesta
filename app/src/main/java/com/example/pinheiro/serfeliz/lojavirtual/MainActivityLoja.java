@@ -46,11 +46,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity implements
+public class MainActivityLoja extends AppCompatActivity implements
         FilterDialogFragment.FilterListener,
         RestaurantAdapter.OnRestaurantSelectedListener {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "MainActivityLoja";
 
     private static final int RC_SIGN_IN = 9001;
 
@@ -88,13 +88,13 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_loja);
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
 
 
 
-         //  startActivity(new Intent(MainActivity.this, ScrollingActivity.class));
+         //  startActivity(new Intent(MainActivityLoja.this, ScrollingActivity.class));
 
          //   finish();
 

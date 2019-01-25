@@ -47,7 +47,7 @@
 
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="profissional_bloqueado">Ops!Parece que você não pode mais acessar o aplicativo,por favor entre em contato conosco atráves
+    <string name="profissional_bloqueado">Ops!Parece que você não pode mais acessar o aplicativo,por favor entre em contatoes conosco atráves
         do e-mail luizcox1@hotmail.com!
     </string>
 
@@ -306,6 +306,37 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
     <string name="title_activity_tela_cliente">festGo</string>
+    <string name="app_label">caixa de pesquisa</string>
+    <string name="search_hint">procurar</string>
+
+    <string name="title_activity_hotel_detalhe">HotelDetalheActivity</string>
+
+    <string name="acao_pesquisar">Pesquisar</string>
+    <string name="acao_novo">Novo</string>
+    <string name="acao_info">Info</string>
+    <string name="hint_busca">Procurar por Hotel</string>
+
+    <string name="sobre_titulo">Dominando o Android</string>
+    <string name="sobre_mensagem">Desenvolvido por nglauber</string>
+    <string name="sobre_botao_site">Site</string>
+    <string name="novo_convidado">Novo Convidado</string>
+
+    <string name="nome">Nome</string>
+    <string name="endereco">Endereço</string>
+    <string name="classificacao">Classificação</string>
+
+
+    <plurals name="numero_selecionados">
+        <item quantity="one">1 selecionado</item>
+        <item quantity="other">%d selecionados</item>
+    </plurals>
+
+    <string name="acao_compartilhar">Compartilhar</string>
+    <string name="texto_compartilhar">Me hospedei no %1$s e o classifiquei em %2$.1f estrelas</string>
+    <string name="acao_delete">delete</string>
+    <string name="form_username">Nome:</string>
+    <string name="salvar_convidado">salvar</string>
+    <string name="title_activity_tela_convidado">TelaConvidado</string>
 
 
 </resources>
