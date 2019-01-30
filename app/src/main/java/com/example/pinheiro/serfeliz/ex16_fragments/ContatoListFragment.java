@@ -23,7 +23,7 @@ import android.widget.Toast;
 
 import com.example.pinheiro.serfeliz.CustomeArrayAdapter;
 import com.example.pinheiro.serfeliz.R;
-import com.example.pinheiro.serfeliz.barradepesquisa.NovaPesquisaContatos;
+
 
 import java.util.ArrayList;
 import java.util.List;

@@ -8,10 +8,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.pinheiro.serfeliz.R;
+import com.example.pinheiro.serfeliz.bancointerno.BD;
+import com.example.pinheiro.serfeliz.bancointerno.Usuario;
+
+import java.util.List;
 
 public class TelaConvidado extends AppCompatActivity {
 
     FloatingActionButton btnAdicionarConvidado;
+
 
     FrameLayout frame;
     @Override
@@ -23,6 +28,8 @@ public class TelaConvidado extends AppCompatActivity {
         frame = (FrameLayout)findViewById(R.id.container_tela_convidado);
 
 
+
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.container_tela_convidado,new FragmentListaConvidados())
@@ -30,26 +37,11 @@ public class TelaConvidado extends AppCompatActivity {
                 .commit();
 
         btnAdicionarConvidado.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
 
            startActivity(new Intent(TelaConvidado.this,TelaCadastroConvidado.class));
-
-
-
-                /*
-            frame.setVisibility(View.VISIBLE);
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.container_tela_convidado,new FragmentCadastroConvidado())
-                        .addToBackStack(null)
-                        .commit();
-
-*/
-
-
-
-
 
             }
         });

@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pinheiro.serfeliz.R;
+import com.example.pinheiro.serfeliz.bancointerno.BD;
+import com.example.pinheiro.serfeliz.bancointerno.Usuario;
 import com.example.pinheiro.serfeliz.ex16_fragments.HotelDetalheActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,6 +28,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,8 +42,8 @@ public class FragmentListaConvidados extends Fragment {
     //static  private LineAdapterLojas mAdapter;
     static private FirebaseFirestore mFirestore;
     static private FirebaseUser mUser;
-    TextView txtTotalConvidado;
-
+    TextView txtTotalConvidado,txtTotalConfirmados;
+    BD bd;
 
     public FragmentListaConvidados() {
         // Required empty public constructor
@@ -56,7 +59,14 @@ public class FragmentListaConvidados extends Fragment {
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerListaConvidados);
         txtTotalConvidado = (TextView)view.findViewById(R.id.txt_Total_Convidados);
+        txtTotalConfirmados = (TextView) view.findViewById(R.id.txt_Convidados_Confirmados);
 
+
+        bd = new BD(getContext());
+        List<Usuario> list = bd.buscar();
+        Usuario user =  (Usuario) list.get(0);
+        String confirmado = user.getConfirmados();
+        txtTotalConfirmados.setText(confirmado);
         buildRecyclerView();
 
 
@@ -67,7 +77,7 @@ public class FragmentListaConvidados extends Fragment {
     public void onPause() {
         super.onPause();
 
-        Toast.makeText(getContext(),"estou na pausa",Toast.LENGTH_SHORT).show();
+
         buildRecyclerView();
 
 
@@ -157,214 +167,6 @@ public class FragmentListaConvidados extends Fragment {
             }
         });
 
-                /*
-
-
-                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-
-
-                        if (documentSnapshot.exists()){
-
-                            for (DocumentSnapshot document : documentSnapshot.get) {
-
-
-                                Coleta coleta = document.toObject(Coleta.class);
-
-                                exampleList.add(coleta);
-
-                                String aspaAbre  = "(";
-                                String aspaFecha  = ")";
-                                getActivity().setTitle("Coletas Abertas " +aspaAbre + exampleList.size()+ aspaFecha);
-
-
-
-
-                                // Configurando o gerenciador de layout para ser uma lista.
-                                mRecyclerView.setLayoutManager(new GridLayoutManager(getContext(),
-                                        2, GridLayoutManager.VERTICAL, false));
-
-                                LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-                                mRecyclerView.setLayoutManager(layoutManager);
-
-                                // Adiciona o adapter que irá anexar os objetos à lista.
-                                // Está sendo criado com lista vazia, pois será preenchida posteriormente.
-
-                                mLayoutManager = new LinearLayoutManager(getContext());
-                                mRecyclerView.setHasFixedSize(true);
-
-                                mRecyclerView.setLayoutManager(mLayoutManager);
-                                mRecyclerView.setAdapter(mAdapter);
-
-                            }
-
-
-                        }
-
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-
-            }
-        });
-
-
-
-
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
-
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-
-
-                                Coleta coleta = document.toObject(Coleta.class);
-
-                                exampleList.add(coleta);
-
-                                String aspaAbre  = "(";
-                                String aspaFecha  = ")";
-                                getActivity().setTitle("Coletas Abertas " +aspaAbre + exampleList.size()+ aspaFecha);
-
-
-
-
-                                // Configurando o gerenciador de layout para ser uma lista.
-                                mRecyclerView.setLayoutManager(new GridLayoutManager(getContext(),
-                                        2, GridLayoutManager.VERTICAL, false));
-
-                                LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-                                mRecyclerView.setLayoutManager(layoutManager);
-
-                                // Adiciona o adapter que irá anexar os objetos à lista.
-                                // Está sendo criado com lista vazia, pois será preenchida posteriormente.
-
-                                mLayoutManager = new LinearLayoutManager(getContext());
-                                mRecyclerView.setHasFixedSize(true);
-
-                                mRecyclerView.setLayoutManager(mLayoutManager);
-                                mRecyclerView.setAdapter(mAdapter);
-
-                            }
-
-                        }
-                    }
-                });
-*/
-
-                /*
-        mAdapter.setOnItemClickListener(new AdapterColetasAbertas.OnItemClickListener() {
-
-            @Override
-            public void onMensagemCliente(int position) {
-
-                mensagemCliente(position);
-            }
-
-
-            @Override
-            public void onLigacaoCliente(int position) {
-                ligarCliente(position);
-            }
-
-            @Override
-            public void onAlterarStatusColeta(int position) {
-
-                alertStatusColeta(position);
-
-            }
-
-            @Override
-            public void onNavegarCliente(int position) {
-                navegarCliente(position);
-            }
-        });
-
-    }
-
-
-    public void ligarCliente(int position){
-
-        String numero  = exampleList.get(position).getCelular();
-
-        mAdapter.notifyDataSetChanged();
-
-
-        Uri uri = Uri.parse("tel:"+numero);
-        Intent intent = new Intent(Intent.ACTION_DIAL,uri);
-
-        startActivity(intent);
-
-    }
-
-    public void alteraStatusColeta(int position){
-
-        mFirestore = FirebaseFirestore.getInstance();
-
-        Coleta coleta =  exampleList.get(position);
-        String numero = coleta.getNumeroColeta();
-
-        DocumentReference alterarColeta =    mFirestore.collection("loja")
-                .document("abertas")
-                .collection("numero")
-                .document(numero);
-
-
-        alterarColeta
-                .update("status", "fechada")
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d("", "DocumentSnapshot successfully updated!");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("", "Error updating document", e);
-                    }
-                });
-
-        Toast.makeText(getActivity(),numero,Toast.LENGTH_SHORT).show();
-        mAdapter.notifyDataSetChanged();
-
-    }
-
-
-    public void navegarCliente(int position){
-
-        String rua = exampleList.get(position).getRua();
-        String numero = exampleList.get(position).getNumero();
-
-        String endereco = rua + numero;
-        mAdapter.notifyDataSetChanged();
-
-        Uri gmmIntentUri = Uri.parse("http://maps.google.com/maps?q=" + rua + numero);
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW,gmmIntentUri);
-        mapIntent.setPackage("com.google.android.apps.maps");
-        startActivity(mapIntent);
-
-
-    }
-
-
-    public void mensagemCliente(int position){
-
-        String numero  = exampleList.get(position).getCelular();
-
-        mAdapter.notifyDataSetChanged();
-
-        Uri uri = Uri.parse("smsto:" + numero);
-        Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-        i.setPackage("com.whatsapp");
-        startActivity(Intent.createChooser(i, ""));
-
-    }
-*/
     }
 
     private void mostraDetalhesConvidado(int position) {
@@ -377,6 +179,7 @@ public class FragmentListaConvidados extends Fragment {
         Intent it = new Intent(getContext(), ConvidadoDetalheActivity.class);
         it.putExtra(ConvidadoDetalheActivity.EXTRA_CONTATO,convidado);
         startActivity(it);
+
 
         adapterListaContatos.notifyDataSetChanged();
 

@@ -31,6 +31,11 @@
     </string-array>
 
 
+    <string name="title_activity_new_user">NewUserActivity</string>
+    <string name="title_activity_list_users">ListUsersActivity</string>
+
+
+
     <!-- ... -->
     <string name="facebook_application_id" translatable="false">1036758143142364</string>
     <!-- Facebook Application ID, prefixed by 'fb'. Enables Chrome Custom tabs. -->

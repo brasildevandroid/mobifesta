@@ -57,11 +57,26 @@
             android:label="@string/title_activity_tela_cliente">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+
+
 
 
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".TelaEditarMensagem"
+            android:label="@string/title_activity_tela_cliente">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+
+
+
+            </intent-filter>
+        </activity>
+
+
 
         <activity
             android:name=".TelaEspera"
@@ -73,6 +88,36 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".bancointerno.TelaDbo"
+            android:label="@string/title_activity_tela_cliente"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
+        </activity>
+
+              <activity
+            android:name=".bancointerno.ListUsersActivity"
+            android:label="@string/title_activity_tela_cliente"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".bancointerno.NewUserActivity"
+            android:label="@string/title_activity_tela_cliente"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".clientetelaconvidados.ConvidadoDetalheActivity"

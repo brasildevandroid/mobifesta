@@ -8,6 +8,8 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -16,16 +18,25 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pinheiro.serfeliz.R;
+import com.example.pinheiro.serfeliz.TelaEditarMensagem;
+import com.example.pinheiro.serfeliz.bancointerno.BD;
+import com.example.pinheiro.serfeliz.bancointerno.Usuario;
 import com.example.pinheiro.serfeliz.ex16_fragments.Contato;
 import com.example.pinheiro.serfeliz.ex16_fragments.FragmentCadastroConvidado;
 import com.example.pinheiro.serfeliz.ex16_fragments.HotelDetalheActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 
@@ -34,7 +45,7 @@ public class ConvidadoDetalheActivity extends AppCompatActivity {
     public static final String EXTRA_CONTATO = "convidado";
 
     CheckBox checkBoxConfirmaConvidado;
-
+    String total;
     static FirebaseUser userCliente;
 
     FirebaseFirestore mFirestore;
@@ -44,7 +55,9 @@ Convidado convidado;
 TextView txtPresencaConvidado,txtNomeConvidado,txtCelularConvidado,txtStatusConvidado,txtQtdeAcompanhantesAdultos,txtQtdeAcompanhantesCriancas,txtGrauParentesco;
 ImageView imgEditarConvidado,imgDeletarConvidado;
 ImageView imgLigar,imgMensagem;
+    BD bd;
 
+    List<Convidado> totalConfirmados;
 
 
     @Override
@@ -63,6 +76,7 @@ ImageView imgLigar,imgMensagem;
         txtPresencaConvidado = (TextView)findViewById(R.id.txt_Presenca_Convidado);
         txtStatusConvidado = (TextView)findViewById(R.id.txt_Status_Convidado);
 
+        bd = new BD(ConvidadoDetalheActivity.this);
 
         txtQtdeAcompanhantesAdultos = (TextView)findViewById(R.id.txt_Acompanhantes_Adultos);
         txtQtdeAcompanhantesCriancas = (TextView)findViewById(R.id.txt_Acompanhantes_Criancas);
@@ -221,7 +235,7 @@ ImageView imgLigar,imgMensagem;
             public void onClick(View v) {
 
 
-                Toast.makeText(ConvidadoDetalheActivity.this, convidado.getStatus(), Toast.LENGTH_LONG).show();
+
 
                 MyTelaDetalheConvidado myTelaDetalheConvidado = new MyTelaDetalheConvidado(convidado);
                 myTelaDetalheConvidado.execute();
@@ -290,11 +304,11 @@ ImageView imgLigar,imgMensagem;
 
                           //  cardCadastroConvidado.setVisibility(View.INVISIBLE);
 
-                            startActivity(new Intent(ConvidadoDetalheActivity.this, TelaConvidado.class));
-                            finish();
+                            atualizarListaConvidados();
 
 
                             Toast.makeText(ConvidadoDetalheActivity.this,
+
                                     "presença do convidado alterada com sucesso!",Toast.LENGTH_LONG).show();
 
                             Log.d(
@@ -327,4 +341,68 @@ ImageView imgLigar,imgMensagem;
 
         }
     }
+
+    public void atualizarListaConvidados(){
+
+
+        totalConfirmados = new ArrayList<Convidado>();
+
+        userCliente = mAuth.getInstance().getCurrentUser();
+        mFirestore = FirebaseFirestore.getInstance();
+        String uid = userCliente.getUid();
+        List<Usuario> list = bd.buscar();
+     final   Usuario user =  (Usuario) list.get(0);
+
+        mFirestore.collection("cliente")
+                .document(uid)
+                .collection("convidados")
+
+                .whereEqualTo("status", "confirmado")
+
+
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                Log.d("documentos", document.getId() + " => " + document.getData());
+
+                                Convidado convidado = document.toObject(Convidado.class);
+
+                                totalConfirmados.add(convidado);
+                                total = String.valueOf(totalConfirmados.size());
+
+
+                                user.setConfirmados(total);
+
+
+                                    bd.atualizar(user);
+
+                            }
+                        } else {
+                            Log.d("", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
+
+
+
+
+
+
+
+
+
+        startActivity(new Intent(ConvidadoDetalheActivity.this, TelaConvidado.class));
+        finish();
+
+
+
+
+    }
+
+
 }

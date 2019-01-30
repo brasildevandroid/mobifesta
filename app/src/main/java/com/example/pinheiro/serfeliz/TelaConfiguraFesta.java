@@ -1,12 +1,9 @@
 package com.example.pinheiro.serfeliz;
 
 import android.app.DatePickerDialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
-import android.media.Image;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -18,7 +15,6 @@ import android.support.v7.widget.CardView;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -26,22 +22,18 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pinheiro.serfeliz.bancointerno.BancoInternoResumo;
-import com.example.pinheiro.serfeliz.bancointerno.PostContract;
+import com.example.pinheiro.serfeliz.bancointerno.BD;
+import com.example.pinheiro.serfeliz.bancointerno.Usuario;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.math.BigDecimal;
-import java.text.DateFormatSymbols;
 import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -66,7 +58,7 @@ public class TelaConfiguraFesta extends AppCompatActivity {
     RelativeLayout relativeConfigFesta;
 
     private TextView[] mDots;
-
+    private Usuario usuario = new Usuario();
     protected AlertDialog alerta;
     ImageButton next ;
     ImageButton back;
@@ -446,11 +438,13 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
     public void verificaDiaDaSemana(Calendar cal) {
 
-        SimpleDateFormat sdfa = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdfa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-         dia = sdf.format(cal.getTime());
+         dia = sdfa.format(cal.getTime());
 
+
+         Toast.makeText(TelaConfiguraFesta.this,dia,Toast.LENGTH_SHORT).show();
 
         long data =  cal.getTimeInMillis();
         String valor = String.valueOf(data);
@@ -598,7 +592,7 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
             String uidCliente =   userCliente.getUid();
             String emailCliente = userCliente.getEmail();
-            String nomeCliente =  userCliente.getDisplayName();
+            final String nomeCliente =  userCliente.getDisplayName();
             Uri foto =            userCliente.getPhotoUrl();
 
              String urlPhoto = String.valueOf(foto);
@@ -635,13 +629,19 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
 
 
-
-                                startActivity(new Intent(TelaConfiguraFesta.this,TelaCliente.class));
-                                finish();
+                             //   criaUsuarioResumo(orcamento,dataFesta,nome);
 
                                 Log.d(
 
                                         "TAG", "DocumentSnapshot successfully written!");
+
+
+
+                                criaResumo(orcamento,dataFesta,nomeCliente);
+
+
+
+
 
 
                             }
@@ -659,8 +659,6 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
 
 
-
-
             return null;
         }
 
@@ -671,7 +669,27 @@ public class TelaConfiguraFesta extends AppCompatActivity {
         }
     }
 
+    private void criaResumo(String orcamento, String dataFesta, String nomeCliente) {
 
+
+        Usuario usuario = new Usuario();
+
+
+        BD bd = new BD(this);
+
+
+        usuario.setNome(nomeCliente);
+        usuario.setOrcamento(orcamento);
+        usuario.setDataFestaRegressiva(dataFesta);
+        usuario.setMensagem("sua mensagem aqui");
+        usuario.setConfirmados("0");
+
+        bd.inserir(usuario);
+
+        startActivity(new Intent(TelaConfiguraFesta.this,TelaCliente.class));
+        finish();
+
+    }
 
 
 
