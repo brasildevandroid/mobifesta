@@ -1,10 +1,8 @@
 package com.example.pinheiro.serfeliz.bancointerno;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -62,7 +60,7 @@ public class NewUserActivity extends Activity {
 
 		usuario.setNome(nomeEt.getText().toString());
 		usuario.setEmail(emailEt.getText().toString());
-		usuario.setSenha(senhaEt.getText().toString());
+
 		
 		BD bd = new BD(this);
 		bd.inserir(usuario);

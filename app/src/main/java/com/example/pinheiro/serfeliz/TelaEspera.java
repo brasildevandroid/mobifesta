@@ -24,7 +24,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-import pojos.Cliente;
+//import pojos.Cliente;
 import pojos.Funcionarios;
 
 public class TelaEspera extends AppCompatActivity {

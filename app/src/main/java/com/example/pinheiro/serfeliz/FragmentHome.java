@@ -1,19 +1,13 @@
 package com.example.pinheiro.serfeliz;
 
-
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.media.Image;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,12 +17,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.pinheiro.serfeliz.R;
 import com.example.pinheiro.serfeliz.bancointerno.BD;
 import com.example.pinheiro.serfeliz.bancointerno.Usuario;
 import com.example.pinheiro.serfeliz.clientetelaconvidados.TelaConvidado;
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
-import java.lang.ref.WeakReference;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,7 +42,7 @@ Button btnAdicionarContato;
 TextView textView;
 Cursor c;
 ArrayList<String> contacts;
-ImageView imgFotoCapaResumo;
+ImageView imgFotoCapaResumo,imgFotoPerfil;
 
 LinearLayout liResumoConvidados;
 
@@ -71,6 +68,7 @@ LinearLayout liResumoConvidados;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_home,container,false);
 
 
@@ -85,6 +83,7 @@ LinearLayout liResumoConvidados;
         txtMensagemFesta = (TextView)view.findViewById(R.id.txt_Mensagem_Festa);
         txtResumoConvidadosConfirmados = (TextView)view.findViewById(R.id.txt_Resumo__Convidados_Confirmados);
         imgFotoCapaResumo  =(ImageView) view.findViewById(R.id.foto_Capa_Resumo);
+        imgFotoPerfil = (ImageView)view.findViewById(R.id.foto_Perfil);
 
         imgFotoCapaResumo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +93,26 @@ LinearLayout liResumoConvidados;
                inserirImagemCapa();
             }
         });
+
+        imgFotoCapaResumo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AuthUI.getInstance()
+                        .signOut(getContext())
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                                startActivity(new Intent(getContext(),TelaEspera.class));
+                                getActivity().finish();
+
+                                // ...
+                            }
+                        });
+
+            }
+        });
+
 
         txtMensagemFesta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,7 +137,7 @@ LinearLayout liResumoConvidados;
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getActivity(), TelaConvidado.class));
+                startActivity(new Intent(getActivity(),TelaConvidado.class));
 
 
             }
@@ -187,21 +206,32 @@ LinearLayout liResumoConvidados;
 
     private void atualizarResumo() {
 
-        bd = new BD(getContext());
 
-        List<Usuario> list = bd.buscar();
 
-        Usuario user =  (Usuario) list.get(0);
+            try{
 
-        txtOrcamento.setText(user.getOrcamento());
+                bd = new BD(getContext());
 
-        EVENT_DATE_TIME = user.getDataFestaRegressiva();
+                List<Usuario> list = bd.buscar();
 
-        txtDataFesta.setText(EVENT_DATE_TIME);
+                Usuario user =  (Usuario) list.get(0);
 
-        txtMensagemFesta.setText(user.getMensagem());
+                txtOrcamento.setText(user.getOrcamento());
 
-        txtResumoConvidadosConfirmados.setText(user.getConfirmados()  + " confirmados");
+                EVENT_DATE_TIME = user.getDataFestaRegressiva();
+
+                txtDataFesta.setText(EVENT_DATE_TIME);
+
+                txtMensagemFesta.setText(user.getMensagem());
+
+                txtResumoConvidadosConfirmados.setText(user.getConfirmados()  + " confirmados");
+                //  Toast.makeText(getContext(),String.valueOf(user.getImgCapa()),Toast.LENGTH_SHORT).show();
+
+
+            }catch (Exception e){
+
+            e.printStackTrace();
+        }
 
 
     }
@@ -236,9 +266,29 @@ LinearLayout liResumoConvidados;
 
         if (resultCode == getActivity().RESULT_OK && requestCode == PICK_IMAGE){
 
-            Uri uri = data.getData();
-            String x  = getPatch(uri);
-            Toast.makeText(getContext(),x,Toast.LENGTH_SHORT).show();
+            try{
+
+                bd = new BD(getContext());
+
+                List<Usuario> list = bd.buscar();
+
+                Usuario user =  (Usuario) list.get(0);
+
+
+                Uri uri = data.getData();
+                String x  = getPatch(uri);
+               // bd.inserirImagens(user,x);
+                Toast.makeText(getContext(),x,Toast.LENGTH_SHORT).show();
+
+                Glide.with(getContext()).load(x).into(imgFotoCapaResumo);
+
+
+            }catch (Exception e){
+                e.printStackTrace();
+
+            }
+
+
         }
     }
 

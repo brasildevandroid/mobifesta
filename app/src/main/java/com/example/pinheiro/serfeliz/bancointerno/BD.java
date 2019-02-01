@@ -1,5 +1,7 @@
 package com.example.pinheiro.serfeliz.bancointerno;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,7 @@ public class BD {
 	
 	
 	public void inserir(Usuario usuario){
+
 		ContentValues valores = new ContentValues();
 		valores.put("nome", usuario.getNome());
 		valores.put("orcamento", usuario.getOrcamento());
@@ -28,7 +31,31 @@ public class BD {
 		bd.insert("usuario", null, valores);
 
 	}
-	
+
+	/*
+
+	public void inserirImagens(Usuario usuario,String x){
+
+		try{
+			FileInputStream fs = new FileInputStream(x);
+
+			byte[] imgByte = new byte[fs.available()];
+			fs.read(imgByte);
+			ContentValues valores = new ContentValues();
+			valores.put("imgCapa",imgByte);
+
+			bd.update("usuario", valores, "_id = ?", new String[]{""+usuario.getId()});
+			fs.close();
+
+
+		}catch (IOException e){
+			e.printStackTrace();
+		}
+
+
+	}
+
+	*/
 	
 	public void atualizar(Usuario usuario){
 		ContentValues valores = new ContentValues();
@@ -65,6 +92,7 @@ public class BD {
 				u.setDataFestaRegressiva(cursor.getString(3));
 				u.setMensagem(cursor.getString(4));
 				u.setConfirmados(cursor.getString(5));
+
 				list.add(u);
 				
 			}while(cursor.moveToNext());

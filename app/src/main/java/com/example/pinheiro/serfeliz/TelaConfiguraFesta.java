@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Locale;
 
 import pojos.Cliente;
-import pojos.Festa;
+
 import util.MaskMoeda;
 
 public class TelaConfiguraFesta extends AppCompatActivity {
@@ -58,7 +58,7 @@ public class TelaConfiguraFesta extends AppCompatActivity {
     RelativeLayout relativeConfigFesta;
 
     private TextView[] mDots;
-    private Usuario usuario = new Usuario();
+
     protected AlertDialog alerta;
     ImageButton next ;
     ImageButton back;
@@ -129,7 +129,10 @@ public class TelaConfiguraFesta extends AppCompatActivity {
             public void onClick(View v) {
 
 
+
                 orcamento = edtOrcamento.getText().toString();
+                orcamento = "R$3.200,00";
+                tipo = "aniversário";
 
                 if(orcamento != null && dataFesta != null && tipo != null){
                     Toast.makeText(TelaConfiguraFesta.this,orcamento,Toast.LENGTH_LONG).show();
@@ -239,52 +242,6 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
     }
 
-
-    private void configuraTipoFesta(Festa tipo) {
-
-
-        Toast.makeText(TelaConfiguraFesta.this, "estou no configura tipo festa", Toast.LENGTH_SHORT).show();
-
-        mAuth = FirebaseAuth.getInstance();
-
-            FirebaseUser user =
-                    mAuth.getCurrentUser();
-
-
-            String mUid =
-                user.getUid();
-
-
-
-        mFirestore.collection("plataforma")
-                .document("cliente")
-                .collection(mUid)
-                .document("tipo festa")
-                .set(tipo)
-
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-
-                        Toast.makeText(TelaConfiguraFesta.this, "tipo festa criado", Toast.LENGTH_SHORT).show();
-
-
-                       // startActivity(new Intent(TelaConfiguraFesta.this,TelaCliente.class));
-                     //   finish();
-                    }
-
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-
-                Toast.makeText(TelaConfiguraFesta.this,"ocorreu um erro desconhecido",
-                        Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-
-    }
 
 
     public void addDotsIndicator(int position){
@@ -677,7 +634,6 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
         BD bd = new BD(this);
 
-
         usuario.setNome(nomeCliente);
         usuario.setOrcamento(orcamento);
         usuario.setDataFestaRegressiva(dataFesta);
@@ -686,16 +642,13 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
         bd.inserir(usuario);
 
-        startActivity(new Intent(TelaConfiguraFesta.this,TelaCliente.class));
-        finish();
-
-    }
 
 
+                startActivity(new Intent(TelaConfiguraFesta.this,TelaCliente.class));
+                finish();
 
-
-
+                 }
+            }
 
 
 
-}

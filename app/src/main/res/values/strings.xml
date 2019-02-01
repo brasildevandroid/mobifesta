@@ -35,7 +35,6 @@
     <string name="title_activity_list_users">ListUsersActivity</string>
 
 
-
     <!-- ... -->
     <string name="facebook_application_id" translatable="false">1036758143142364</string>
     <!-- Facebook Application ID, prefixed by 'fb'. Enables Chrome Custom tabs. -->
@@ -48,11 +47,11 @@
     <string name="localizacao">Localizacao</string>
 
 
-    <string name="app_name">EasyFesta</string>
+    <string name="app_name">FestGO</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="profissional_bloqueado">Ops!Parece que você não pode mais acessar o aplicativo,por favor entre em contatoes conosco atráves
+    <string name="profissional_bloqueado">Ops!Parece que você não pode mais acessar o aplicativo,por favor entre em contato conosco atráves
         do e-mail luizcox1@hotmail.com!
     </string>
 

@@ -3,13 +3,16 @@ package com.example.pinheiro.serfeliz.bancointerno;
 import java.util.List;
 
 public class Usuario {
+
 	private String nome;
 	private String email;
-	private String senha;
 	private String dataFestaRegressiva;
 	private String orcamento;
 	private String mensagem;
 	private String  confirmados;
+	private long id;
+
+
 
 	public String getConfirmados() {
 		return confirmados;
@@ -18,8 +21,6 @@ public class Usuario {
 	public void setConfirmados(String  confirmados) {
 		this.confirmados = confirmados;
 	}
-
-	private long id;
 
 
 
@@ -62,15 +63,11 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}

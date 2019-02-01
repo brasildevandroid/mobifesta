@@ -13,12 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".clientetelaconvidados.TelaCadastroConvidado"></activity>
+        <activity android:name=".clientetelaconvidados.TelaCadastroConvidado" />
         <activity android:name=".clientetelaconvidados.TelaConvidado">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-
             </intent-filter>
         </activity>
 
@@ -26,13 +24,6 @@
             android:name="android.app.searchable"
             android:resource="@xml/searchable" />
 
-        <activity
-            android:name=".TelaConfiguraFesta"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".TelaLogin"
             android:screenOrientation="portrait">
@@ -57,10 +48,6 @@
             android:label="@string/title_activity_tela_cliente">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-
-
-
             </intent-filter>
         </activity>
 
@@ -69,14 +56,16 @@
             android:label="@string/title_activity_tela_cliente">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-
-
-
             </intent-filter>
         </activity>
 
-
+        <activity
+            android:name=".TelaConfiguraFesta"
+            android:label="@string/title_activity_tela_cliente">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".TelaEspera"
@@ -84,60 +73,48 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".bancointerno.TelaDbo"
             android:label="@string/title_activity_tela_cliente"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
-
-              <activity
+        <activity
             android:name=".bancointerno.ListUsersActivity"
             android:label="@string/title_activity_tela_cliente"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".bancointerno.NewUserActivity"
             android:label="@string/title_activity_tela_cliente"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
-
         <activity
             android:name=".clientetelaconvidados.ConvidadoDetalheActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".clientetelaconvidados.TelaEditarConvidado"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
-
         <activity android:name=".barradepesquisa.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
