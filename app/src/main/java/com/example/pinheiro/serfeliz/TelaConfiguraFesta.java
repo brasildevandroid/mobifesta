@@ -6,11 +6,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.text.Html;
 import android.util.Log;
@@ -41,11 +41,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.Locale;
 
 import pojos.Cliente;
-
 import util.MaskMoeda;
 
 public class TelaConfiguraFesta extends AppCompatActivity {
@@ -60,20 +58,20 @@ public class TelaConfiguraFesta extends AppCompatActivity {
     private TextView[] mDots;
 
     protected AlertDialog alerta;
-    ImageButton next ;
+    ImageButton next;
     ImageButton back;
     Button btnConfiguraFesta;
 
     FirebaseFirestore mFirestore;
 
-    TextView txtEscolheData,txtConfiguraFestaTitulo,txtConfiguraFestaDescricao;
+    TextView txtEscolheData, txtConfiguraFestaTitulo, txtConfiguraFestaDescricao;
     EditText edtOrcamento;
     Calendar mCurrentDate;
 
     private String nome;
 
     TextView txtConfiguraFesta;
-    static String dia,dataFesta,orcamento,tipo;
+    static String dia, dataFesta, orcamento, tipo;
 
     FirebaseAuth mAuth;
     CardView cardConfiguraFesta;
@@ -85,24 +83,24 @@ public class TelaConfiguraFesta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_configura_festa);
 
-     String valor =   addMask("3400");
+        String valor = addMask("3400");
 
         // link fs mascara de texto;
         // https://pt.stackoverflow.com/questions/277985/mascara-para-dinheiro-em-android
 
-        Log.d("valorformatado",valor);
+        Log.d("valorformatado", valor);
 
         pegaOrcamentoFesta();
 
-        next         = (ImageButton) findViewById(R.id.btn_Next_Button);
-        back         = (ImageButton) findViewById(R.id.btn_Back_Button);
-        btnConfiguraFesta = (Button)findViewById(R.id.btn_Configura_Festa);
-        cardConfiguraFesta = (CardView)findViewById(R.id.card_Configura_Festa);
-        txtConfiguraFesta = (TextView)findViewById(R.id.txt_Tipo_Festa_Configura_Festa);
-        txtEscolheData = (TextView)findViewById(R.id.txt_Configura_Festa_Escolhe_Data);
-        edtOrcamento = (EditText)findViewById(R.id.edt_Configura_Festa_Orcamento);
-        txtConfiguraFestaTitulo = (TextView)findViewById(R.id.txt_Configura_Festa_Titulo);
-        txtConfiguraFestaDescricao = (TextView)findViewById(R.id.txt_Configura_Festa_Descricao);
+        next = (ImageButton) findViewById(R.id.btn_Next_Button);
+        back = (ImageButton) findViewById(R.id.btn_Back_Button);
+        btnConfiguraFesta = (Button) findViewById(R.id.btn_Configura_Festa);
+        cardConfiguraFesta = (CardView) findViewById(R.id.card_Configura_Festa);
+        txtConfiguraFesta = (TextView) findViewById(R.id.txt_Tipo_Festa_Configura_Festa);
+        txtEscolheData = (TextView) findViewById(R.id.txt_Configura_Festa_Escolhe_Data);
+        edtOrcamento = (EditText) findViewById(R.id.edt_Configura_Festa_Orcamento);
+        txtConfiguraFestaTitulo = (TextView) findViewById(R.id.txt_Configura_Festa_Titulo);
+        txtConfiguraFestaDescricao = (TextView) findViewById(R.id.txt_Configura_Festa_Descricao);
 
 
         mFirestore = FirebaseFirestore.getInstance();
@@ -111,8 +109,7 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
 
         Locale mLocale = new Locale("pt", "BR");
-        edtOrcamento.addTextChangedListener(new MaskMoeda(edtOrcamento,mLocale));
-
+        edtOrcamento.addTextChangedListener(new MaskMoeda(edtOrcamento, mLocale));
 
 
         txtConfiguraFesta.setOnClickListener(new View.OnClickListener() {
@@ -129,29 +126,26 @@ public class TelaConfiguraFesta extends AppCompatActivity {
             public void onClick(View v) {
 
 
-
                 orcamento = edtOrcamento.getText().toString();
                 orcamento = "R$3.200,00";
                 tipo = "aniversário";
 
-                if(orcamento != null && dataFesta != null && tipo != null){
-                    Toast.makeText(TelaConfiguraFesta.this,orcamento,Toast.LENGTH_LONG).show();
+                if (orcamento != null && dataFesta != null && tipo != null) {
+                    Toast.makeText(TelaConfiguraFesta.this, orcamento, Toast.LENGTH_LONG).show();
 
 
-                MyTelaConfiguraFesta myTelaConfiguraFesta = new MyTelaConfiguraFesta();
+                    MyTelaConfiguraFesta myTelaConfiguraFesta = new MyTelaConfiguraFesta();
 
-                myTelaConfiguraFesta.execute();
+                    myTelaConfiguraFesta.execute();
 
-            } else{
+                } else {
 
-                Toast.makeText(TelaConfiguraFesta.this,"Por Favor preencha todos os campos",Toast.LENGTH_LONG).show();
-            }
-
+                    Toast.makeText(TelaConfiguraFesta.this, "Por Favor preencha todos os campos", Toast.LENGTH_LONG).show();
+                }
 
 
             }
         });
-
 
 
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -168,7 +162,6 @@ public class TelaConfiguraFesta extends AppCompatActivity {
             }
 
         };
-
 
 
         txtEscolheData.setOnClickListener(new View.OnClickListener() {
@@ -200,16 +193,13 @@ public class TelaConfiguraFesta extends AppCompatActivity {
         }
 
 
-
-
         //tipoFesta = new Festa();
 
         mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         mDotLayout = (LinearLayout) findViewById(R.id.dotsLayout);
 
-        slideAdapter =  new SlideAdapter(this);
+        slideAdapter = new SlideAdapter(this);
         mSlideViewPager.setAdapter(slideAdapter);
-
 
 
         addDotsIndicator(0);
@@ -220,16 +210,15 @@ public class TelaConfiguraFesta extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
 
 
-           @Override
-           public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
 
 
-              mSlideViewPager.setCurrentItem(mCurrentPage + 1);
+                mSlideViewPager.setCurrentItem(mCurrentPage + 1);
 
 
-
-           }
-       });
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -243,14 +232,13 @@ public class TelaConfiguraFesta extends AppCompatActivity {
     }
 
 
-
-    public void addDotsIndicator(int position){
+    public void addDotsIndicator(int position) {
 
         mDots = new TextView[4];
         mDotLayout.removeAllViews();
 
 
-        for (int i = 0; i < mDots.length;i++){
+        for (int i = 0; i < mDots.length; i++) {
 
             mDots[i] = new TextView(this);
             mDots[i].setText(Html.fromHtml("&#8226;"));
@@ -260,7 +248,7 @@ public class TelaConfiguraFesta extends AppCompatActivity {
             mDotLayout.addView(mDots[i]);
         }
 
-        if (mDots.length > 0){
+        if (mDots.length > 0) {
 
             mDots[position].setTextColor(getResources().getColor(R.color.colorAccent));
         }
@@ -269,84 +257,78 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
 
     ViewPager.OnPageChangeListener viewListener =
-                               new ViewPager.OnPageChangeListener() {
-                                   @Override
-                                   public void onPageScrolled(int i, float v, int i1) {
+            new ViewPager.OnPageChangeListener() {
+                @Override
+                public void onPageScrolled(int i, float v, int i1) {
 
-                                   }
+                }
 
-                                   @Override
-                                   public void onPageSelected(int i) {
+                @Override
+                public void onPageSelected(int i) {
 
-                                       addDotsIndicator(i);
-                                       mCurrentPage = i;
+                    addDotsIndicator(i);
+                    mCurrentPage = i;
 
-                                       if (i == 0){
+                    if (i == 0) {
 
-                                           // estou na primeira posição
+                        // estou na primeira posição
 
-                                           next.setEnabled(true);
-                                           back.setEnabled(false);
-                                           back.setVisibility(View.INVISIBLE);
-                                           next.setVisibility(View.VISIBLE);
-                                           btnConfiguraFesta.setVisibility(View.INVISIBLE);
-                                           cardConfiguraFesta.setVisibility(View.INVISIBLE);
-
-
-                                       }else if (i == mDots.length -1){
-
-                                           //estou na segunda posição
-                                           next.setEnabled(true);
-                                           back.setEnabled(true);
-                                           back.setVisibility(View.VISIBLE);
-                                           next.setVisibility(View.INVISIBLE);
-
-                                           btnConfiguraFesta.setVisibility(View.VISIBLE);
-                                           cardConfiguraFesta.setVisibility(View.VISIBLE);
-                                           txtConfiguraFestaTitulo.setVisibility(View.VISIBLE);
-                                           txtConfiguraFestaDescricao.setVisibility(View.VISIBLE);
+                        next.setEnabled(true);
+                        back.setEnabled(false);
+                        back.setVisibility(View.INVISIBLE);
+                        next.setVisibility(View.VISIBLE);
+                        btnConfiguraFesta.setVisibility(View.INVISIBLE);
+                        cardConfiguraFesta.setVisibility(View.INVISIBLE);
 
 
-                                       }else if (i == mDots.length -2){
+                    } else if (i == mDots.length - 1) {
 
-                                           //estou na terceira posição
-                                           next.setEnabled(true);
-                                           back.setEnabled(true);
-                                           back.setVisibility(View.VISIBLE);
-                                           next.setVisibility(View.VISIBLE);
-                                           btnConfiguraFesta.setVisibility(View.INVISIBLE);
-                                           cardConfiguraFesta.setVisibility(View.INVISIBLE);
-                                           txtConfiguraFestaTitulo.setVisibility(View.INVISIBLE);
-                                           txtConfiguraFestaDescricao.setVisibility(View.INVISIBLE);
+                        //estou na segunda posição
+                        next.setEnabled(true);
+                        back.setEnabled(true);
+                        back.setVisibility(View.VISIBLE);
+                        next.setVisibility(View.INVISIBLE);
 
-
-
-                                       }
+                        btnConfiguraFesta.setVisibility(View.VISIBLE);
+                        cardConfiguraFesta.setVisibility(View.VISIBLE);
+                        txtConfiguraFestaTitulo.setVisibility(View.VISIBLE);
+                        txtConfiguraFestaDescricao.setVisibility(View.VISIBLE);
 
 
-                                       else
-                                           {
+                    } else if (i == mDots.length - 2) {
 
-                                           //estou na quarta posição
+                        //estou na terceira posição
+                        next.setEnabled(true);
+                        back.setEnabled(true);
+                        back.setVisibility(View.VISIBLE);
+                        next.setVisibility(View.VISIBLE);
+                        btnConfiguraFesta.setVisibility(View.INVISIBLE);
+                        cardConfiguraFesta.setVisibility(View.INVISIBLE);
+                        txtConfiguraFestaTitulo.setVisibility(View.INVISIBLE);
+                        txtConfiguraFestaDescricao.setVisibility(View.INVISIBLE);
 
-                                           next.setEnabled(true);
-                                           back.setEnabled(true);
-                                           back.setVisibility(View.VISIBLE);
-                                           next.setVisibility(View.VISIBLE);
-                                           btnConfiguraFesta.setVisibility(View.INVISIBLE);
-                                               cardConfiguraFesta.setVisibility(View.INVISIBLE);
-                                               txtConfiguraFestaTitulo.setVisibility(View.INVISIBLE);
-                                               txtConfiguraFestaDescricao.setVisibility(View.INVISIBLE);
 
-                                       }
-                                   }
+                    } else {
 
-                                   @Override
-                                   public void onPageScrollStateChanged(int i) {
+                        //estou na quarta posição
 
-                                   }
-                               };
+                        next.setEnabled(true);
+                        back.setEnabled(true);
+                        back.setVisibility(View.VISIBLE);
+                        next.setVisibility(View.VISIBLE);
+                        btnConfiguraFesta.setVisibility(View.INVISIBLE);
+                        cardConfiguraFesta.setVisibility(View.INVISIBLE);
+                        txtConfiguraFestaTitulo.setVisibility(View.INVISIBLE);
+                        txtConfiguraFestaDescricao.setVisibility(View.INVISIBLE);
 
+                    }
+                }
+
+                @Override
+                public void onPageScrollStateChanged(int i) {
+
+                }
+            };
 
 
     private void dialogTipoFesta() {
@@ -369,19 +351,19 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
                 String posicaoHorario = String.valueOf(arg1);
 
-                if (posicaoHorario.equalsIgnoreCase("0")){
+                if (posicaoHorario.equalsIgnoreCase("0")) {
 
-                tipo = "Anivesário";
-                txtConfiguraFesta.setTextColor(Color.parseColor("#DE000000"));
-                txtConfiguraFesta.setText(tipo);
+                    tipo = "Anivesário";
+                    txtConfiguraFesta.setTextColor(Color.parseColor("#DE000000"));
+                    txtConfiguraFesta.setText(tipo);
 
 
-                }else if (posicaoHorario.equalsIgnoreCase("1")){
+                } else if (posicaoHorario.equalsIgnoreCase("1")) {
 
-                  //  horario = "De 13:00 ás 16:00 hrs";
-                }else if (posicaoHorario.equalsIgnoreCase("2")){
+                    //  horario = "De 13:00 ás 16:00 hrs";
+                } else if (posicaoHorario.equalsIgnoreCase("2")) {
 
-                   // horario = "De 16:00 ás 18:00 hrss";
+                    // horario = "De 16:00 ás 18:00 hrss";
                 }
 
                 alerta.dismiss();
@@ -398,12 +380,12 @@ public class TelaConfiguraFesta extends AppCompatActivity {
         SimpleDateFormat sdfa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-         dia = sdfa.format(cal.getTime());
+        dia = sdfa.format(cal.getTime());
 
 
-         Toast.makeText(TelaConfiguraFesta.this,dia,Toast.LENGTH_SHORT).show();
+        Toast.makeText(TelaConfiguraFesta.this, dia, Toast.LENGTH_SHORT).show();
 
-        long data =  cal.getTimeInMillis();
+        long data = cal.getTimeInMillis();
         String valor = String.valueOf(data);
         Date calll = cal.getTime();
 
@@ -411,7 +393,7 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
         dataAtual.getTime();
 
-        if (calll.compareTo (dataAtual) < 0) {
+        if (calll.compareTo(dataAtual) < 0) {
 
             alertDataAntiga();
 
@@ -426,7 +408,6 @@ public class TelaConfiguraFesta extends AppCompatActivity {
         }
 
     }
-
 
 
     public void alertDataAntiga() {
@@ -461,7 +442,7 @@ public class TelaConfiguraFesta extends AppCompatActivity {
     }
 
 
-    public void pegaOrcamentoFesta(){
+    public void pegaOrcamentoFesta() {
 /*
         DecimalFormat formatoDois = new DecimalFormat("##,###,###,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
         formatoDois.setMinimumFractionDigits(2);
@@ -470,7 +451,7 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 */
         String money = NumberFormat.getCurrencyInstance().format(4500);
 
-        Log.d("valor",money);
+        Log.d("valor", money);
 
 
         /*
@@ -519,15 +500,10 @@ public class TelaConfiguraFesta extends AppCompatActivity {
     }
 
 
-
     class MyTelaConfiguraFesta extends AsyncTask<String, String, String> {
 
 
-
-
-        public MyTelaConfiguraFesta(){
-
-
+        public MyTelaConfiguraFesta() {
 
 
         }
@@ -547,73 +523,65 @@ public class TelaConfiguraFesta extends AppCompatActivity {
             userCliente = mAuth.getInstance().getCurrentUser();
 
 
-            String uidCliente =   userCliente.getUid();
+            String uidCliente = userCliente.getUid();
             String emailCliente = userCliente.getEmail();
-            final String nomeCliente =  userCliente.getDisplayName();
-            Uri foto =            userCliente.getPhotoUrl();
+            final String nomeCliente = userCliente.getDisplayName();
+            Uri foto = userCliente.getPhotoUrl();
 
-             String urlPhoto = String.valueOf(foto);
+            String urlPhoto = String.valueOf(foto);
 
-                mFirestore = FirebaseFirestore.getInstance();
+            mFirestore = FirebaseFirestore.getInstance();
 
-                long timeInMillis = System.currentTimeMillis();
-                Calendar cal1 = Calendar.getInstance();
-                cal1.setTimeInMillis(timeInMillis);
+            long timeInMillis = System.currentTimeMillis();
+            Calendar cal1 = Calendar.getInstance();
+            cal1.setTimeInMillis(timeInMillis);
 
-                SimpleDateFormat dateFormat = new SimpleDateFormat(
-                        "dd/MM/yyyy");
+            SimpleDateFormat dateFormat = new SimpleDateFormat(
+                    "dd/MM/yyyy");
 
-                String  dateCadastro = dateFormat.format(cal1.getTime());
+            String dateCadastro = dateFormat.format(cal1.getTime());
 
-                cliente.setNome(nomeCliente);
-                cliente.setEmail(emailCliente);
-                cliente.setDataCadastro(dateCadastro);
-                cliente.setUidCliente(uidCliente);
-                cliente.setUrlPhoto(urlPhoto);
-                cliente.setDataFesta(dataFesta);
-                cliente.setOrcamento(orcamento);
-                cliente.setTipoFesta(tipo);
-
-
-                mFirestore.collection("cliente")
-                        .document(uidCliente)
-                        .collection("dados gerais")
-                        .document("dados")
-                        .set(cliente)
-                        .addOnSuccessListener( new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
+            cliente.setNome(nomeCliente);
+            cliente.setEmail(emailCliente);
+            cliente.setDataCadastro(dateCadastro);
+            cliente.setUidCliente(uidCliente);
+            cliente.setUrlPhoto(urlPhoto);
+            cliente.setDataFesta(dataFesta);
+            cliente.setOrcamento(orcamento);
+            cliente.setTipoFesta(tipo);
 
 
-
-                             //   criaUsuarioResumo(orcamento,dataFesta,nome);
-
-                                Log.d(
-
-                                        "TAG", "DocumentSnapshot successfully written!");
-
-
-
-                                criaResumo(orcamento,dataFesta,nomeCliente);
+            mFirestore.collection("cliente")
+                    .document(uidCliente)
+                    .collection("dados gerais")
+                    .document("dados")
+                    .set(cliente)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
 
 
+                            //   criaUsuarioResumo(orcamento,dataFesta,nome);
+
+                            Log.d(
+
+                                    "TAG", "DocumentSnapshot successfully written!");
 
 
+                            criaResumo(orcamento, dataFesta, nomeCliente);
 
 
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
 
-                        Log.d("TAG","ocorreu um erro por favor tente mais tarde!");
+                    Log.d("TAG", "ocorreu um erro por favor tente mais tarde!");
 
-                        e.printStackTrace();
+                    e.printStackTrace();
 
-                    }
-                });
-
-
+                }
+            });
 
 
             return null;
@@ -642,13 +610,12 @@ public class TelaConfiguraFesta extends AppCompatActivity {
 
         bd.inserir(usuario);
 
+        startActivity(new Intent(TelaConfiguraFesta.this, TelaCliente.class));
+        finish();
 
 
-                startActivity(new Intent(TelaConfiguraFesta.this,TelaCliente.class));
-                finish();
-
-                 }
-            }
+    }
+}
 
 
 

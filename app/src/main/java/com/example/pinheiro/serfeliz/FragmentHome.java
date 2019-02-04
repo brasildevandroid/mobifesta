@@ -1,12 +1,12 @@
 package com.example.pinheiro.serfeliz;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,19 +18,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.pinheiro.serfeliz.R;
 import com.example.pinheiro.serfeliz.bancointerno.BD;
 import com.example.pinheiro.serfeliz.bancointerno.Usuario;
 import com.example.pinheiro.serfeliz.clientetelaconvidados.TelaConvidado;
-import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 
 /**
@@ -38,7 +35,8 @@ import java.util.Random;
  */
 public class FragmentHome extends Fragment {
 
-Button btnAdicionarContato;
+    private static final int PIC_CROP =1 ;
+    Button btnAdicionarContato;
 TextView textView;
 Cursor c;
 ArrayList<String> contacts;
@@ -50,13 +48,13 @@ LinearLayout liResumoConvidados;
     private String DATE_FORMAT = "dd-MM-yyyy HH:mm:ss";
     private String DATE_FORMAT_DATA = "dd-MM-yyyy";
 
-    private TextView txtDias, txtHoras, txtMinutos, txtSegundos,txtOrcamento,txtDataFesta,txtMensagemFesta,txtResumoConvidadosConfirmados;
+    private TextView txtDias, txtHoras, txtMinutos, txtSegundos,
+                   txtOrcamento,txtDataFesta,txtMensagemFesta,txtResumoConvidadosConfirmados;
+
     private Handler handler = new Handler();
     private Runnable runnable;
     BD bd;
     private static final int PICK_IMAGE = 100;
-
-
 
     private static final int  PERMISSIONS_REQUEST_READ_CONTACTS = 100;
 
@@ -83,7 +81,7 @@ LinearLayout liResumoConvidados;
         txtMensagemFesta = (TextView)view.findViewById(R.id.txt_Mensagem_Festa);
         txtResumoConvidadosConfirmados = (TextView)view.findViewById(R.id.txt_Resumo__Convidados_Confirmados);
         imgFotoCapaResumo  =(ImageView) view.findViewById(R.id.foto_Capa_Resumo);
-        imgFotoPerfil = (ImageView)view.findViewById(R.id.foto_Perfil);
+    //    imgFotoPerfil = (ImageView)view.findViewById(R.id.foto_Perfil);
 
         imgFotoCapaResumo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,9 +92,12 @@ LinearLayout liResumoConvidados;
             }
         });
 
-        imgFotoCapaResumo.setOnClickListener(new View.OnClickListener() {
+        /*
+        imgFotoPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
 
                 AuthUI.getInstance()
                         .signOut(getContext())
@@ -110,10 +111,14 @@ LinearLayout liResumoConvidados;
                             }
                         });
 
+
+
+
+                inserirImagemPerfil();
+
             }
         });
-
-
+*/
         txtMensagemFesta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,6 +151,17 @@ LinearLayout liResumoConvidados;
 
 
         return view;
+    }
+
+    private void inserirImagemPerfil() {
+
+
+        Intent intent
+                = new Intent(Intent.ACTION_PICK, Uri.parse("content://media/internal/images/media"));
+
+        startActivityForResult(intent,PICK_IMAGE);
+
+
     }
 
     // link de referência desse trecho de código
@@ -207,9 +223,6 @@ LinearLayout liResumoConvidados;
     private void atualizarResumo() {
 
 
-
-            try{
-
                 bd = new BD(getContext());
 
                 List<Usuario> list = bd.buscar();
@@ -225,16 +238,13 @@ LinearLayout liResumoConvidados;
                 txtMensagemFesta.setText(user.getMensagem());
 
                 txtResumoConvidadosConfirmados.setText(user.getConfirmados()  + " confirmados");
-                //  Toast.makeText(getContext(),String.valueOf(user.getImgCapa()),Toast.LENGTH_SHORT).show();
 
 
-            }catch (Exception e){
-
-            e.printStackTrace();
-        }
+                Glide.with(imgFotoCapaResumo).load(user.getImgCapa()).into(imgFotoCapaResumo);
 
 
     }
+
 
 
     public void onStop() {
@@ -249,10 +259,6 @@ LinearLayout liResumoConvidados;
     public void inserirImagemCapa(){
 
 
-        Random rand = new Random();
-        int aleatorio = 500000000;
-        int  n = rand.nextInt((aleatorio) + 1);
-
         Intent intent
                  = new Intent(Intent.ACTION_PICK, Uri.parse("content://media/internal/images/media"));
 
@@ -262,11 +268,11 @@ LinearLayout liResumoConvidados;
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == getActivity().RESULT_OK && requestCode == PICK_IMAGE){
 
-            try{
 
                 bd = new BD(getContext());
 
@@ -274,23 +280,20 @@ LinearLayout liResumoConvidados;
 
                 Usuario user =  (Usuario) list.get(0);
 
-
                 Uri uri = data.getData();
                 String x  = getPatch(uri);
-               // bd.inserirImagens(user,x);
-                Toast.makeText(getContext(),x,Toast.LENGTH_SHORT).show();
 
-                Glide.with(getContext()).load(x).into(imgFotoCapaResumo);
+            performCrop(uri);
 
 
-            }catch (Exception e){
-                e.printStackTrace();
+
+
 
             }
 
 
         }
-    }
+
 
     public String getPatch(Uri uri){
 
@@ -311,6 +314,91 @@ LinearLayout liResumoConvidados;
 
         return uri.getPath();
 
+    }
+
+    public   void atualizaCapaResumo(String foto){
+
+
+        try{
+
+            FileInputStream fs = new FileInputStream(foto);
+
+            byte[] imgByte = new byte[fs.available()];
+
+            bd = new BD(getContext());
+
+            List<Usuario> list = bd.buscar();
+
+            Usuario user =  (Usuario) list.get(0);
+
+            fs.read(imgByte);
+
+            //valores.put("imgCapa",imgByte);
+
+            user.setImgCapa(imgByte);
+
+            bd.atualizar(user);
+            String imagem = String.valueOf(user.getImgCapa());
+
+           Toast.makeText(getContext(), "imagem atualizada" + imagem,Toast.LENGTH_SHORT).show();
+
+            Glide.with(imgFotoCapaResumo).load(user.getImgCapa()).into(imgFotoCapaResumo);
+
+/*
+            Bitmap bt = null;
+
+            byte[] imagemCapa = user.getImgCapa();
+
+            bt = BitmapFactory.decodeByteArray(imagemCapa,0,imagemCapa.length);
+
+            //imgFotoCapaResumo.setImageBitmap(bt);
+
+            Toast.makeText(getContext(),"estou executando",Toast.LENGTH_LONG).show();
+
+*/
+
+
+
+
+
+            fs.close();
+
+
+        }catch (IOException e){
+            e.printStackTrace();
+
+            Toast.makeText(getContext(), "ocorreu um erro", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
+
+    private void performCrop(Uri picUri) {
+        try {
+            Intent cropIntent = new Intent("com.android.camera.action.CROP");
+            // indicate image type and Uri
+            cropIntent.setDataAndType(picUri, "image/*");
+            // set crop properties here
+            cropIntent.putExtra("crop", true);
+            // indicate aspect of desired crop
+            cropIntent.putExtra("aspectX", 1);
+            cropIntent.putExtra("aspectY", 1);
+            // indicate output X and Y
+            cropIntent.putExtra("outputX", 128);
+            cropIntent.putExtra("outputY", 128);
+            // retrieve data on return
+            cropIntent.putExtra("return-data", true);
+            // start the activity - we handle returning in onActivityResult
+            startActivityForResult(cropIntent, PIC_CROP);
+        }
+        // respond to users whose devices do not support the crop action
+        catch (ActivityNotFoundException anfe) {
+
+            // display an error message
+            String errorMessage = "Whoops - your device doesn't support the crop action!";
+            Toast toast = Toast.makeText(getContext(), errorMessage, Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
 }

@@ -1,7 +1,5 @@
 package com.example.pinheiro.serfeliz.bancointerno;
 
-import java.util.List;
-
 public class Usuario {
 
 	private String nome;
@@ -11,8 +9,15 @@ public class Usuario {
 	private String mensagem;
 	private String  confirmados;
 	private long id;
+	private byte[] imgCapa;
 
+	public byte[] getImgCapa() {
+		return imgCapa;
+	}
 
+	public void setImgCapa(byte[] imgCapa) {
+		this.imgCapa = imgCapa;
+	}
 
 	public String getConfirmados() {
 		return confirmados;

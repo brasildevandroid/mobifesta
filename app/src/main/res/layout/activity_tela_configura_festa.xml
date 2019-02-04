@@ -93,6 +93,7 @@
                     android:layout_height="60dp">
 
                     <TextView
+                        android:maxLength="11"
                         android:id="@+id/txt_Configura_Festa_Escolhe_Data"
                         android:textAlignment="center"
                         android:layout_margin="16dp"
