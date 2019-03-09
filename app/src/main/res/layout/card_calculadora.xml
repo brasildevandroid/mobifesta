@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="@dimen/cardMarginVertical"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp">
+
+        <TextView
+
+            android:id="@+id/txt_Item_Calculadora"
+            android:textColor="@color/greyPrimary"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="textStart"
+            android:textAppearance="?attr/textAppearanceBody1"/>
+
+    <View
+        android:background="@color/colorCinzaClaro"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+
+</LinearLayout>

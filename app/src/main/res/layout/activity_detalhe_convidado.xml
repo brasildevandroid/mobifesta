@@ -8,13 +8,18 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/colorCinzaClaro">
 
+
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
+
         android:background="@color/colorPrimaryDark"
+
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
@@ -23,12 +28,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="16dp"
             android:layout_centerInParent="true"
             android:text="Dados do Convidado"
             android:textAppearance="?attr/textAppearanceBody2"
+
             android:textColor="@color/colorBranco"
-            android:textSize="24sp"
+            android:textSize="25sp"
             tools:ignore="MissingConstraints" />
 
         <ImageView
@@ -39,6 +45,7 @@
             android:layout_centerInParent="true"
             android:layout_width="36dp"
             android:layout_height="36dp"
+
             app:srcCompat="@drawable/ic_editar_convidado"/>
 
 
@@ -49,149 +56,242 @@
             android:layout_centerInParent="true"
             android:layout_width="36dp"
             android:layout_height="36dp"
+
             app:srcCompat="@drawable/ic_delete"/>
 
     </RelativeLayout>
 
 
 
-        <LinearLayout
-            android:background="@color/colorCinza"
-            android:id="@+id/linearLayout"
+    <LinearLayout
+
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="24dp"
+            android:id="@+id/txt_Detalhe_Nome_Convidado"
+
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_marginLeft="12dp"
+            android:text="Ana Lúcia"
+            android:textAppearance="?attr/textAppearanceBody2"
+
+            android:textColor="@color/greyPrimary"
+            android:textSize="25sp"
             tools:ignore="MissingConstraints"
-            android:orientation="vertical">
+            />
 
-            <TextView
-                android:layout_marginTop="32dp"
-                android:id="@+id/txt_Detalhe_Nome_Convidado"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/txt_Grau_Parentesco_Convidado"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_marginLeft="12dp"
+            android:text="Parente"
+            android:textAppearance="?attr/textAppearanceBody2"
+
+            android:textColor="@color/greySecondary"
+            android:textSize="18sp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/txt_Presenca_Convidado"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_marginLeft="12dp"
+            android:text="á confirmar"
+            android:textAppearance="?attr/textAppearanceBody2"
+
+            android:textColor="@color/greySecondary"
+            android:textSize="18sp"
+            tools:ignore="MissingConstraints"
+            />
+
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/txt_Celular_Convidado"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_marginLeft="12dp"
+            android:text="2197837470"
+            android:textAppearance="?attr/textAppearanceBody2"
+
+            android:textColor="@color/greySecondary"
+            android:textSize="18sp"
+            tools:ignore="MissingConstraints" />
+
+
+
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/txt_Acompanhantes_Adultos"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_marginLeft="12dp"
+            android:text="( 0 ) Acompanhantes adultos"
+            android:textAppearance="?attr/textAppearanceBody2"
+
+            android:textColor="@color/greySecondary"
+            android:textSize="18sp"
+            tools:ignore="MissingConstraints"
+            />
+
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/txt_Acompanhantes_Criancas"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_marginLeft="12dp"
+            android:text="( 0 ) Acompanhantescrianças"
+            android:textAppearance="?attr/textAppearanceBody2"
+
+            android:textColor="@color/greySecondary"
+            android:textSize="18sp"
+            tools:ignore="MissingConstraints" />
+
+
+        <CheckBox
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:visibility="invisible"
+            android:layout_marginLeft="12dp"
+            android:id="@+id/checkBox_Confirmar_Convidado"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:text="Confirmar ápresença deste convidado ?" />
+
+
+
+
+
+
+        <LinearLayout
+
+
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+
+
+
+            <android.support.design.card.MaterialCardView
+
+
+                xmlns:android="http://schemas.android.com/apk/res/android"
+
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                app:cardElevation="16dp"
+
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+
                 android:layout_marginLeft="12dp"
-                android:text="Ana Lúcia"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="@color/greyPrimary"
-                android:textSize="30sp"
-                tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:layout_marginTop="8dp"
-                android:id="@+id/txt_Grau_Parentesco_Convidado"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
-                android:layout_marginLeft="12dp"
-                android:text="Parente"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="@color/bootstrap_gray_dark"
-                android:textSize="24sp"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:layout_marginTop="8dp"
-                android:id="@+id/txt_Presenca_Convidado"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
-                android:layout_marginLeft="12dp"
-                android:text="á confirmar"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="@color/bootstrap_gray_dark"
-                android:textSize="24sp"
-                tools:ignore="MissingConstraints" />
+                android:layout_marginRight="8dp"
+                app:cardCornerRadius="10dp">
 
 
-            <TextView
-                android:layout_marginTop="8dp"
-                android:id="@+id/txt_Celular_Convidado"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
-                android:layout_marginLeft="12dp"
-                android:text="2197837470"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="@color/bootstrap_gray_dark"
-                android:textSize="24sp"
-                tools:ignore="MissingConstraints" />
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
 
+                    android:layout_width="match_parent"
+                    android:id="@+id/txt_Fazer_Ligacao_Convidado"
 
+                    android:layout_height="45dp"
 
+                    android:background="@color/colorPrimaryDark"
 
-            <TextView
-                android:layout_marginTop="8dp"
-                android:id="@+id/txt_Acompanhantes_Adultos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
-                android:layout_marginLeft="12dp"
-                android:text="( 0 ) Acompanhantes adultos"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="@color/bootstrap_gray_dark"
-                android:textSize="24sp"
-                tools:ignore="MissingConstraints" />
-
-
-            <TextView
-                android:layout_marginTop="8dp"
-                android:id="@+id/txt_Acompanhantes_Criancas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
-                android:layout_marginLeft="12dp"
-                android:text="( 3 ) Acompanhantes crianças"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="@color/bootstrap_gray_dark"
-                android:textSize="24sp"
-                tools:ignore="MissingConstraints" />
-
-
-
-
-            <CheckBox
-                android:visibility="invisible"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="36dp"
-                android:id="@+id/checkBox_Confirmar_Convidado"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Confirmar á presença deste convidado ?" />
-
-
-            <LinearLayout
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_marginTop="48dp"
-                android:layout_width="match_parent"
-                android:layout_height="70dp">
-
-
-
-                <ImageView
                     android:backgroundTint="@color/colorPrimaryDark"
-                    android:background="@drawable/background_imagens_convidados"
-                    android:layout_marginRight="48dp"
-                    android:id="@+id/img_Ligar"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    app:srcCompat="@drawable/ic_ligar"/>
+                    android:text="LIGAR PARACONVIDADO"
+
+                    android:textColor="@color/colorBranco"
+                    android:textSize="16sp" />
 
 
-                <ImageView
 
-                    android:backgroundTint="@color/colorPrimaryDark"
-                    android:background="@drawable/background_imagens_convidados"
-                    android:layout_alignLeft="@+id/img_Ligar"
-                    android:id="@+id/img_Mensagem"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    app:srcCompat="@drawable/ic_message"/>
+            </android.support.design.card.MaterialCardView>
 
-            </LinearLayout>
 
+
+            <android.support.design.card.MaterialCardView
+
+                xmlns:android="http://schemas.android.com/apk/res/android"
+
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                app:cardElevation="16dp"
+
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="10dp">
+
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+
+                    android:layout_width="match_parent"
+                    android:id="@+id/txt_Mensagem_Convidado"
+
+                    android:layout_height="45dp"
+
+                    android:background="@color/colorPrimaryDark"
+
+                    android:backgroundTint="@color/colorPrimaryDark
+"
+
+                    android:text="WHATTSZAPP"
+
+                    android:textColor="@color/colorBranco"
+                    android:textSize="16sp" />
+
+
+            </android.support.design.card.MaterialCardView>
 
         </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
 
 
 

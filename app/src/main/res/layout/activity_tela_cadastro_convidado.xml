@@ -11,7 +11,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:background="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,12 +24,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="16dp"
             android:layout_centerInParent="true"
             android:text="Novo Convidado"
             android:textAppearance="?attr/textAppearanceBody2"
             android:textColor="@color/colorBranco"
-            android:textSize="28sp"
+            android:textSize="25sp"
             tools:ignore="MissingConstraints" />
 
         <ImageView
@@ -175,6 +175,7 @@
         <Spinner
             android:layout_marginRight="12dp"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
             android:layout_marginLeft="12dp"
             android:id="@+id/spinner_Tipo_Convidado"
             android:layout_width="match_parent"
@@ -184,20 +185,46 @@
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="421dp" />
 
-        <Button
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="24dp"
-            android:id="@+id/btn_Salva_Convidado"
+
+
+        <View
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/colorCinza" />
+
+
+
+        <android.support.design.card.MaterialCardView
+            android:layout_gravity="center"
             android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:background="@drawable/background_button_salvar_convidado"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:text="salvar"
-            android:textColor="@color/colorBranco"
-            android:textSize="16dp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="645dp" />
+            android:layout_height="45dp"
+            app:cardElevation="16dp"
+            android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="@dimen/cardMarginHorizontal"
+            android:layout_marginRight="@dimen/cardMarginHorizontal"
+            app:cardCornerRadius="10dp">
+
+
+
+            <Button
+                android:layout_marginBottom="16dp"
+                android:id="@+id/btn_Salva_Convidado"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:background="@drawable/background_button_salvar_convidado"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:text="salvar convidado"
+                android:textColor="@color/colorBranco"
+                android:textSize="16sp" />
+
+
+        </android.support.design.card.MaterialCardView>
+
+
     </LinearLayout>
 
 </ScrollView>

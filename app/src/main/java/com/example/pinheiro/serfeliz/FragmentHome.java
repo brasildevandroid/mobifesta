@@ -37,23 +37,24 @@ public class FragmentHome extends Fragment {
 
     private static final int PIC_CROP =1 ;
     Button btnAdicionarContato;
-TextView textView;
+TextView textView,txtMinhasAnotacoes;
 Cursor c;
 ArrayList<String> contacts;
 ImageView imgFotoCapaResumo,imgFotoPerfil;
 
-LinearLayout liResumoConvidados;
+LinearLayout liResumoConvidados,liMinhasAnotacoes,liResumoCalculadora,liMinhasTarefas;
 
     private String EVENT_DATE_TIME = "19-04-19 10:30:00";
     private String DATE_FORMAT = "dd-MM-yyyy HH:mm:ss";
     private String DATE_FORMAT_DATA = "dd-MM-yyyy";
 
     private TextView txtDias, txtHoras, txtMinutos, txtSegundos,
-                   txtOrcamento,txtDataFesta,txtMensagemFesta,txtResumoConvidadosConfirmados;
+                   txtOrcamento,txtDataFesta,txtMensagemFesta,txtTotalConvidados;
 
     private Handler handler = new Handler();
     private Runnable runnable;
     BD bd;
+    int gramas = 0;
     private static final int PICK_IMAGE = 100;
 
     private static final int  PERMISSIONS_REQUEST_READ_CONTACTS = 100;
@@ -70,7 +71,8 @@ LinearLayout liResumoConvidados;
         View view = inflater.inflate(R.layout.fragment_home,container,false);
 
 
-        Usuario usuario = new Usuario();
+
+
 
         txtDias = (TextView) view.findViewById(R.id.txt_Dias);
         txtHoras = (TextView) view.findViewById(R.id.txt_Horas);
@@ -79,9 +81,14 @@ LinearLayout liResumoConvidados;
         txtOrcamento= (TextView) view.findViewById(R.id.txt_orcamento);
         txtDataFesta = (TextView)view.findViewById(R.id.txt_Data_Festa);
         txtMensagemFesta = (TextView)view.findViewById(R.id.txt_Mensagem_Festa);
-        txtResumoConvidadosConfirmados = (TextView)view.findViewById(R.id.txt_Resumo__Convidados_Confirmados);
+        txtTotalConvidados = (TextView)view.findViewById(R.id.txt_Total_Convidados);
+        txtMinhasAnotacoes = (TextView)view.findViewById(R.id.txt_Minhas_Anotacoes);
         imgFotoCapaResumo  =(ImageView) view.findViewById(R.id.foto_Capa_Resumo);
-    //    imgFotoPerfil = (ImageView)view.findViewById(R.id.foto_Perfil);
+        liMinhasAnotacoes = (LinearLayout)view.findViewById(R.id.li_Minhas_Anotacoes);
+        liResumoConvidados  = (LinearLayout)view.findViewById(R.id.li_Resumo_Convidados);
+        liResumoCalculadora = (LinearLayout)view.findViewById(R.id.li_Resumo_Calculadora);
+        liMinhasTarefas = (LinearLayout)view.findViewById(R.id.li_Minhas_tarefas);
+        //    imgFotoPerfil = (ImageView)view.findViewById(R.id.foto_Perfil);
 
         imgFotoCapaResumo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,13 +143,51 @@ LinearLayout liResumoConvidados;
                  *
                  * */
 
-        liResumoConvidados  = (LinearLayout)view.findViewById(R.id.li_Resumo_Convidados);
+
 
         liResumoConvidados.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
 
                 startActivity(new Intent(getActivity(),TelaConvidado.class));
+
+
+            }
+
+        });
+
+
+        liMinhasTarefas.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getActivity(),TelaMinhasTarefas.class));
+
+
+            }
+
+        });
+        liMinhasAnotacoes.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getActivity(),TelaMinhasAnotacoes.class));
+
+
+            }
+
+        });
+
+
+        liResumoCalculadora.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getActivity(),TelaCalculadora.class));
 
 
             }
@@ -235,11 +280,20 @@ LinearLayout liResumoConvidados;
 
                 txtDataFesta.setText(EVENT_DATE_TIME);
 
+                Toast.makeText(getContext(),EVENT_DATE_TIME , Toast.LENGTH_SHORT).show();
+
                 txtMensagemFesta.setText(user.getMensagem());
 
-                txtResumoConvidadosConfirmados.setText(user.getConfirmados()  + " confirmados");
+
+                int criancas = Integer.parseInt(user.getConvidadosCriancas());
+                int adultos = Integer.parseInt( user.getConvidadosAdultos());
 
 
+                int totalConvidados = criancas + adultos;
+                Toast.makeText(getContext(),"total convidados" + totalConvidados,Toast.LENGTH_SHORT).show();
+                txtTotalConvidados.setText(String.valueOf("Total " + totalConvidados));
+
+                txtMinhasAnotacoes.setText(user.getQtdeAnotacoes() + " anotação");
                 Glide.with(imgFotoCapaResumo).load(user.getImgCapa()).into(imgFotoCapaResumo);
 
 
@@ -283,16 +337,46 @@ LinearLayout liResumoConvidados;
                 Uri uri = data.getData();
                 String x  = getPatch(uri);
 
-            performCrop(uri);
+             //   performCrop(uri);
 
-
-
-
+            atualizaCapaResumo(x);
 
             }
 
 
         }
+
+    private void performCrop(Uri picUri) {
+
+        try {
+
+            Intent cropIntent = new Intent("com.android.camera.action.CROP");
+            // indicate image type and Uri
+            cropIntent.setDataAndType(picUri, "image/*");
+            // set crop properties here
+            cropIntent.putExtra("crop", true);
+            // indicate aspect of desired crop
+            cropIntent.putExtra("aspectX", 1);
+            cropIntent.putExtra("aspectY", 1);
+            // indicate output X and Y
+            cropIntent.putExtra("outputX", 128);
+            cropIntent.putExtra("outputY", 128);
+            // retrieve data on return
+            cropIntent.putExtra("return-data", true);
+            // start the activity - we handle returning in onActivityResult
+            startActivityForResult(cropIntent, PIC_CROP);
+
+
+        }
+        // respond to users whose devices do not support the crop action
+        catch (ActivityNotFoundException anfe) {
+
+            // display an error message
+            String errorMessage = "Whoops - your device doesn't support the crop action!";
+            Toast toast = Toast.makeText(getContext(), errorMessage, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
 
 
     public String getPatch(Uri uri){
@@ -342,6 +426,7 @@ LinearLayout liResumoConvidados;
 
            Toast.makeText(getContext(), "imagem atualizada" + imagem,Toast.LENGTH_SHORT).show();
 
+
             Glide.with(imgFotoCapaResumo).load(user.getImgCapa()).into(imgFotoCapaResumo);
 
 /*
@@ -353,9 +438,9 @@ LinearLayout liResumoConvidados;
 
             //imgFotoCapaResumo.setImageBitmap(bt);
 
-            Toast.makeText(getContext(),"estou executando",Toast.LENGTH_LONG).show();
-
 */
+
+            Toast.makeText(getContext(),"estou executando",Toast.LENGTH_LONG).show();
 
 
 
@@ -373,32 +458,6 @@ LinearLayout liResumoConvidados;
 
     }
 
-    private void performCrop(Uri picUri) {
-        try {
-            Intent cropIntent = new Intent("com.android.camera.action.CROP");
-            // indicate image type and Uri
-            cropIntent.setDataAndType(picUri, "image/*");
-            // set crop properties here
-            cropIntent.putExtra("crop", true);
-            // indicate aspect of desired crop
-            cropIntent.putExtra("aspectX", 1);
-            cropIntent.putExtra("aspectY", 1);
-            // indicate output X and Y
-            cropIntent.putExtra("outputX", 128);
-            cropIntent.putExtra("outputY", 128);
-            // retrieve data on return
-            cropIntent.putExtra("return-data", true);
-            // start the activity - we handle returning in onActivityResult
-            startActivityForResult(cropIntent, PIC_CROP);
-        }
-        // respond to users whose devices do not support the crop action
-        catch (ActivityNotFoundException anfe) {
 
-            // display an error message
-            String errorMessage = "Whoops - your device doesn't support the crop action!";
-            Toast toast = Toast.makeText(getContext(), errorMessage, Toast.LENGTH_SHORT);
-            toast.show();
-        }
-    }
 
 }

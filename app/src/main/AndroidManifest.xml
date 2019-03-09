@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".TelaMinhasTarefas"></activity>
+        <activity android:name=".TelaDicasCalculadora" />
+        <activity android:name=".TelaCalculadora" />
         <activity android:name=".clientetelaconvidados.TelaCadastroConvidado" />
         <activity android:name=".clientetelaconvidados.TelaConvidado">
             <intent-filter>
@@ -53,7 +55,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".TelaEditarMensagem"
             android:label="@string/title_activity_tela_cliente">
@@ -61,7 +62,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".TelaConfiguraFesta"
             android:label="@string/title_activity_tela_cliente">
@@ -69,7 +69,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".TelaEspera"
             android:label="@string/title_activity_tela_cliente"
@@ -118,7 +117,20 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity android:name=".TelaMinhasAnotacoes" />
+        <activity android:name=".TelaCadastroAnotacao" />
+        <activity android:name=".AnotacaoDetalheActivity" />
         <activity android:name=".barradepesquisa.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TelaEditarAnotacao">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CalculadoraDetalheActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

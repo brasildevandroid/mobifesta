@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelaMinhasTarefas">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="16dp"
+            android:layout_centerInParent="true"
+            android:text="3 de 25 Tarefas Realizadas"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/colorBranco"
+            android:textSize="25sp"
+            tools:ignore="MissingConstraints" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+
+            <TextView
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/greyPrimary"
+                android:textSize="20sp"
+                android:text="6 Meses Antes:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="8dp"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="10dp">
+
+
+                <LinearLayout
+
+                    android:background="@drawable/background_button_salvar_convidado"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+                    <ImageView
+                        android:layout_marginLeft="6dp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_check"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+
+                    <View
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:textColor="@color/greySecondary"
+                        android:textSize="14sp"
+                        android:text="Escolha á data e horário da festa(manhã,tarde,noite);"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+            </android.support.design.card.MaterialCardView>
+
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="8dp"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="10dp">
+
+
+                <LinearLayout
+
+                    android:background="@drawable/background_button_salvar_convidado"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+                    <ImageView
+                        android:layout_marginLeft="6dp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_check"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+
+                    <View
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:textColor="@color/greySecondary"
+                        android:textSize="14sp"
+                        android:text="Defina seu orçamento isso fará toda á diferença no planejamento;"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+            </android.support.design.card.MaterialCardView>
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="8dp"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+
+
+                app:cardCornerRadius="10dp">
+
+
+                <LinearLayout
+
+                    android:background="@drawable/background_button_salvar_convidado"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+                    <ImageView
+                        android:layout_marginLeft="6dp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_check"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+
+                    <View
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:textColor="@color/greySecondary"
+                        android:textSize="14sp"
+                        android:text="Escolha o tema da festa baseado no gosto do aniversariante,se precisar contrate um decorador;"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+            </android.support.design.card.MaterialCardView>
+
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="8dp"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+
+
+                app:cardCornerRadius="10dp">
+
+
+                <LinearLayout
+
+                    android:background="@drawable/background_button_salvar_convidado"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+                    <ImageView
+                        android:layout_marginLeft="6dp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_check"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+
+                    <View
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:textColor="@color/greySecondary"
+                        android:textSize="14sp"
+                        android:text="Escolha o modelo da roupa do aniversariante,geralmente usado em festas temáticas ou infantis."
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+            </android.support.design.card.MaterialCardView>
+
+
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="8dp"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+
+
+                app:cardCornerRadius="10dp">
+
+
+                <LinearLayout
+
+                    android:background="@drawable/background_button_salvar_convidado"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+                    <ImageView
+                        android:layout_marginLeft="6dp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_check"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+
+                    <View
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:textColor="@color/greySecondary"
+                        android:textSize="14sp"
+                        android:text="crie sua lista de convidados,use nossa calculadora se precisar para calcular á quantidade de comida e bebida."
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+
+            </android.support.design.card.MaterialCardView>
+
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="8dp"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+
+
+                app:cardCornerRadius="10dp">
+
+
+                <LinearLayout
+
+                    android:background="@drawable/background_button_salvar_convidado"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+                    <ImageView
+                        android:layout_marginLeft="6dp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_check_a_realizar"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+
+                    <View
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:textColor="@color/greySecondary"
+                        android:textSize="14sp"
+                        android:text="Escolha o local da festa(casa,recepção(salão de festas),praia,restaurante etc...)."
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+
+            </android.support.design.card.MaterialCardView>
+
+
+
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="8dp"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+
+
+                app:cardCornerRadius="10dp">
+
+
+                <LinearLayout
+
+                    android:background="@drawable/background_button_salvar_convidado"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+                    <ImageView
+                        android:layout_marginLeft="6dp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_check_a_realizar"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+
+                    <View
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:textColor="@color/greySecondary"
+                        android:textSize="14sp"
+                        android:text="Se for ao ar livre lembre-se de contratar tenda e iluminação."
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+
+            </android.support.design.card.MaterialCardView>
+
+
+
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="8dp"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+
+
+                app:cardCornerRadius="10dp">
+
+
+                <LinearLayout
+
+                    android:background="@drawable/background_button_salvar_convidado"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+                    <ImageView
+                        android:layout_marginLeft="6dp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_check_a_realizar"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+
+                    <View
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:textColor="@color/greySecondary"
+                        android:textSize="14sp"
+                        android:text="Defina quanto tempo vai durar á festa,normalmente a maioria dura entre 3 á 5 horas;"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+
+            </android.support.design.card.MaterialCardView>
+
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="8dp"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+
+
+                app:cardCornerRadius="10dp">
+
+
+                <LinearLayout
+
+                    android:background="@drawable/background_button_salvar_convidado"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+                    <ImageView
+                        android:layout_marginLeft="6dp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_check_a_realizar"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+
+                    <View
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:textColor="@color/greySecondary"
+                        android:textSize="14sp"
+                        android:text="Reserve o local e horário da festa com locatário do imovel onde será realizado o evento,isso evitará grandes transtornos."
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+
+            </android.support.design.card.MaterialCardView>
+
+
+            <TextView
+                android:textColor="@color/greyPrimary"
+                android:textStyle="italic"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="16sp"
+                android:textSize="16sp"
+                android:text="* Marque as tarefas realizadas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

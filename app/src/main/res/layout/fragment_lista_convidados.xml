@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="10dp"
-        app:cardCornerRadius="3dp"
         app:cardPreventCornerOverlap="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +29,7 @@
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,18 +42,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="16dp"
                 android:layout_centerInParent="true"
                 android:text="Convidados "
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="@color/colorBranco"
-                android:textSize="24sp"
+                android:textSize="25sp"
                 tools:ignore="MissingConstraints" />
 
 
         </RelativeLayout>
 
         <View
+
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/colorCinza"
@@ -76,7 +76,8 @@
 
 
             <LinearLayout
-                android:layout_marginTop="4dp"
+
+                android:layout_marginTop="8dp"
                 android:layout_marginRight="16dp"
                 android:id="@+id/line1"
                 android:layout_width="100dp"
@@ -86,14 +87,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total"
+                    android:text="Crianças"
                     android:textAlignment="center"
                     android:textColor="@color/colorBranco"
                     android:textSize="20sp" />
 
 
                 <TextView
-                    android:id="@+id/txt_Total_Convidados"
+                    android:id="@+id/txt_Total_Criancas"
                     android:textAlignment="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -105,7 +106,7 @@
 
 
             <LinearLayout
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginRight="16dp"
                 android:id="@+id/line2"
                 android:layout_width="120dp"
@@ -116,13 +117,13 @@
                     android:textAlignment="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Confirmados"
+                    android:text="Adultos"
                     android:textColor="@color/colorBranco"
                     android:textSize="20sp" />
 
 
                 <TextView
-                    android:id="@+id/txt_Convidados_Confirmados"
+                    android:id="@+id/txt_Total_Adultos"
                     android:textAlignment="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

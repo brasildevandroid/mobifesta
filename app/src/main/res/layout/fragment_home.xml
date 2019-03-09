@@ -8,845 +8,796 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-<ScrollView
+    <ScrollView
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <LinearLayout
-        android:background="@color/colorCinza"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-
-
-
-
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:background="@color/colorBranco"
-
-                android:layout_width="match_parent"
-                android:layout_height="290dp">
-
-
-                <ImageView
-                    android:id="@+id/foto_Capa_Resumo"
-                    android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/foto_crianca" />
-
-
-                <TextView
-                    android:gravity="center"
-                    android:layout_height="30dp"
-                    android:id="@+id/txt_Data_Festa"
-                    android:maxLength="11"
-                    android:textAlignment="center"
-                    android:layout_width="match_parent"
-                    android:background="@color/colorBranco"
-                    android:layout_gravity="center_vertical"
-                    android:text="20/04/2019"
-                    android:textColor="@color/greySecondary"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    tools:ignore="RtlCompat" />
-
-                <View
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/colorCinza"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"/>
-
-
-
-
-                <TextView
-                    android:id="@+id/txt_Mensagem_Festa"
-                    android:gravity="center"
-                    android:layout_below="@+id/txt_Data_Festa"
-                    android:maxLength="40"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:textAlignment="center"
-                    android:text="sua mensagem aqui!"
-                    android:textColor="@color/greyPrimary"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-
-
-
-
-            </LinearLayout>
-
-
-
-
-
-
-
-
-        <TextView
-            android:layout_marginTop="8dp"
-
-            android:paddingTop="6dp"
-            android:textColor="@color/greyPrimary"
-            android:background="@color/colorBranco"
-            android:paddingLeft="16dp"
-            android:textStyle="italic"
-            android:textSize="20sp"
-            android:text="Faltam..."
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
         <LinearLayout
-
-            android:background="@color/colorBranco"
-            android:gravity="center"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="match_parent"
+            android:background="@color/colorCinza"
+            android:orientation="vertical">
 
 
-            <LinearLayout
-                android:layout_marginBottom="12dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/background_data"
-                android:orientation="vertical"
-                android:layout_width="80dp"
-
-                android:layout_height="match_parent">
-
-                <TextView
-
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/greyPrimary"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:id="@+id/txt_Dias"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-
-                <TextView
-                    android:textAlignment="center"
-                    android:textSize="15sp"
-                    android:id="@+id/txt_Dia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dias" />
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="12dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/background_data"
-                android:orientation="vertical"
-                android:layout_width="80dp"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/greyPrimary"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:id="@+id/txt_Horas"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-
-                <TextView
-                    android:textAlignment="center"
-                    android:textSize="15sp"
-                    android:id="@+id/txt_Hora"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Horas" />
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_marginLeft="5dp"
-
-                android:layout_marginBottom="12dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/background_data"
-                android:orientation="vertical"
-                android:layout_width="80dp"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/greyPrimary"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:id="@+id/txt_Minutos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-
-                <TextView
-                    android:textAlignment="center"
-                    android:textSize="15sp"
-                    android:id="@+id/txt_Minuto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Minutos" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_marginLeft="5dp"
-
-                android:layout_marginBottom="12dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/background_data"
-                android:orientation="vertical"
-                android:layout_width="80dp"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/greyPrimary"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:id="@+id/txt_Segundos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-
-                <TextView
-                    android:textAlignment="center"
-                    android:textSize="15sp"
-                    android:id="@+id/txt_Segundo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Segundos" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-        <TextView
-            android:textStyle="italic"
-            android:paddingTop="6dp"
-            android:layout_marginTop="8dp"
-            android:id="@+id/txt_ddddd"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="@color/colorBranco"
-            android:gravity="center_vertical"
-            android:text="Resumo"
-            android:paddingLeft="16dp"
-            android:textColor="@color/greyPrimary"
-            android:textSize="20sp" />
-
-        <HorizontalScrollView
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-
-                android:layout_marginBottom="8dp"
-                android:background="@color/colorBranco"
+            <ImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/foto_Capa_Resumo"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="140dp">
-
-
-                <LinearLayout
-                    android:id="@+id/li_Resumo_Convidados"
-                    android:layout_margin="6dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/ic_contato_rosa"/>
-
-                    <TextView
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Convidados"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-
-                    <TextView
-                        android:id="@+id/txt_Resumo__Convidados_Confirmados"
-                        android:textAlignment="center"
-                        android:textColor="@color/bootstrap_gray"
-                        android:text="2 de 5 confirmados"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-
-                </LinearLayout>
-
-
-
-                <View
-                    android:layout_marginBottom="6dp"
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/colorCinza"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"/>
-
-
-                <LinearLayout
-                    android:layout_margin="6dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/ic_contato_rosa"
-
-                        />
-
-                    <TextView
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Calculadora"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Calcule Comes e Bebes"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_marginBottom="6dp"
-
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/colorCinza"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"/>
-
-
-
-                <LinearLayout
-                    android:layout_margin="6dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/ic_contato_rosa"
-
-                        />
-
-                    <TextView
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Tarefas"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="3 de 25 concluidas"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_marginBottom="6dp"
-
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/colorCinza"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"/>
-
-
-
-                <LinearLayout
-                    android:layout_margin="6dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/ic_contato_rosa" />
-
-                    <TextView
-                        android:textSize="16sp"
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Fornecedores"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="1 de 25 confirmados"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_marginBottom="6dp"
-
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/colorCinza"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"/>
-
-
-                <LinearLayout
-                    android:layout_margin="6dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/ic_contato_rosa"/>
-
-                    <TextView
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Minhas Anotações"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-
-                    <TextView
-
-                        android:textAlignment="center"
-                        android:textColor="@color/bootstrap_gray"
-                        android:text="3 anotações"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-
-                </LinearLayout>
-                <View
-                    android:layout_marginBottom="6dp"
-
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/colorCinza"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"/>
-
-
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
-
-        <TextView
-            android:id="@+id/txt_dddsssdd"
-            android:layout_width="match_parent"
-
-            android:layout_height="30dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/colorBranco"
-            android:gravity="center_vertical"
-            android:paddingLeft="16dp"
-            android:paddingTop="6dp"
-            android:text="Financeiro"
-            android:textColor="@color/greyPrimary"
-            android:textSize="20sp"
-            android:textStyle="italic" />
-
-
-            <LinearLayout
+                android:layout_height="230dp"
+                android:src="@drawable/foto_crianca" />
+
+
+            <TextView
+                android:id="@+id/txt_Data_Festa"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorBranco"
                 android:gravity="center"
-                android:layout_marginBottom="8dp"
-                android:background="@color/colorBranco"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="140dp">
+                android:maxLength="11"
+                android:text="20/04/2019"
+                android:textAlignment="center"
+                android:textColor="@color/greySecondary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/colorCinza" />
+
+
+            <TextView
+                android:id="@+id/txt_Mensagem_Festa"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/txt_Data_Festa"
+                android:background="@color/colorBranco"
+                android:gravity="center"
+                android:maxLength="40"
+                android:text="sua mensagem aqui!"
+                android:textAlignment="center"
+                android:textColor="@color/greyPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorBranco"
+                android:paddingLeft="16dp"
+                android:paddingTop="6dp"
+                android:text="Faltam..."
+                android:textColor="@color/greyPrimary"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/colorBranco"
+                android:gravity="center"
+                android:orientation="horizontal">
 
 
                 <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/background_data"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_Dias"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/greyPrimary"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/txt_Dia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dias"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/background_data"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_Horas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/greyPrimary"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/txt_Hora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Horas"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="80dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/background_data"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_Minutos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/greyPrimary"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/txt_Minuto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Minutos"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="80dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/background_data"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_Segundos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/greyPrimary"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/txt_Segundo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Segundos"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/txt_ddddd"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorBranco"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="6dp"
+                android:text="Resumo"
+                android:textColor="@color/greyPrimary"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <HorizontalScrollView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/colorBranco"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:id="@+id/li_Resumo_Convidados"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_contato_rosa" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Convidados"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary"
+                            android:textSize="17sp" />
+
+
+                        <TextView
+                            android:id="@+id/txt_Total_Convidados"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="center"
+                            android:textColor="@color/bootstrap_gray" />
+
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="6dp"
+                        android:background="@color/colorCinza" />
+
+
+                    <LinearLayout
+                        android:id="@+id/li_Resumo_Calculadora"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_contato_rosa"
+
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Calculadora"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary"
+                            android:textSize="17sp" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Calcule Comes e Bebes"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="6dp"
+                        android:background="@color/colorCinza" />
+
+
+                    <LinearLayout
+                        android:id="@+id/li_Minhas_tarefas"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_contato_rosa"
+
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tarefas"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="3 de 25 concluidas"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="6dp"
+                        android:background="@color/colorCinza" />
+
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_contato_rosa" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fornecedores"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1 de 25 confirmados"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="6dp"
+                        android:background="@color/colorCinza" />
+
+
+                    <LinearLayout
+                        android:id="@+id/li_Minhas_Anotacoes"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_contato_rosa" />
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Minhas Anotações"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary"
+                            android:textSize="17sp" />
+
+
+                        <TextView
+                            android:id="@+id/txt_Minhas_Anotacoes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="3 anotações"
+                            android:textAlignment="center"
+                            android:textColor="@color/bootstrap_gray" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="6dp"
+                        android:background="@color/colorCinza" />
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+            <TextView
+                android:id="@+id/txt_dddsssdd"
+                android:layout_width="match_parent"
+
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorBranco"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="6dp"
+                android:text="Financeiro"
+                android:textColor="@color/greyPrimary"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorBranco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="6dp"
                     android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
+                    android:orientation="vertical">
 
 
                     <ImageView
-                        android:layout_gravity="center"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:layout_gravity="center"
                         app:srcCompat="@drawable/ic_contato_rosa"
 
                         />
 
                     <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Orçamento"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="Orçamento"
+                        android:textAlignment="center"
+                        android:textColor="@color/greyPrimary" />
 
 
                     <TextView
                         android:id="@+id/txt_orcamento"
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="R$ 5.000,00"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:textAlignment="center"
+                        android:textColor="@color/greyPrimary" />
 
                 </LinearLayout>
 
                 <View
-                    android:layout_marginBottom="6dp"
+                    android:layout_width="1dp"
 
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="1dp"
                     android:layout_marginRight="1dp"
-                    android:background="@color/colorCinza"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"/>
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/colorCinza" />
 
 
                 <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="6dp"
                     android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
+                    android:orientation="vertical">
 
 
                     <ImageView
-                        android:layout_gravity="center"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:layout_gravity="center"
                         app:srcCompat="@drawable/ic_contato_rosa"
 
                         />
 
                     <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Gastos"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:textAlignment="center"
+                        android:textColor="@color/greyPrimary" />
 
                     <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="R$ 700,00"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="R$ 700,00"
+                        android:textAlignment="center"
+                        android:textColor="@color/greyPrimary" />
 
                 </LinearLayout>
 
 
                 <View
-                    android:layout_marginBottom="6dp"
+                    android:layout_width="1dp"
 
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="1dp"
                     android:layout_marginRight="1dp"
-                    android:background="@color/colorCinza"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"/>
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/colorCinza" />
 
 
                 <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="6dp"
                     android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
+                    android:orientation="vertical">
 
 
                     <ImageView
-                        android:layout_gravity="center"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:layout_gravity="center"
                         app:srcCompat="@drawable/ic_contato_rosa"
 
                         />
 
                     <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Moedas"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:textAlignment="center"
+                        android:textColor="@color/greyPrimary" />
 
                     <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="R$ 300,00"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:textAlignment="center"
+                        android:textColor="@color/greyPrimary" />
 
                 </LinearLayout>
-
 
 
             </LinearLayout>
 
 
-
-
-
-        <TextView
-            android:textStyle="italic"
-            android:paddingTop="6dp"
-            android:layout_marginTop="8dp"
-            android:id="@+id/tddddddxt_ddddd"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="@color/colorBranco"
-            android:gravity="center_vertical"
-            android:text="Meus Fornecedores"
-            android:paddingLeft="16dp"
-
-            android:textColor="@color/greyPrimary"
-            android:textSize="20sp" />
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <LinearLayout
-                android:background="@color/colorBranco"
+            <TextView
+                android:id="@+id/tddddddxt_ddddd"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="140dp">
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorBranco"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="6dp"
+                android:text="Meus Fornecedores"
+                android:textColor="@color/greyPrimary"
+
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
 
                 <LinearLayout
-                    android:layout_margin="6dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:background="@color/colorBranco"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
 
 
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/ic_contato_rosa"
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_contato_rosa"
 
-                        />
+                            />
 
-                    <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Convidados"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Convidados"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary" />
 
 
-                    <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/bootstrap_gray"
-                        android:text="2 de 5 confirmados"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2 de 5 confirmados"
+                            android:textAlignment="center"
+                            android:textColor="@color/bootstrap_gray" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_contato_rosa"
+
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Calculadora"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Calcule Comes e Bebes"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_contato_rosa"
+
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tarefas"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="3 de 25 concluidas"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_contato_rosa"
+
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fornecedores"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1 de 25 contratados"
+                            android:textAlignment="center"
+                            android:textColor="@color/greyPrimary" />
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
 
+            </HorizontalScrollView>
 
+            <TextView
+                android:id="@+id/tddddddxt_d"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/colorBranco"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp"
+                android:text="ver todos >"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/greyPrimary"
+                android:textSize="15sp"
+                tools:ignore="RtlCompat" />
 
-                <LinearLayout
-                    android:layout_margin="6dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/ic_contato_rosa"
-
-                        />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Calculadora"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Calcule Comes e Bebes"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-
-
-                <LinearLayout
-                    android:layout_margin="6dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/ic_contato_rosa"
-
-                        />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Tarefas"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="3 de 25 concluidas"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-
-
-
-                <LinearLayout
-                    android:layout_margin="6dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/ic_contato_rosa"
-
-                        />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="Fornecedores"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:textColor="@color/greyPrimary"
-                        android:text="1 de 25 contratados"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-
-
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
-        <TextView
-            android:layout_marginBottom="16dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"
-            android:id="@+id/tddddddxt_d"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/colorBranco"
-            android:gravity="center_vertical"
-            android:text="ver todos >"
-            android:textAlignment="viewEnd"
-            android:textColor="@color/greyPrimary"
-            android:textSize="15sp"
-            tools:ignore="RtlCompat" />
-
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
 
 
 

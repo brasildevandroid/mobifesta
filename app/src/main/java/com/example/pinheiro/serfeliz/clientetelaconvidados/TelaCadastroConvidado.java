@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -21,13 +21,20 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.pinheiro.serfeliz.R;
+import com.example.pinheiro.serfeliz.bancointerno.BD;
+import com.example.pinheiro.serfeliz.bancointerno.Usuario;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class TelaCadastroConvidado extends AppCompatActivity {
@@ -48,7 +55,7 @@ public class TelaCadastroConvidado extends AppCompatActivity {
     static FirebaseUser userCliente;
     String numeroConvidado;
     FirebaseFirestore mFirestore;
-
+    BD bd;
 
     private Spinner sp;
     Convidado convidado;
@@ -60,6 +67,7 @@ public class TelaCadastroConvidado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastro_convidado);
         btnSalvarConvidado = (Button) findViewById(R.id.btn_Salva_Convidado);
+        bd = new BD(this);
 
         qtdeAcompanhantesAdultos = "0";
         qtdeAcompanhantesCriancas = "0";
@@ -296,6 +304,8 @@ public class TelaCadastroConvidado extends AppCompatActivity {
 
     Convidado novoConvidado = new Convidado();
 
+        List<Usuario> list = bd.buscar();
+        final   Usuario user =  (Usuario) list.get(0);
 
         public MyTelaCadastroConvidado(Convidado convidado){
 
@@ -316,12 +326,12 @@ public class TelaCadastroConvidado extends AppCompatActivity {
         protected String doInBackground(String... strings) {
 
 
+
             userCliente = mAuth.getInstance().getCurrentUser();
             mFirestore = FirebaseFirestore.getInstance();
 
 
             String uidCliente =   userCliente.getUid();
-
 
             mFirestore.collection("cliente")
                     .document(uidCliente)
@@ -334,13 +344,19 @@ public class TelaCadastroConvidado extends AppCompatActivity {
 
                             cardCadastroConvidado.setVisibility(View.INVISIBLE);
 
+                            /*
+                            * chamar o banco de dados interno
+                            *  get collection
+                            * for e pegar os objetos,consigo colocar numa variavel contando
+                            * */
+
                             startActivity(new Intent(TelaCadastroConvidado.this, TelaConvidado.class));
                             finish();
 
 
 
-
                             Toast.makeText(TelaCadastroConvidado.this,
+
                                     "novo convidado registrado com sucesso!",Toast.LENGTH_LONG).show();
 
                             Log.d(
@@ -363,7 +379,99 @@ public class TelaCadastroConvidado extends AppCompatActivity {
                 }
             });
 
+            final List<Convidado> listaConvidados = new ArrayList<Convidado>();
 
+            final int[] totalCrian = {0};
+            final int[] totalAdultos = {0};
+            final int[] totalPrincipal = {0};
+
+
+            mFirestore.collection("cliente")
+                    .document(uidCliente)
+                    .collection("convidados")
+
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                    Log.d("documentos", document.getId() + " => " + document.getData());
+
+                                    Convidado convidados = document.toObject(Convidado.class);
+
+                                    listaConvidados.add(convidados);
+                                    totalPrincipal[0] =listaConvidados.size();
+
+
+                                    // se o getAdultos ou criancas for zero ele quebra
+
+                                    if (convidados.getQtdeAcompanhantesCriancas() != "0" && convidados.getQtdeAcompanhantesCriancas() != ""){
+
+
+                                        int criancas = Integer.parseInt(convidados.getQtdeAcompanhantesCriancas());
+                                        totalCrian[0] += criancas;
+                                    }
+
+                                    if (convidados.getQtdeAcompanhantesAdultos() != "0"
+                                            && convidados.getQtdeAcompanhantesAdultos() != ""){
+
+
+                                        int adultos = Integer.parseInt(convidados.getQtdeAcompanhantesAdultos());
+                                        totalAdultos[0] += adultos;
+
+
+                                    }
+
+
+
+
+                                    /*
+
+
+                                    // Configurando o gerenciador de layout para ser uma lista.
+                                    mRecyclerView.setLayoutManager(new GridLayoutManager(getContext(),
+                                            2, GridLayoutManager.VERTICAL, false));
+
+
+                                    LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+                                    mRecyclerView.setLayoutManager(layoutManager);
+
+                                    // Adiciona o adapter que irá anexar os objetos à lista.
+                                    // Está sendo criado com lista vazia, pois será preenchida posteriormente.
+
+                                    mLayoutManager = new LinearLayoutManager(getContext());
+
+                                    mRecyclerView.setHasFixedSize(true);
+                                    mRecyclerView.setLayoutManager(mLayoutManager);
+                                    mRecyclerView.setAdapter(adapterListaContatos);
+
+*/
+                                }
+                            } else {
+                                Log.d("", "Error getting documents: ", task.getException());
+                            }
+
+                            int total = totalAdultos[0] + totalPrincipal[0];
+
+                            user.setConvidadosCriancas(String.valueOf(totalCrian[0]));
+                            user.setConvidadosAdultos(String.valueOf(total));
+                            //user.setConfirmados(total);
+
+
+
+                            bd.atualizar(user);
+
+                            String totalAdults = user.getConvidadosAdultos();
+                            String totalCriancas = user.getConvidadosCriancas();
+
+
+
+
+
+                        }
+                    });
 
 
 

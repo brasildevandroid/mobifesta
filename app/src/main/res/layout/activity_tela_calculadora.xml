@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelaCalculadora">
+
+
+
+
+    <android.support.design.card.MaterialCardView
+        android:layout_gravity="center"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:cardElevation="16dp"
+        android:outlineAmbientShadowColor="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+
+
+                <TextView
+                    android:id="@+id/txt_Status_Convidado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_centerInParent="true"
+                    android:text="Calculadora Comes e Bebes"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="@color/colorBranco"
+                    android:textSize="24sp"
+                    tools:ignore="MissingConstraints" />
+
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_marginTop="4dp"
+                android:paddingLeft="8dp"
+                android:layout_marginBottom="4dp"
+                android:textColor="@color/greyPrimary"
+                android:text="Número de convidados da sua lista:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"/>
+
+
+
+
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        app:srcCompat="@drawable/bartender" />
+
+
+
+                    <ImageView
+                        android:id="@+id/img_Calculadora_Menos_Adultos"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/background_tela_calculadora"
+                        app:srcCompat="@drawable/ic_remove" />
+
+                    <TextView
+                        android:textSize="30sp"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:id="@+id/txt_Calculadora_Adulto"
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_tela_calculadora" />
+
+                    <ImageView
+                        android:id="@+id/img_Calculadora_Mais_Adultos"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/background_tela_calculadora"
+                        app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                    <TextView
+                        android:layout_gravity="center_vertical"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="Adulto(s)"
+                        android:textColor="@color/greyPrimary" />
+
+                </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+
+                <ImageView
+                    android:id="@+id/img_Calculadora_Menos_Criancas"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:textSize="30sp"
+                    android:layout_gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:id="@+id/txt_Calculadora_Criancas"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Calculadora_Mais_Criancas"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+                    android:layout_gravity="center_vertical"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Criança(s)"
+                    android:textColor="@color/greyPrimary" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </android.support.design.card.MaterialCardView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:textColor="@color/greyPrimary"
+                android:text="Quantidade por pessoa:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"/>
+
+            <TextView
+
+                android:layout_marginBottom="16dp"
+                android:paddingLeft="8dp"
+                android:textColor="@color/greySecondary"
+                android:text="* Considere á quantidade por adulto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"/>
+
+            <View
+
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+            <LinearLayout
+
+                android:gravity="left"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Bolo"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Bolo"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/background_tela_calculadora"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Bolo"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="gramas de Bolo"
+                    android:textColor="@color/greyPrimary" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+
+            <LinearLayout
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Docinhos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Doces"
+
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20sp"
+
+
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Docinhos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Docinhos"
+                    android:textColor="@color/greyPrimary" />
+
+            </LinearLayout>
+
+
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+
+            <LinearLayout
+
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Salgadinhos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Salgadinhos"
+
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20sp"
+
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Salgadinhos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Salgadinhos"
+                    android:textColor="@color/greyPrimary" />
+
+            </LinearLayout>
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+
+            <LinearLayout
+
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Sanduiches"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Sanduiches"
+
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20sp"
+
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Sanduiches"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:text="Sanduíches"
+                    android:textColor="@color/greyPrimary" />
+
+            </LinearLayout>
+
+
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Agua"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Agua"
+
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/background_tela_calculadora"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+
+                    />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Agua"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:text="ml de Água"
+                    android:textColor="@color/greyPrimary" />
+
+            </LinearLayout>
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+            <LinearLayout
+
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Refrigerante"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Refrigerante"
+
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20sp"
+
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Refrigerante"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="ml de Refrigerante"
+                    android:textColor="@color/greyPrimary" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+
+
+            <LinearLayout
+
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Cerveja"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+
+                    android:id="@+id/txt_Calculadora_Cerveja"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20sp"
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Cerveja"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="ml de Cerveja"
+                    android:textColor="@color/greyPrimary" />
+
+
+            </LinearLayout>
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+
+            <LinearLayout
+
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Suco"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Suco"
+
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20sp"
+
+
+                    android:textAlignment="center"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Suco"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="ml de Suco"
+                    android:textColor="@color/greyPrimary" />
+
+            </LinearLayout>
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza"/>
+
+
+
+
+
+            <LinearLayout
+
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Pratinhos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Pratinhos"
+
+                    android:textSize="20sp"
+                    android:layout_gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Pratinhos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora"
+                    />
+
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Pratinhos"
+                    android:textColor="@color/greyPrimary" />
+
+            </LinearLayout>
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+
+            <LinearLayout
+
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Copos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Copos"
+
+                    android:textSize="20sp"
+
+                    android:layout_gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Copos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Copos de 220ml"
+                    android:textColor="@color/greyPrimary" />
+
+            </LinearLayout>
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+
+            <LinearLayout
+
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Colheres"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Colheres"
+
+                    android:textSize="20sp"
+                    android:layout_gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Colheres"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Colheres"
+                    android:textColor="@color/greyPrimary" />
+
+            </LinearLayout>
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+
+            <LinearLayout
+
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Garfos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Garfos"
+
+                    android:textSize="20sp"
+                    android:layout_gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Garfos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Garfos"
+                    android:textColor="@color/greyPrimary" />
+
+            </LinearLayout>
+
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+            <LinearLayout
+
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/bartender" />
+
+
+                <ImageView
+                    android:id="@+id/img_Menos_Guardanapos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/txt_Calculadora_Guardanapos"
+
+                    android:textSize="20sp"
+
+                    android:layout_gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/background_tela_calculadora" />
+
+                <ImageView
+                    android:id="@+id/img_Mais_Guardanapos"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/background_tela_calculadora"
+                    app:srcCompat="@drawable/ic_adicionar_calculadora" />
+
+
+                <TextView
+
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Guardanapos"
+                    android:textColor="@color/greyPrimary" />
+
+            </LinearLayout>
+            <View
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCinza" />
+
+
+
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_gravity="center"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                app:cardElevation="16dp"
+                android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginLeft="@dimen/cardMarginHorizontal"
+                android:layout_marginRight="@dimen/cardMarginHorizontal"
+                app:cardCornerRadius="10dp">
+
+
+                <Button
+                    android:id="@+id/btn_Calcular"
+                    android:layout_width="300dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/background_button_salvar_convidado"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:text="calcular"
+                    android:textColor="@color/colorBranco"
+                    android:textSize="16sp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="55dp"
+                    tools:layout_editor_absoluteY="645dp" />
+
+
+            </android.support.design.card.MaterialCardView>
+
+
+
+
+            <TextView
+                android:layout_margin="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="* Marque os itens que deseja calcular para o seu evento "/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -5,11 +5,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -18,26 +14,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pinheiro.serfeliz.R;
-import com.example.pinheiro.serfeliz.TelaEditarMensagem;
 import com.example.pinheiro.serfeliz.bancointerno.BD;
 import com.example.pinheiro.serfeliz.bancointerno.Usuario;
-import com.example.pinheiro.serfeliz.ex16_fragments.Contato;
-import com.example.pinheiro.serfeliz.ex16_fragments.FragmentCadastroConvidado;
-import com.example.pinheiro.serfeliz.ex16_fragments.HotelDetalheActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 
 public class ConvidadoDetalheActivity extends AppCompatActivity {
@@ -56,6 +46,7 @@ TextView txtPresencaConvidado,txtNomeConvidado,txtCelularConvidado,txtStatusConv
 ImageView imgEditarConvidado,imgDeletarConvidado;
 ImageView imgLigar,imgMensagem;
     BD bd;
+    TextView txtFazerLigacaoConvidado,txtMensagemConvidado;
 
     List<Convidado> totalConfirmados;
 
@@ -65,11 +56,15 @@ ImageView imgLigar,imgMensagem;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhe_convidado);
 
-      //  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        imgEditarConvidado = (ImageView)findViewById(R.id.img_Editar_Convidado);
+        imgDeletarConvidado = (ImageView)findViewById(R.id.img_Deletar_Convidado);
+
 
         Intent intent = getIntent();
         convidado = (Convidado)
                 intent.getSerializableExtra(EXTRA_CONTATO);
+
+
 
         txtNomeConvidado = (TextView)findViewById(R.id.txt_Detalhe_Nome_Convidado);
         txtCelularConvidado = (TextView)findViewById(R.id.txt_Celular_Convidado);
@@ -81,16 +76,18 @@ ImageView imgLigar,imgMensagem;
         txtQtdeAcompanhantesAdultos = (TextView)findViewById(R.id.txt_Acompanhantes_Adultos);
         txtQtdeAcompanhantesCriancas = (TextView)findViewById(R.id.txt_Acompanhantes_Criancas);
         txtGrauParentesco = (TextView)findViewById(R.id.txt_Grau_Parentesco_Convidado);
+        checkBoxConfirmaConvidado = (CheckBox)findViewById(R.id.checkBox_Confirmar_Convidado);
 
-        imgEditarConvidado = (ImageView)findViewById(R.id.img_Editar_Convidado);
-        imgDeletarConvidado = (ImageView)findViewById(R.id.img_Deletar_Convidado);
+        //  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        imgLigar = (ImageView)findViewById(R.id.img_Ligar);
-        imgMensagem = (ImageView)findViewById(R.id.img_Mensagem);
-
+        txtFazerLigacaoConvidado = (TextView)findViewById(R.id.txt_Fazer_Ligacao_Convidado);
+        txtMensagemConvidado = (TextView)findViewById(R.id.txt_Mensagem_Convidado);
 
 
-        imgLigar.setOnClickListener(new View.OnClickListener() {
+
+
+
+        txtFazerLigacaoConvidado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -107,7 +104,7 @@ ImageView imgLigar,imgMensagem;
 
 
 
-        imgMensagem.setOnClickListener(new View.OnClickListener() {
+        txtMensagemConvidado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -220,7 +217,7 @@ ImageView imgLigar,imgMensagem;
 
         idConvidado  = convidado.getId();
 
-        checkBoxConfirmaConvidado = (CheckBox)findViewById(R.id.checkBox_Confirmar_Convidado);
+       // checkBoxConfirmaConvidado = (CheckBox)findViewById(R.id.checkBox_Confirmar_Convidado);
 
 
         if (convidado.getStatus().equalsIgnoreCase("á confirmar")){
@@ -230,11 +227,10 @@ ImageView imgLigar,imgMensagem;
         }
 
 
+
         checkBoxConfirmaConvidado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
 
 
                 MyTelaDetalheConvidado myTelaDetalheConvidado = new MyTelaDetalheConvidado(convidado);
@@ -349,6 +345,7 @@ ImageView imgLigar,imgMensagem;
 
         userCliente = mAuth.getInstance().getCurrentUser();
         mFirestore = FirebaseFirestore.getInstance();
+
         String uid = userCliente.getUid();
         List<Usuario> list = bd.buscar();
      final   Usuario user =  (Usuario) list.get(0);
@@ -386,14 +383,6 @@ ImageView imgLigar,imgMensagem;
                         }
                     }
                 });
-
-
-
-
-
-
-
-
 
 
         startActivity(new Intent(ConvidadoDetalheActivity.this, TelaConvidado.class));

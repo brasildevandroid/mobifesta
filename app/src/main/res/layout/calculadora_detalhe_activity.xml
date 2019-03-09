@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/txt_Titulo_Detalhe_Calculadora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="8dp"
+            android:layout_centerInParent="true"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/colorBranco"
+            android:textSize="18sp"
+            tools:ignore="MissingConstraints" />
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="4dp"
+                android:fontFamily="@string/acao_compartilhar"
+                android:textColor="@color/greyPrimary"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Comida e Bebida:"/>
+
+
+    <TextView
+
+        android:textStyle="italic"
+        android:id="@+id/txt_Bolo_Quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="6dp"
+        android:layout_centerInParent="true"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/greySecondary"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <TextView
+
+        android:textStyle="italic"
+        android:id="@+id/txt_Docinhos_Quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="4dp"
+        android:layout_centerInParent="true"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/greySecondary"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <TextView
+
+        android:textStyle="italic"
+        android:id="@+id/txt_Salgadinhos_Quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="6dp"
+        android:layout_centerInParent="true"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/greySecondary"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:textStyle="italic"
+        android:id="@+id/txt_Sanduiches_Quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="6dp"
+        android:layout_centerInParent="true"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/greySecondary"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:textStyle="italic"
+        android:id="@+id/txt_Agua_Quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="6dp"
+        android:layout_centerInParent="true"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/greySecondary"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:textStyle="italic"
+        android:id="@+id/txt_Suco_Quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="6dp"
+        android:layout_centerInParent="true"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/greySecondary"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:textStyle="italic"
+        android:id="@+id/txt_Refrigerante_Quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="6dp"
+        android:layout_centerInParent="true"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/greySecondary"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:textStyle="italic"
+                android:id="@+id/txt_Cerveja_Quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="4dp"
+                android:layout_centerInParent="true"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/greySecondary"
+                android:textSize="20sp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="4dp"
+                android:fontFamily="@string/acao_compartilhar"
+                android:textColor="@color/greyPrimary"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descartáveis:"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:id="@+id/txt_Pratinhos_Quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="6dp"
+                android:layout_centerInParent="true"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/greySecondary"
+                android:textSize="20sp"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:textStyle="italic"
+                android:id="@+id/txt_Copos_Quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="6dp"
+                android:layout_centerInParent="true"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/greySecondary"
+                android:textSize="20sp"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:textStyle="italic"
+                android:id="@+id/txt_Colheres_Quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="6dp"
+                android:layout_centerInParent="true"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/greySecondary"
+                android:textSize="20sp"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:textStyle="italic"
+                android:id="@+id/txt_Garfos_Quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="6dp"
+                android:layout_centerInParent="true"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/greySecondary"
+                android:textSize="20sp"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:textStyle="italic"
+                android:id="@+id/txt_Guardanapos_Quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="6dp"
+                android:layout_centerInParent="true"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/greySecondary"
+                android:textSize="16sp"
+                tools:ignore="MissingConstraints" />
+
+            <View
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorCinza"/>
+
+
+            <LinearLayout
+                android:layout_marginBottom="16dp"
+
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+
+
+                <android.support.design.card.MaterialCardView
+
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="250dp"
+                    android:layout_height="45dp"
+                    app:cardElevation="16dp"
+                    android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="8dp"
+                    app:cardCornerRadius="10dp">
+
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:id="@+id/txt_Salvar_Anotacao_Calculadora"
+                        android:layout_height="45dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:text="SALVAR EM MINHAS ANOTAÇÕES"
+                        android:textColor="@color/colorBranco"
+                        android:textSize="14sp" />
+
+
+                </android.support.design.card.MaterialCardView>
+
+
+                <android.support.design.card.MaterialCardView
+                    android:layout_marginBottom="16dp"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="80dp"
+                    android:layout_height="45dp"
+                    app:cardElevation="16dp"
+                    android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+
+
+                    app:cardCornerRadius="10dp">
+
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:id="@+id/txt_Dicas_Anotacao_Calculadora"
+                        android:layout_height="45dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:text="DICAS"
+                        android:textColor="@color/colorBranco"
+                        android:textSize="16sp" />
+
+                </android.support.design.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>
+
+

@@ -1,17 +1,13 @@
 package com.example.pinheiro.serfeliz.clientetelaconvidados;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.pinheiro.serfeliz.R;
-import com.example.pinheiro.serfeliz.bancointerno.BD;
-import com.example.pinheiro.serfeliz.bancointerno.Usuario;
-
-import java.util.List;
 
 public class TelaConvidado extends AppCompatActivity {
 
@@ -28,22 +24,25 @@ public class TelaConvidado extends AppCompatActivity {
         frame = (FrameLayout)findViewById(R.id.container_tela_convidado);
 
 
-
-
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.container_tela_convidado,new FragmentListaConvidados())
              //   .addToBackStack(null)
                 .commit();
 
-        btnAdicionarConvidado.setOnClickListener(new View.OnClickListener() {
+            btnAdicionarConvidado.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
            startActivity(new Intent(TelaConvidado.this,TelaCadastroConvidado.class));
 
+
             }
         });
     }
+
+
+
+
 }

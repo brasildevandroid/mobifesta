@@ -607,6 +607,25 @@ public class TelaConfiguraFesta extends AppCompatActivity {
         usuario.setDataFestaRegressiva(dataFesta);
         usuario.setMensagem("sua mensagem aqui");
         usuario.setConfirmados("0");
+        usuario.setQtdeAnotacoes("0");
+        usuario.setCalculadoraAdultos("0");
+        usuario.setCalculadoraCriancas("0");
+        usuario.setCalculadoraBolo("100");
+        usuario.setCalculadoraDocinhos("8");
+        usuario.setCalculadoraSalgadinhos("10");
+        usuario.setCalculadoraSanduiches("2");
+        usuario.setCalculadoraRefrigerante("600");
+        usuario.setCalculadoraCerveja("800");
+        usuario.setCalculadoraSuco("400");
+        usuario.setCalculadoraAgua("200");
+        usuario.setCalculadoraPratinhos("2");
+        usuario.setCalculadoraCopos("4");
+        usuario.setCalculadoraColheres("2");
+        usuario.setCalculadoraGarfos("2");
+        usuario.setCalculadoraGuardanapos("10");
+        usuario.setConvidadosAdultos("0");
+        usuario.setConvidadosCriancas("0");
+
 
         bd.inserir(usuario);
 

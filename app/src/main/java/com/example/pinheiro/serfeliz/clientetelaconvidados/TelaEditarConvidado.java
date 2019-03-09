@@ -218,9 +218,6 @@ if (convidado != null){
             int  n = rand.nextInt((aleatorio) + 1);
 
 
-
-
-
             cardCadastroConvidado.setVisibility(View.VISIBLE);
 
             Convidado convidado = new Convidado();

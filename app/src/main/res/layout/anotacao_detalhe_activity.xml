@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="16dp"
+            android:layout_centerInParent="true"
+            android:text="Dados da Anotação"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/colorBranco"
+            android:textSize="25sp"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+
+            android:id="@+id/img_Editar_Anotacao"
+            android:layout_marginRight="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:srcCompat="@drawable/ic_editar_convidado"/>
+
+
+        <ImageView
+            android:id="@+id/img_Deletar_Anotacao"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:srcCompat="@drawable/ic_delete"/>
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="MissingConstraints"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:id="@+id/txt_Detalhes_Titulo_Anotacoes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:layout_marginLeft="12dp"
+                android:text="Comprar descártaveis"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/greyPrimary"
+                android:textSize="20sp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/txt_Detalhes_Descricao_Anotacoes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:padding="8dp"
+                android:text="Preciso comprar copos descartáveis não posso me esquecer,á mariazinha ficou de ajudar na compra vamos aguardar pra ver!"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/bootstrap_gray_dark"
+                android:textSize="18sp"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
